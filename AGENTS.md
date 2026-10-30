@@ -35,17 +35,18 @@ et l'ADR concerné dans le même commit.
 
 | Besoin | Choix |
 |---|---|
-| Build | Vite |
-| UI | React 18 + TypeScript strict |
-| Style | Tailwind CSS (tokens de la charte dans `tailwind.config.ts`) |
+| Runtime | Node.js 22 (`.nvmrc`) |
+| Build | Vite 8 |
+| UI | React 18 + TypeScript 5.9 strict |
+| Style | Tailwind CSS 3.4 (tokens de la charte dans `tailwind.config.ts`) |
 | Routing | `react-router-dom` (`BrowserRouter` + `404.html` de repli) |
 | Données serveur | `@supabase/supabase-js` + `@tanstack/react-query` |
 | Formulaires | `react-hook-form` + `zod` |
 | i18n | `i18next` + `react-i18next` |
 | Glisser-déposer | `@dnd-kit/core` |
 | Icônes | `lucide-react` |
-| Tests | Vitest + Testing Library |
-| Qualité | ESLint + Prettier |
+| Tests | Vitest 5 + Testing Library |
+| Qualité | ESLint 9 + Prettier 3 |
 
 Les raisons de chaque choix sont dans [`docs/adr/`](docs/adr/).
 

@@ -10,9 +10,11 @@ et qui permette d'ajouter des fonctionnalités rapidement.
 
 ## Décision
 
-- **Vite** pour le build et le serveur de développement.
-- **React 18 + TypeScript** en mode `strict`.
-- **Tailwind CSS** pour le style, avec les tokens de la charte dans `tailwind.config.ts`.
+- **Vite 8** pour le build et le serveur de développement.
+- **React 18 + TypeScript 5.9** en mode `strict` (avec `noUncheckedIndexedAccess`).
+- **Tailwind CSS 3.4** pour le style, avec les tokens de la charte dans `tailwind.config.ts`.
+  Tailwind 4 (configuration en CSS) est volontairement écarté pour l'instant : la v3.4 est stable,
+  sans faille connue, et garde une configuration TypeScript lisible par les agents.
 - Bibliothèques retenues :
   - `react-router-dom` (routing),
   - `@tanstack/react-query` (cache et état des données serveur),
@@ -21,7 +23,10 @@ et qui permette d'ajouter des fonctionnalités rapidement.
   - `@dnd-kit/core` (glisser-déposer du planning),
   - `lucide-react` (icônes),
   - `@fontsource/*` (polices auto-hébergées).
-- Qualité : ESLint, Prettier, Vitest + Testing Library.
+- Qualité : ESLint 9 (configuration « flat »), Prettier 3, Vitest 5 + Testing Library.
+- Node.js 22 (`.nvmrc`) en local comme en CI.
+- Les dépendances doivent rester sans vulnérabilité connue (`npm audit`) ; une montée de version majeure
+  passe par une mise à jour de cet ADR.
 
 ## Alternatives envisagées
 
