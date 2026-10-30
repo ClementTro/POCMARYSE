@@ -118,12 +118,15 @@ npm install          # dépendances
 npm run dev          # serveur local (http://localhost:5173/POCMARYSE/)
 npm run build        # build de production + copie 404.html
 npm run preview      # prévisualise le build
-npm run lint         # ESLint
+npm run lint         # ESLint + vérification que tous les fichiers sont en UTF-8
 npm run typecheck    # tsc --noEmit
 npm run test         # Vitest (une passe)
 npm run format       # Prettier
 npm run typo:fr      # espaces insécables FR (avant ? ! : ; et dans « ») — à lancer après toute modif d'un fr.json
 ```
+
+Sous Windows, ne jamais écrire un fichier avec `Set-Content`, `Out-File` ou `>` de PowerShell 5 :
+ils réécrivent les accents en ANSI et cassent le build. Utiliser les outils d'édition, ou Node (`fs.writeFileSync`).
 
 Configuration locale : copier `.env.example` en `.env.local` et renseigner les deux variables Supabase.
 Sans elles, l'app affiche un écran « Backend non configuré » au lieu de planter.
