@@ -22,7 +22,7 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 - Utilitaires de dates locales partagés (`shared/lib/dates.ts`).
 - Règles de dépendance entre couches vérifiées par ESLint.
 - Vérification de l'encodage UTF-8 de tous les fichiers dans `npm run lint`, y compris le texte
-  encodé deux fois (« Ã© »).
+  encodé deux fois (accents remplacés par deux caractères parasites).
 
 ### Corrigé
 
