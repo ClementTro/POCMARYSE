@@ -13,7 +13,7 @@ Chaque fonctionnalité métier est un **module** autonome dans `src/modules/<id>
 
 ```
 src/modules/<id>/
-  index.ts          export du module (contrat AppModule)
+  index.tsx         export du module (contrat AppModule)
   api.ts            accès Supabase + hooks React Query du module
   types.ts          types du domaine
   pages/            pages routées
