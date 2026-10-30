@@ -21,11 +21,4 @@ export function libelleCase(t: TFunction<'planning'>, { date, creneau }: Case, l
   return t('case.libelle', { jour: texteJour, creneau: t(`creneaux.${creneau}`) });
 }
 
-/** « 26 oct. – 1 nov. 2026 » */
-export function libelleSemaine(lundi: Date, dimanche: Date, langue: string): string {
-  return new Intl.DateTimeFormat(langue, {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  }).formatRange(lundi, dimanche);
-}
+export { formaterPeriode as libelleSemaine } from '@/shared/lib/dates';

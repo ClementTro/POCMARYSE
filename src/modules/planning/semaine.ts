@@ -1,31 +1,7 @@
-import type { Case, Creneau, DateIso, RecettePlanifiable, Repas } from './types';
+import { ajouterJours, depuisIso, lundiDe } from '@/shared/lib/dates';
+import type { Case, Creneau, RecettePlanifiable, Repas } from './types';
 
-// Dates locales uniquement : `toISOString()` passerait en UTC et décalerait d'un jour le soir.
-
-export function versIso(date: Date): DateIso {
-  const mois = String(date.getMonth() + 1).padStart(2, '0');
-  const jour = String(date.getDate()).padStart(2, '0');
-  return `${date.getFullYear()}-${mois}-${jour}`;
-}
-
-/** `AAAA-MM-JJ` → Date locale à minuit ; `null` si la chaîne n'est pas une date réelle. */
-export function depuisIso(iso: string): Date | null {
-  const morceaux = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
-  if (!morceaux) return null;
-  const [annee, mois, jour] = morceaux.slice(1).map(Number) as [number, number, number];
-  const date = new Date(annee, mois - 1, jour);
-  return date.getMonth() === mois - 1 && date.getDate() === jour ? date : null;
-}
-
-export function ajouterJours(date: Date, jours: number): Date {
-  return new Date(date.getFullYear(), date.getMonth(), date.getDate() + jours);
-}
-
-/** Lundi de la semaine de `date` (semaine du lundi au dimanche). */
-export function lundiDe(date: Date): Date {
-  const decalage = (date.getDay() + 6) % 7;
-  return ajouterJours(date, -decalage);
-}
+export { ajouterJours, depuisIso, lundiDe, versIso } from '@/shared/lib/dates';
 
 export function joursDeLaSemaine(lundi: Date): Date[] {
   return Array.from({ length: 7 }, (_, i) => ajouterJours(lundi, i));

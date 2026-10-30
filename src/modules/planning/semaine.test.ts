@@ -2,10 +2,8 @@ import {
   ajouterJours,
   cleCase,
   deplacer,
-  depuisIso,
   joursDeLaSemaine,
   lireCleCase,
-  lundiDe,
   lundiDepuisUrl,
   placer,
   repasDansCase,
@@ -26,24 +24,6 @@ const repas = (id: string, plan_date: string, slot: 'midi' | 'soir'): Repas => (
 });
 
 describe('dates de la semaine', () => {
-  it('formate et relit les dates locales sans décalage de fuseau', () => {
-    const tard = new Date(2026, 9, 30, 23, 30);
-    expect(versIso(tard)).toBe('2026-10-30');
-    expect(versIso(depuisIso('2026-03-29')!)).toBe('2026-03-29');
-  });
-
-  it('refuse les dates impossibles ou mal formées', () => {
-    expect(depuisIso('2026-02-30')).toBeNull();
-    expect(depuisIso('30/10/2026')).toBeNull();
-    expect(depuisIso('')).toBeNull();
-  });
-
-  it('trouve le lundi, y compris depuis un dimanche', () => {
-    expect(versIso(lundiDe(new Date(2026, 9, 30)))).toBe('2026-10-26');
-    expect(versIso(lundiDe(new Date(2026, 10, 1)))).toBe('2026-10-26');
-    expect(versIso(lundiDe(new Date(2026, 9, 26)))).toBe('2026-10-26');
-  });
-
   it('liste 7 jours en traversant le changement de mois et d’heure', () => {
     const jours = joursDeLaSemaine(new Date(2026, 9, 26)).map(versIso);
     expect(jours).toEqual([

@@ -1,11 +1,9 @@
 import type { Creneau } from '@/core/database.types';
+import type { DateIso } from '@/shared/lib/dates';
 
-export type { Creneau };
+export type { Creneau, DateIso };
 
 export const CRENEAUX = ['midi', 'soir'] as const satisfies readonly Creneau[];
-
-/** Date locale au format `AAAA-MM-JJ` (colonne `plan_date`). */
-export type DateIso = string;
 
 /** Ce que le planning a besoin de savoir d'une recette (requête dédiée, ADR 0005). */
 export interface RecettePlanifiable {
