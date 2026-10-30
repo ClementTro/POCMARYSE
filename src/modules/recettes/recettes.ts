@@ -1,0 +1,87 @@
+import type { Json, Ligne } from '@/core/database.types';
+import { DIFFICULTES, type FiltresRecettes, type Ingredient, type Recette } from './types';
+
+function estObjet(valeur: Json): valeur is { [cle: string]: Json | undefined } {
+  return typeof valeur === 'object' && valeur !== null && !Array.isArray(valeur);
+}
+
+/** Lit la colonne jsonb `ingredients` en ignorant les entrées mal formées. */
+export function lireIngredients(json: Json): Ingredient[] {
+  if (!Array.isArray(json)) return [];
+  return json.flatMap((entree) => {
+    if (!estObjet(entree) || typeof entree.name !== 'string' || !entree.name.trim()) return [];
+    const quantite = entree.quantity;
+    return [
+      {
+        name: entree.name.trim(),
+        quantity: typeof quantite === 'number' && Number.isFinite(quantite) ? quantite : null,
+        unit: typeof entree.unit === 'string' ? entree.unit.trim() : '',
+      },
+    ];
+  });
+}
+
+/** Lit la colonne jsonb `steps` (tableau de chaînes). */
+export function lireEtapes(json: Json): string[] {
+  if (!Array.isArray(json)) return [];
+  return json.flatMap((etape) => (typeof etape === 'string' && etape.trim() ? [etape.trim()] : []));
+}
+
+export function versRecette(ligne: Ligne<'recipes'>): Recette {
+  return {
+    ...ligne,
+    difficulty: DIFFICULTES.includes(ligne.difficulty) ? ligne.difficulty : 'facile',
+    ingredients: lireIngredients(ligne.ingredients),
+    steps: lireEtapes(ligne.steps),
+  };
+}
+
+/** Recette de démo : partagée, en lecture seule, copiable dans son carnet. */
+export function estDemo(recette: Pick<Recette, 'user_id'>): boolean {
+  return recette.user_id === null;
+}
+
+export function tempsTotal(recette: Pick<Recette, 'prep_minutes' | 'cook_minutes'>): number {
+  return recette.prep_minutes + recette.cook_minutes;
+}
+
+/** Minuscules sans accents, pour une recherche tolérante (« creme » trouve « Crème »). */
+export function normaliser(texte: string): string {
+  return texte
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase()
+    .trim();
+}
+
+export function filtrerRecettes(recettes: Recette[], filtres: FiltresRecettes): Recette[] {
+  const recherche = normaliser(filtres.texte);
+  return recettes.filter((recette) => {
+    if (filtres.origine === 'miennes' && estDemo(recette)) return false;
+    if (filtres.origine === 'demo' && !estDemo(recette)) return false;
+    if (filtres.difficulte && recette.difficulty !== filtres.difficulte) return false;
+    if (filtres.tempsMax !== null && tempsTotal(recette) > filtres.tempsMax) return false;
+    if (filtres.tag && !recette.tags.includes(filtres.tag)) return false;
+    if (!recherche) return true;
+    const cible = [recette.title, recette.description, ...recette.ingredients.map((i) => i.name)]
+      .map(normaliser)
+      .join(' ');
+    return cible.includes(recherche);
+  });
+}
+
+export function tagsDisponibles(recettes: Recette[]): string[] {
+  const tags = new Set(recettes.flatMap((recette) => recette.tags));
+  return [...tags].sort((a, b) => a.localeCompare(b, 'fr'));
+}
+
+/** Tri d'affichage : ses propres recettes d'abord, puis ordre alphabétique. */
+export function trierRecettes(recettes: Recette[]): Recette[] {
+  return [...recettes].sort(
+    (a, b) => Number(estDemo(a)) - Number(estDemo(b)) || a.title.localeCompare(b.title, 'fr'),
+  );
+}
+
+export function formaterQuantite(quantite: number, langue: string): string {
+  return new Intl.NumberFormat(langue, { maximumFractionDigits: 2 }).format(quantite);
+}
