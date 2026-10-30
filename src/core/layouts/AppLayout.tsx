@@ -67,7 +67,7 @@ export function AppLayout() {
       <LienEvitement />
       <header className="no-print border-b border-seyes bg-papier-fonce dark:border-nuit-ligne dark:bg-nuit">
         <div className="mx-auto flex max-w-6xl items-center gap-2 px-4 pt-3 sm:gap-4 sm:px-6">
-          <Logo vers="/app" />
+          <Logo vers="/app" compact />
           <div className="ml-auto flex items-center gap-1">
             <LangSwitch />
             <ThemeToggle />

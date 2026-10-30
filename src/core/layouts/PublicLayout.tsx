@@ -28,7 +28,7 @@ export function PublicLayout() {
     <div className="flex min-h-screen flex-col">
       <LienEvitement />
       <header className="no-print border-b border-seyes bg-papier/95 dark:border-nuit-ligne dark:bg-nuit/95">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-6 py-3">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3 sm:px-6">
           <Logo />
           <nav
             aria-label={t('nav.principale')}
@@ -41,11 +41,11 @@ export function PublicLayout() {
               {t('nav.fonctionnalites')}
             </NavLink>
           </nav>
-          <div className="ml-auto flex items-center gap-1">
+          <div className="ml-auto flex flex-wrap items-center justify-end gap-1">
             <LangSwitch />
             <ThemeToggle />
             {session ? (
-              <LienBouton to="/app" className="ml-2">
+              <LienBouton to="/app" className="ml-2 whitespace-nowrap">
                 {t('nav.ouvrirCarnet')}
               </LienBouton>
             ) : (
@@ -53,7 +53,7 @@ export function PublicLayout() {
                 <LienBouton to="/connexion" variante="discret" className="hidden lg:inline-flex">
                   {t('nav.connexion')}
                 </LienBouton>
-                <LienBouton to="/inscription" className="ml-1">
+                <LienBouton to="/inscription" className="ml-1 whitespace-nowrap">
                   {t('nav.inscription')}
                 </LienBouton>
               </>
