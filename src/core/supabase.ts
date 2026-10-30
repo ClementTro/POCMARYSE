@@ -1,15 +1,18 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
+import type { Database } from './database.types';
 
 const url = import.meta.env.VITE_SUPABASE_URL;
 const cleAnon = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+export type ClientSupabase = SupabaseClient<Database>;
 
 /** Vrai si les variables publiques Supabase sont fournies (ADR 0009). */
 export const supabaseConfigure = Boolean(url && cleAnon);
 
 /** Client unique de l'application ; `null` si le backend n'est pas configuré. */
-export const supabase: SupabaseClient | null =
+export const supabase: ClientSupabase | null =
   url && cleAnon
-    ? createClient(url, cleAnon, {
+    ? createClient<Database>(url, cleAnon, {
         auth: {
           flowType: 'pkce',
           detectSessionInUrl: true,
@@ -20,7 +23,7 @@ export const supabase: SupabaseClient | null =
     : null;
 
 /** À utiliser dans les `api.ts` : les pages de l'app ne s'affichent que si le backend est configuré. */
-export function clientSupabase(): SupabaseClient {
+export function clientSupabase(): ClientSupabase {
   if (!supabase) throw new Error('Supabase n’est pas configuré (VITE_SUPABASE_URL / ANON_KEY).');
   return supabase;
 }
