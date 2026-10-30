@@ -14,7 +14,7 @@ export function ThemeToggle() {
       onClick={basculer}
       aria-label={libelle}
       title={libelle}
-      className={classesBouton('discret', 'w-11 px-0')}
+      className={classesBouton('icone')}
     >
       {sombre ? (
         <Sun aria-hidden="true" className="h-5 w-5" />
