@@ -24,7 +24,7 @@ export function WidgetPlanning() {
           const leRepas = repasDansCase(repas, { date: aujourdhui, creneau });
           return (
             <div key={creneau} className="flex items-baseline gap-3">
-              <dt className="w-14 shrink-0 text-sm font-bold uppercase text-encre-douce dark:text-seyes">
+              <dt className="w-14 shrink-0 text-sm font-bold text-encre-douce dark:text-seyes">
                 {t(`creneaux.${creneau}`)}
               </dt>
               <dd className={leRepas ? 'font-main text-xl' : 'text-encre-douce dark:text-seyes'}>

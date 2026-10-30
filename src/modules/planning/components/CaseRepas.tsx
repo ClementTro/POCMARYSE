@@ -52,7 +52,7 @@ export function CaseRepas({ laCase, libelle, repas, onChoisir, onRetirer }: Case
           : 'border-seyes dark:border-nuit-ligne',
       )}
     >
-      <h3 className="font-texte text-xs font-bold uppercase tracking-wide text-encre-douce dark:text-seyes">
+      <h3 className="font-texte text-sm font-bold text-encre-douce dark:text-seyes">
         {t(`creneaux.${laCase.creneau}`)}
       </h3>
       {repas ? (
