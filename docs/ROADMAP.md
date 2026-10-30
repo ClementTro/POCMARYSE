@@ -23,7 +23,7 @@ Chaque jalon se termine par une release `develop → main` (voir ADR 0010).
 
 - [x] Recettes : liste, filtres, fiche, création / modification / suppression, copie des recettes de démo
 - [x] Planning : semaine midi / soir, glisser-déposer
-- [ ] Courses : génération depuis le planning, regroupement, cases à cocher
+- [x] Courses : génération depuis le planning, regroupement, cases à cocher
 
 ## Jalon 4 — v1.0.0 : finitions
 
