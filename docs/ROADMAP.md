@@ -40,6 +40,6 @@ chacune avec son jalon et sa release.
 
 ## En attente côté porteur du projet
 
-- [ ] Déposer les photos de Maryse dans `public/images/maryse/` (`medaille.jpg`, et la seconde photo)
-- [ ] Créer le projet Supabase et renseigner les variables du repo (voir `docs/SUPABASE_SETUP.md`)
+- [x] Déposer les photos de Maryse dans `public/images/maryse/` (`medaille.jpg`, et la seconde photo)
+- [x] Créer le projet Supabase et renseigner les variables du repo (voir `docs/SUPABASE_SETUP.md`)
 - [ ] Faire valider le texte de la page « Histoire » par Maryse
