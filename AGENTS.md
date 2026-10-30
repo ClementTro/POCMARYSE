@@ -54,7 +54,8 @@ Les raisons de chaque choix sont dans [`docs/adr/`](docs/adr/).
 
 ```
 src/
-  core/        shell de l'app : router, layouts, auth, client Supabase, registre des modules, pages système
+  core/        shell de l'app : router, layouts, auth, client Supabase, registre des modules,
+               profil et préférences (ADR 0013), pages système (tableau de bord, profil, 404)
   shared/      composants UI réutilisables, thème, hooks, utilitaires (aucune logique métier)
   vitrine/     pages publiques (accueil, histoire, fonctionnalités, auth, pages légales)
   modules/     un dossier par module métier (recettes, planning, courses)
@@ -166,3 +167,4 @@ Direction « cahier de cuisine familial » : papier Seyès, faïence bleue, napp
 | [0010](docs/adr/0010-workflow-git.md) | Workflow git develop / main sans validation humaine |
 | [0011](docs/adr/0011-donnees-personnelles.md) | Données personnelles, RGPD et photos |
 | [0012](docs/adr/0012-generation-liste-de-courses.md) | Génération de la liste de courses depuis le planning |
+| [0013](docs/adr/0013-preferences-du-profil.md) | Langue et thème synchronisés avec le profil |

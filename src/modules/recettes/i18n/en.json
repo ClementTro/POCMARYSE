@@ -93,6 +93,13 @@
     "enregistrer": "Save recipe",
     "enregistre": "Recipe saved."
   },
+  "widget": {
+    "titre": "Today's idea",
+    "total_one": "{{count}} recipe in the notebook",
+    "total_other": "{{count}} recipes in the notebook",
+    "vide": "The notebook is still empty.",
+    "ouvrir": "Open the notebook"
+  },
   "erreurs": {
     "titreRequis": "Give the recipe a name.",
     "titreTropLong": "120 characters at most.",

@@ -109,6 +109,17 @@ export function ecrireFiltres(filtres: FiltresRecettes): URLSearchParams {
   return params;
 }
 
+/** Suggestion du tableau de bord : la même toute la journée, une autre le lendemain. */
+export function recetteDuJour<T extends { id: string }>(
+  recettes: T[],
+  jour: string,
+): T | undefined {
+  if (!recettes.length) return undefined;
+  const stables = [...recettes].sort((a, b) => a.id.localeCompare(b.id));
+  const graine = [...jour].reduce((somme, car) => (somme * 31 + car.charCodeAt(0)) % 100_003, 7);
+  return stables[graine % stables.length];
+}
+
 export function formaterQuantite(quantite: number, langue: string): string {
   return new Intl.NumberFormat(langue, { maximumFractionDigits: 2 }).format(quantite);
 }

@@ -25,12 +25,18 @@ Chaque jalon se termine par une release `develop → main` (voir ADR 0010).
 - [x] Planning : semaine midi / soir, glisser-déposer
 - [x] Courses : génération depuis le planning, regroupement, cases à cocher
 
-## Jalon 4 — v1.0.0 : finitions
+## Jalon 4 — v1.0.0 : finitions (publié)
 
-- [ ] Tableau de bord et profil
-- [ ] Tests unitaires de la logique métier
-- [ ] Passe accessibilité et responsive
-- [ ] Documentation finale
+- [x] Tableau de bord et profil
+- [x] Tests unitaires de la logique métier
+- [x] Passe accessibilité et responsive (axe-core sans violation WCAG 2.2 AA sur toutes les pages,
+      thèmes clair et sombre ; aucun débordement de 320 à 1280 px)
+- [x] Documentation finale
+
+## Après la v1
+
+Les prochaines évolutions sont choisies dans [`MODULES_A_VENIR.md`](MODULES_A_VENIR.md), une à la fois,
+chacune avec son jalon et sa release.
 
 ## En attente côté porteur du projet
 

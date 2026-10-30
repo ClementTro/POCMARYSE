@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { LogOut, Sun, UserRound, type LucideIcon } from 'lucide-react';
 import { useAuth } from '@/core/auth/useAuth';
 import { modules } from '@/core/moduleRegistry';
+import { SynchroPreferences } from '@/core/profil/SynchroPreferences';
 import { cn } from '@/shared/lib/cn';
 import { Button } from '@/shared/ui/Button';
 import { Chargement } from '@/shared/ui/Chargement';
@@ -62,10 +63,11 @@ export function AppLayout() {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <SynchroPreferences />
       <LienEvitement />
       <header className="no-print border-b border-seyes bg-papier-fonce dark:border-nuit-ligne dark:bg-nuit">
         <div className="mx-auto flex max-w-6xl items-center gap-2 px-4 pt-3 sm:gap-4 sm:px-6">
-          <Logo vers="/app" />
+          <Logo vers="/app" compact />
           <div className="ml-auto flex items-center gap-1">
             <LangSwitch />
             <ThemeToggle />

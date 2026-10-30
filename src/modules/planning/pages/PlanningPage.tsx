@@ -212,7 +212,7 @@ export default function PlanningPage() {
                     </span>
                     <span className="text-sm text-encre-douce dark:text-seyes">
                       {estAujourdhui ? (
-                        <strong className="font-main text-base font-normal text-vichy dark:text-beurre">
+                        <strong className="font-main text-base font-normal text-vichy-fonce dark:text-beurre">
                           {t('case.aujourdhui')}
                         </strong>
                       ) : (

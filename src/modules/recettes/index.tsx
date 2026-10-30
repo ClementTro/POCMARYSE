@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { BookOpen } from 'lucide-react';
 import type { AppModule } from '@/core/types';
+import { WidgetRecettes } from './components/WidgetRecettes';
 import en from './i18n/en.json';
 import fr from './i18n/fr.json';
 
@@ -19,4 +20,5 @@ export const recettesModule: AppModule = {
   ],
   navItem: { labelKey: 'recettes:nav', icon: BookOpen },
   i18n: { fr, en },
+  dashboardWidget: WidgetRecettes,
 };

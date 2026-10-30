@@ -93,6 +93,13 @@
     "enregistrer": "Enregistrer la recette",
     "enregistre": "Recette enregistrée."
   },
+  "widget": {
+    "titre": "L'idée du jour",
+    "total_one": "{{count}} recette dans le carnet",
+    "total_other": "{{count}} recettes dans le carnet",
+    "vide": "Le carnet est encore vide.",
+    "ouvrir": "Ouvrir le carnet"
+  },
   "erreurs": {
     "titreRequis": "Donne un nom à la recette.",
     "titreTropLong": "120 caractères au plus.",

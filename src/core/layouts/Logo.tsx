@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { cn } from '@/shared/lib/cn';
 
-export function Logo({ vers = '/' }: { vers?: string }) {
+interface LogoProps {
+  vers?: string;
+  /** Monogramme seul sous 380 px (le nom reste lu) : l'en-tête de l'app ne passe pas à la ligne. */
+  compact?: boolean;
+}
+
+export function Logo({ vers = '/', compact = false }: LogoProps) {
   const { t } = useTranslation();
   return (
     <Link
@@ -28,7 +35,7 @@ export function Logo({ vers = '/' }: { vers?: string }) {
           strokeLinejoin="round"
         />
       </svg>
-      {t('marque')}
+      <span className={cn(compact && 'max-[379px]:sr-only')}>{t('marque')}</span>
     </Link>
   );
 }

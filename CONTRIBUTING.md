@@ -39,9 +39,11 @@ Exemple avec un module fictif `favoris`.
 ```
 src/modules/favoris/
   index.tsx
-  api.ts
+  api.ts                      hooks React Query (seul fichier qui parle à Supabase)
   types.ts
-  pages/FavorisPage.tsx
+  favoris.ts                  logique pure, testée dans favoris.test.ts
+  pages/FavorisPage.tsx       export default (chargée à la demande)
+  components/WidgetFavoris.tsx
   i18n/fr.json
   i18n/en.json
 ```
@@ -49,11 +51,14 @@ src/modules/favoris/
 4. **Déclarer le module** dans `index.tsx` :
 
 ```ts
+import { lazy } from 'react';
 import { Heart } from 'lucide-react';
 import type { AppModule } from '@/core/types';
-import fr from './i18n/fr.json';
+import { WidgetFavoris } from './components/WidgetFavoris';
 import en from './i18n/en.json';
-import { FavorisPage } from './pages/FavorisPage';
+import fr from './i18n/fr.json';
+
+const FavorisPage = lazy(() => import('./pages/FavorisPage'));
 
 export const favorisModule: AppModule = {
   id: 'favoris',
@@ -61,8 +66,14 @@ export const favorisModule: AppModule = {
   routes: [{ index: true, element: <FavorisPage /> }],
   navItem: { labelKey: 'favoris:nav', icon: Heart },
   i18n: { fr, en },
+  dashboardWidget: WidgetFavoris, // facultatif
 };
 ```
+
+   Le module n'importe de `core/` que `@/core/types`, `@/core/supabase`, `@/core/database.types` et
+   `@/core/auth/useAuth`, et n'importe **jamais** un autre module : s'il a besoin des recettes, il les lit
+   dans Supabase (comme Courses lit le planning). ESLint fait échouer la CI sinon.
+   Dans l'interface, les liens internes sont relatifs (`..`, `nouvelle`) et les filtres vivent dans l'URL.
 
 5. **L'enregistrer** dans `src/core/moduleRegistry.ts` :
 
@@ -72,7 +83,8 @@ export const modules: AppModule[] = [recettesModule, planningModule, coursesModu
 
    Le menu, les routes `/app/favoris/*`, les traductions et l'éventuel widget du tableau de bord sont alors
    générés automatiquement.
-6. **Tester** : au moins un test unitaire sur la logique métier du module.
+6. **Tester** : au moins un test unitaire sur la logique métier du module. Après avoir écrit le `fr.json`,
+   lancer `npm run typo:fr` (espaces insécables).
 7. **Documenter** : retirer l'idée de `MODULES_A_VENIR.md`, l'ajouter à `ROADMAP.md` et au `CHANGELOG.md`.
 
 ## Ajouter une décision (ADR)
