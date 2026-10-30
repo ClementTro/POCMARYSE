@@ -1,0 +1,18 @@
+---
+description: Charte graphique « cahier de cuisine familial » (ADR 0008)
+globs: src/**/*.tsx,src/**/*.css,tailwind.config.ts
+alwaysApply: false
+---
+
+# Charte « cahier de cuisine »
+
+- Univers : cahier Seyès, faïence bleue, nappe vichy, notes manuscrites de Maryse.
+- Couleurs : papier #FDFCF7, seyes #B9CBE4, faience #2F5D8C, vichy #C9463D, beurre #F2D16B, sauge #7E9C7A, encre #23324A.
+- Polices : `font-titre` (Young Serif), `font-texte` (Nunito), `font-main` (Kalam, annotations courtes uniquement).
+- Métaphores : recette = fiche cartonnée, planning = tableau de frigo, courses = bloc-notes (articles barrés une fois cochés).
+- Un seul élément signature par page ; le reste sobre.
+- Interdits : dégradés décoratifs, libellés en capitales, accent de couleur sur un seul mot d'un titre,
+  animations d'apparition sur chaque section, flèche « → » ajoutée aux boutons.
+- Thème sombre via la classe `dark` : toujours fournir les variantes `dark:`.
+- Accessibilité : focus visible, contrastes AA, `motion-safe:` pour les animations, cibles tactiles ≥ 44 px.
+- Textes : phrases courtes, tutoiement dans l'app, boutons qui disent l'action (« Enregistrer la recette »).

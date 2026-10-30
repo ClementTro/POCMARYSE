@@ -1,0 +1,16 @@
+---
+description: Règles Supabase, schéma SQL et sécurité RLS (ADR 0003, 0009)
+globs: supabase/**/*.sql,src/**/api.ts,src/core/supabase.ts
+alwaysApply: false
+---
+
+# Supabase
+
+- Le front n'utilise que `VITE_SUPABASE_URL` et `VITE_SUPABASE_ANON_KEY`. Jamais la clé `service_role`.
+- Chaque table utilisateur : colonne `user_id uuid not null default auth.uid() references auth.users on delete cascade`,
+  `alter table ... enable row level security`, politiques select/insert/update/delete sur `auth.uid() = user_id`.
+- Les recettes de démo ont `user_id is null` : lisibles par les utilisatrices connectées, non modifiables.
+- Ne jamais modifier une migration existante : créer `supabase/migrations/000N_description.sql`.
+- Toute migration est idempotente autant que possible (`if not exists`, `drop policy if exists`).
+- Mettre à jour `docs/SUPABASE_SETUP.md` à chaque nouvelle migration.
+- Côté front : le client vient de `@/core/supabase` ; ne pas instancier d'autre client.

@@ -1,0 +1,23 @@
+---
+description: Architecture modulaire, règles de dépendance et conventions de code React/TypeScript
+globs: src/**/*.ts,src/**/*.tsx
+alwaysApply: false
+---
+
+# Architecture (ADR 0005)
+
+- `src/core/` : shell (router, layouts, auth, Supabase, registre, thème). Ne connaît les modules que via `moduleRegistry.ts`.
+- `src/shared/` : UI et utilitaires génériques. N'importe jamais `core/`, `vitrine/` ou `modules/`.
+- `src/vitrine/` : pages publiques.
+- `src/modules/<id>/` : `index.tsx` (contrat `AppModule`), `api.ts` (Supabase + hooks React Query),
+  `types.ts`, `pages/`, `components/`, `i18n/fr.json`, `i18n/en.json`.
+- Un module n'importe jamais un autre module.
+
+# Conventions
+
+- TypeScript strict, pas de `any`.
+- Alias `@/` pour les imports.
+- Aucun texte en dur : `useTranslation('<namespace>')` et `t('cle')`, clés dans FR **et** EN.
+- Aucune couleur en dur : tokens Tailwind (`papier`, `seyes`, `faience`, `vichy`, `beurre`, `sauge`, `encre`).
+- Accès aux données uniquement via les hooks de `api.ts` ; invalider les requêtes React Query après mutation.
+- Pages de l'app chargées avec `React.lazy`.
