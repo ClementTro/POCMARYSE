@@ -10,8 +10,18 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 - Module Recettes : liste avec recherche sans accents et filtres (étiquette, temps, difficulté,
   origine) conservés dans l'URL, fiche cartonnée, création / modification / suppression,
   copie des recettes de Maryse dans son carnet, impression.
+- Module Planning : semaine du lundi au dimanche, midi et soir, recettes posées comme des aimants
+  par glisser-déposer (souris, toucher, clavier case par case avec annonces pour lecteurs d'écran),
+  échange de deux repas, choix dans une liste en alternative, navigation entre semaines,
+  mises à jour optimistes. Widget « Au menu aujourd'hui » pour le tableau de bord.
 - Champs à libellé masqué et message d'erreur de chargement avec « Réessayer » dans `shared/ui`.
 - Règles de dépendance entre couches vérifiées par ESLint.
+- Vérification de l'encodage UTF-8 de tous les fichiers dans `npm run lint`.
+
+### Corrigé
+
+- En-tête de l'application sur mobile (logo sur une ligne, bouton de déconnexion visible).
+- Les listes gardent leurs données affichées quand une relecture échoue.
 
 ## [0.2.0] - 2026-10-30
 
