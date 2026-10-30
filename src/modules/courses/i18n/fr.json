@@ -1,0 +1,51 @@
+{
+  "nav": "Courses",
+  "page": {
+    "titre": "La liste de courses",
+    "intro": "Tout ce qu'il faut rapporter du marché. Coche au fur et à mesure : l'article est barré.",
+    "liste": "Ma liste",
+    "imprimer": "Imprimer la liste",
+    "vider": "Enlever les articles cochés",
+    "restants_one": "{{count}} article à acheter",
+    "restants_other": "{{count}} articles à acheter",
+    "toutCoche": "Tout est dans le panier."
+  },
+  "ajout": {
+    "libelle": "Ajouter un article",
+    "exemple": "ex. 2 kg de pommes",
+    "aide": "La quantité et l'unité sont facultatives.",
+    "bouton": "Ajouter",
+    "vide": "Écris le nom de l'article."
+  },
+  "article": {
+    "retirer": "Retirer {{nom}}",
+    "planning": "Vient du planning"
+  },
+  "vide": {
+    "titre": "La liste est vide",
+    "texte": "Ajoute un article à la main, ou prépare la liste à partir des repas du planning."
+  },
+  "generation": {
+    "titre": "Depuis le planning",
+    "texte": "Les ingrédients des repas prévus sont additionnés : 200 g et 1 kg de farine font 1,2 kg.",
+    "semaine": "Semaine",
+    "cetteSemaine": "Cette semaine ({{periode}})",
+    "semaineProchaine": "La semaine prochaine ({{periode}})",
+    "bouton": "Préparer la liste",
+    "remplace": "Les articles venus du planning sont remplacés. Ceux ajoutés à la main restent.",
+    "resultat_one": "{{count}} article ajouté à partir de {{repas}} repas.",
+    "resultat_other": "{{count}} articles ajoutés à partir de {{repas}} repas.",
+    "aucunRepas": "Aucun repas n'est prévu cette semaine-là.",
+    "ouvrirPlanning": "Ouvrir le planning"
+  },
+  "widget": {
+    "titre": "Les courses",
+    "vide": "Rien à acheter pour l'instant.",
+    "etAutres_one": "et {{count}} autre",
+    "etAutres_other": "et {{count}} autres",
+    "ouvrir": "Ouvrir la liste"
+  },
+  "erreurs": {
+    "serveur": "La liste n'a pas pu être enregistrée. Réessaie dans un instant."
+  }
+}
