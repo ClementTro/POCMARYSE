@@ -1,0 +1,111 @@
+{
+  "nav": "Recipes",
+  "liste": {
+    "titre": "My recipes",
+    "intro": "Maryse's recipes to get you started, and yours alongside them.",
+    "nouvelle": "New recipe",
+    "resultats_one": "{{count}} recipe",
+    "resultats_other": "{{count}} recipes",
+    "aucunResultatTitre": "No recipe matches",
+    "aucunResultatTexte": "Try another word, or remove a filter.",
+    "reinitialiser": "Clear filters",
+    "videTitre": "The notebook is still empty",
+    "videTexte": "Maryse's recipes show up here once the demo data is loaded. You can also write your own."
+  },
+  "filtres": {
+    "titre": "Filter recipes",
+    "recherche": "Search",
+    "recherchePlaceholder": "Title or ingredient: leek, cream…",
+    "etiquette": "Tag",
+    "toutes": "All",
+    "temps": "Total time",
+    "sansLimite": "Any",
+    "tempsMax": "{{minutes}} min or less",
+    "difficulte": "Difficulty",
+    "origine": "In the notebook",
+    "origines": {
+      "toutes": "All recipes",
+      "miennes": "My recipes",
+      "demo": "Maryse's recipes"
+    }
+  },
+  "difficultes": {
+    "facile": "Easy",
+    "moyen": "Medium",
+    "difficile": "Hard"
+  },
+  "duree": {
+    "minutes": "{{count}} min",
+    "heures": "{{heures}} h",
+    "heuresMinutes": "{{heures}} h {{minutes}} min"
+  },
+  "carte": {
+    "demo": "Maryse's recipe",
+    "portions_one": "Serves {{count}}",
+    "portions_other": "Serves {{count}}"
+  },
+  "fiche": {
+    "retour": "All recipes",
+    "portions": "Serves",
+    "preparation": "Prep",
+    "cuisson": "Cooking",
+    "total": "Total",
+    "difficulte": "Difficulty",
+    "ingredients": "Ingredients",
+    "etapes": "Method",
+    "aucunIngredient": "No ingredient written down.",
+    "aucuneEtape": "No step written down.",
+    "demoNote": "This recipe comes from Maryse's notebook (written in French). Copy it into yours to adapt it.",
+    "copier": "Copy to my notebook",
+    "copieFaite": "Recipe copied to your notebook. You can now edit it.",
+    "modifier": "Edit",
+    "supprimer": "Delete",
+    "confirmerSuppression": "Delete “{{titre}}”? It will also be removed from the meal plan.",
+    "confirmer": "Yes, delete",
+    "imprimer": "Print",
+    "introuvableTitre": "Recipe not found",
+    "introuvableTexte": "It may have been deleted."
+  },
+  "formulaire": {
+    "titreNouvelle": "New recipe",
+    "titreModifier": "Edit recipe",
+    "titre": "Recipe name",
+    "description": "In a few words",
+    "descriptionAide": "Optional: the story behind it, when to make it…",
+    "portions": "Number of servings",
+    "preparation": "Prep (min)",
+    "cuisson": "Cooking (min)",
+    "difficulte": "Difficulty",
+    "etiquettes": "Tags",
+    "etiquettesAide": "Comma-separated: main, oven, kids",
+    "ingredients": "Ingredients",
+    "ingredientsAide": "Quantity is optional: leave it empty for “to taste”.",
+    "ingredient": "Ingredient {{n}}",
+    "quantite": "Quantity",
+    "unite": "Unit",
+    "unitePlaceholder": "g, ml, pinch…",
+    "ajouterIngredient": "Add an ingredient",
+    "retirerIngredient": "Remove ingredient {{n}}",
+    "etapes": "Method",
+    "etape": "Step {{n}}",
+    "ajouterEtape": "Add a step",
+    "retirerEtape": "Remove step {{n}}",
+    "enregistrer": "Save recipe",
+    "enregistre": "Recipe saved."
+  },
+  "erreurs": {
+    "titreRequis": "Give the recipe a name.",
+    "titreTropLong": "120 characters at most.",
+    "descriptionTropLongue": "1,000 characters at most.",
+    "portions": "Between 1 and 30 servings.",
+    "minutes": "A whole number of minutes, 24 h at most.",
+    "etiquettesTropLongues": "200 characters at most.",
+    "quantite": "A number, for example 250 or 1.5.",
+    "ingredientTropLong": "120 characters at most.",
+    "uniteTropLongue": "20 characters at most.",
+    "ingredientRequis": "Add at least one ingredient.",
+    "etapeRequise": "Add at least one step.",
+    "etapeTropLongue": "1,000 characters at most.",
+    "serveur": "The notebook couldn't save. Try again in a moment."
+  }
+}
