@@ -6,8 +6,9 @@ alwaysApply: false
 
 # Architecture (ADR 0005)
 
-- `src/core/` : shell (router, layouts, auth, Supabase, registre, thème). Ne connaît les modules que via `moduleRegistry.ts`.
-- `src/shared/` : UI et utilitaires génériques. N'importe jamais `core/`, `vitrine/` ou `modules/`.
+- `src/core/` : shell (router, layouts, auth, Supabase, registre, pages système). Ne connaît les modules que via `moduleRegistry.ts`.
+- `src/shared/` : UI, thème et utilitaires génériques. N'importe jamais `core/`, `vitrine/` ou `modules/`.
+- Le client Supabase s'obtient par `clientSupabase()` de `@/core/supabase` (seule exception autorisée pour les modules, avec `@/core/types` et `@/core/auth/useAuth`).
 - `src/vitrine/` : pages publiques.
 - `src/modules/<id>/` : `index.tsx` (contrat `AppModule`), `api.ts` (Supabase + hooks React Query),
   `types.ts`, `pages/`, `components/`, `i18n/fr.json`, `i18n/en.json`.

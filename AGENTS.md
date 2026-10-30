@@ -54,8 +54,8 @@ Les raisons de chaque choix sont dans [`docs/adr/`](docs/adr/).
 
 ```
 src/
-  core/        shell de l'app : router, layouts, auth, client Supabase, registre des modules, thème
-  shared/      composants UI réutilisables, hooks, utilitaires (aucune logique métier)
+  core/        shell de l'app : router, layouts, auth, client Supabase, registre des modules, pages système
+  shared/      composants UI réutilisables, thème, hooks, utilitaires (aucune logique métier)
   vitrine/     pages publiques (accueil, histoire, fonctionnalités, auth, pages légales)
   modules/     un dossier par module métier (recettes, planning, courses)
   i18n/        initialisation i18next et traductions communes
@@ -70,6 +70,8 @@ Règles de dépendance :
 - Un module n'importe jamais un autre module. S'il a besoin de données d'un autre domaine, il passe par
   Supabase (requête dédiée) ou par un utilitaire de `shared/`.
 - `core/` ne connaît les modules que via `moduleRegistry.ts`.
+- Un module peut importer de `core/` uniquement : `@/core/types`, `@/core/supabase` (`clientSupabase()`)
+  et `@/core/auth/useAuth`.
 
 Contrat d'un module (voir ADR 0005 et `CONTRIBUTING.md`) :
 
