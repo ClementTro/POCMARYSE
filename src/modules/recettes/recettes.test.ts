@@ -12,11 +12,32 @@ import {
   lireEtapes,
   lireFiltres,
   lireIngredients,
+  recetteDuJour,
   tagsDisponibles,
   trierRecettes,
   versRecette,
 } from './recettes';
 import { FILTRES_VIDES, type Recette } from './types';
+
+describe('recette du jour', () => {
+  const carnet = ['c', 'a', 'b', 'd', 'e'].map((id) => ({ id }));
+
+  it('propose la même recette toute la journée, quel que soit l’ordre du carnet', () => {
+    const idee = recetteDuJour(carnet, '2026-10-30');
+    expect(recetteDuJour([...carnet].reverse(), '2026-10-30')).toBe(idee);
+  });
+
+  it('change d’une journée à l’autre sur une semaine', () => {
+    const semaine = ['26', '27', '28', '29', '30', '31'].map(
+      (jour) => recetteDuJour(carnet, `2026-10-${jour}`)?.id,
+    );
+    expect(new Set(semaine).size).toBeGreaterThan(1);
+  });
+
+  it('ne propose rien quand le carnet est vide', () => {
+    expect(recetteDuJour([], '2026-10-30')).toBeUndefined();
+  });
+});
 
 function ligne(surcharge: Partial<Ligne<'recipes'>> = {}): Ligne<'recipes'> {
   return {
