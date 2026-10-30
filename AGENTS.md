@@ -70,8 +70,9 @@ Règles de dépendance :
 - Un module n'importe jamais un autre module. S'il a besoin de données d'un autre domaine, il passe par
   Supabase (requête dédiée) ou par un utilitaire de `shared/`.
 - `core/` ne connaît les modules que via `moduleRegistry.ts`.
-- Un module peut importer de `core/` uniquement : `@/core/types`, `@/core/supabase` (`clientSupabase()`)
-  et `@/core/auth/useAuth`.
+- Un module peut importer de `core/` uniquement : `@/core/types`, `@/core/supabase` (`clientSupabase()`),
+  `@/core/database.types` (types des tables) et `@/core/auth/useAuth`. Ses imports internes sont relatifs.
+- Ces règles sont vérifiées par ESLint (`no-restricted-imports`) : un import interdit fait échouer la CI.
 
 Contrat d'un module (voir ADR 0005 et `CONTRIBUTING.md`) :
 
