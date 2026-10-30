@@ -1,5 +1,13 @@
 import type { Json, Ligne } from '@/core/database.types';
-import { DIFFICULTES, type FiltresRecettes, type Ingredient, type Recette } from './types';
+import {
+  DIFFICULTES,
+  ORIGINES,
+  type Difficulte,
+  type FiltresRecettes,
+  type Ingredient,
+  type Origine,
+  type Recette,
+} from './types';
 
 function estObjet(valeur: Json): valeur is { [cle: string]: Json | undefined } {
   return typeof valeur === 'object' && valeur !== null && !Array.isArray(valeur);
@@ -80,6 +88,33 @@ export function trierRecettes(recettes: Recette[]): Recette[] {
   return [...recettes].sort(
     (a, b) => Number(estDemo(a)) - Number(estDemo(b)) || a.title.localeCompare(b.title, 'fr'),
   );
+}
+
+/** Filtres lus depuis l'URL (`?q=&tag=&temps=&difficulte=&origine=`) ; valeurs inconnues ignorées. */
+export function lireFiltres(params: URLSearchParams): FiltresRecettes {
+  const temps = Number(params.get('temps'));
+  const difficulte = params.get('difficulte') ?? '';
+  const origine = params.get('origine') ?? '';
+  return {
+    texte: params.get('q') ?? '',
+    tag: params.get('tag') ?? '',
+    tempsMax: Number.isInteger(temps) && temps > 0 ? temps : null,
+    difficulte: (DIFFICULTES as readonly string[]).includes(difficulte)
+      ? (difficulte as Difficulte)
+      : '',
+    origine: (ORIGINES as readonly string[]).includes(origine) ? (origine as Origine) : 'toutes',
+  };
+}
+
+/** Inverse de `lireFiltres` : seuls les filtres actifs apparaissent dans l'URL. */
+export function ecrireFiltres(filtres: FiltresRecettes): URLSearchParams {
+  const params = new URLSearchParams();
+  if (filtres.texte) params.set('q', filtres.texte);
+  if (filtres.tag) params.set('tag', filtres.tag);
+  if (filtres.tempsMax !== null) params.set('temps', String(filtres.tempsMax));
+  if (filtres.difficulte) params.set('difficulte', filtres.difficulte);
+  if (filtres.origine !== 'toutes') params.set('origine', filtres.origine);
+  return params;
 }
 
 export function formaterQuantite(quantite: number, langue: string): string {

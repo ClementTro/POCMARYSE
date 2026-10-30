@@ -7,8 +7,10 @@ import {
   VALEURS_NOUVELLE_RECETTE,
 } from './formulaire';
 import {
+  ecrireFiltres,
   filtrerRecettes,
   lireEtapes,
+  lireFiltres,
   lireIngredients,
   normaliser,
   tagsDisponibles,
@@ -121,6 +123,26 @@ describe('filtrerRecettes', () => {
 
   it('normalise les textes', () => {
     expect(normaliser('  Œufs à la NEIGE ')).toBe('œufs a la neige');
+  });
+});
+
+describe('filtres dans l’URL', () => {
+  it('fait l’aller-retour filtres → URL → filtres', () => {
+    const filtres = {
+      texte: 'crème',
+      tag: 'four',
+      tempsMax: 30,
+      difficulte: 'moyen' as const,
+      origine: 'demo' as const,
+    };
+    expect(lireFiltres(ecrireFiltres(filtres))).toEqual(filtres);
+  });
+
+  it('n’écrit que les filtres actifs et ignore les valeurs inconnues', () => {
+    expect(ecrireFiltres(FILTRES_VIDES).toString()).toBe('');
+    expect(lireFiltres(new URLSearchParams('temps=-5&difficulte=extreme&origine=voisin'))).toEqual(
+      FILTRES_VIDES,
+    );
   });
 });
 

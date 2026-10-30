@@ -98,7 +98,9 @@ export function versValeursFormulaire(recette: Recette, langue: string): Valeurs
 }
 
 /** Valeurs validées par `schemaRecette` → ligne à écrire dans `recipes`. */
-export function versDonneesRecette(valeurs: ValeursRecette): Omit<Insertion<'recipes'>, 'user_id'> {
+export function versDonneesRecette(
+  valeurs: ValeursRecette,
+): Omit<Insertion<'recipes'>, 'id' | 'user_id' | 'image_url'> {
   return {
     title: valeurs.titre,
     description: valeurs.description,

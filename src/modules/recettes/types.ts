@@ -20,7 +20,8 @@ export type Recette = Omit<Ligne<'recipes'>, 'ingredients' | 'steps'> & {
   steps: string[];
 };
 
-export type Origine = 'toutes' | 'miennes' | 'demo';
+export const ORIGINES = ['toutes', 'miennes', 'demo'] as const;
+export type Origine = (typeof ORIGINES)[number];
 
 export interface FiltresRecettes {
   texte: string;
@@ -38,5 +39,10 @@ export const FILTRES_VIDES: FiltresRecettes = {
   difficulte: '',
   origine: 'toutes',
 };
+
+/** État de navigation vers la fiche : clé du message de confirmation à afficher. */
+export interface EtatNavigationRecette {
+  message?: string;
+}
 
 export const TEMPS_MAX_PROPOSES = [20, 30, 45, 60, 90] as const;
