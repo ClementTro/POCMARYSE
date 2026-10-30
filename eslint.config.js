@@ -53,6 +53,8 @@ export default tseslint.config(
                 '!@/core/types',
                 '!@/core/supabase',
                 '!@/core/database.types',
+                '!@/core/auth',
+                '@/core/auth/*',
                 '!@/core/auth/useAuth',
               ],
               message:
