@@ -1,7 +1,9 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
+import appEn from './locales/en/app.json';
 import commonEn from './locales/en/common.json';
+import appFr from './locales/fr/app.json';
 import commonFr from './locales/fr/common.json';
 
 export const LANGUES = ['fr', 'en'] as const;
@@ -14,15 +16,15 @@ void i18n
   .use(initReactI18next)
   .init({
     resources: {
-      fr: { common: commonFr },
-      en: { common: commonEn },
+      fr: { common: commonFr, app: appFr },
+      en: { common: commonEn, app: appEn },
     },
     fallbackLng: 'fr',
     supportedLngs: [...LANGUES],
     nonExplicitSupportedLngs: true,
     load: 'languageOnly',
     defaultNS: 'common',
-    ns: ['common'],
+    ns: ['common', 'app'],
     interpolation: { escapeValue: false },
     detection: {
       order: ['localStorage', 'navigator'],

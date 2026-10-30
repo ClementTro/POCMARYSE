@@ -1,0 +1,8 @@
+{
+  "tableauDeBord": {
+    "titre": "Bonjour {{nom}}",
+    "titreSansNom": "Bonjour",
+    "intro": "Voici ta journée en cuisine.",
+    "aucunModule": "Les pages du carnet arrivent bientôt."
+  }
+}

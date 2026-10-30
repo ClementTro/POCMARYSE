@@ -1,14 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import { App } from '@/App';
-import { ThemeProvider } from '@/shared/theme/ThemeProvider';
 
 describe('App', () => {
-  it('affiche le nom du produit', () => {
-    render(
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>,
-    );
-    expect(screen.getByRole('heading', { name: 'Maryse & Co' })).toBeInTheDocument();
+  it('affiche la vitrine avec le nom du produit', async () => {
+    render(<App />);
+    expect(await screen.findByRole('heading', { level: 1 })).toBeInTheDocument();
+    expect(screen.getByRole('navigation', { name: 'Navigation principale' })).toBeInTheDocument();
   });
 });
