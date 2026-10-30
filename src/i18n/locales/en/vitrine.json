@@ -1,0 +1,161 @@
+{
+  "photos": {
+    "medailleAlt": "Maryse, standing between two colleagues, holds her French Medal of Honour for Labour and a bouquet of flowers.",
+    "secondeAlt": "Another photo of Maryse."
+  },
+  "accueil": {
+    "titre": "Maryse's cooking notebook, open to the whole family",
+    "intro": "Tried-and-tested recipes, the week's menu on the fridge and a shopping list that writes itself. Just like Maryse's notebook, but in your pocket.",
+    "ctaPrincipal": "Start my notebook",
+    "ctaSecondaire": "Read Maryse's story",
+    "gratuit": "Free, with no ads.",
+    "photoNote": "The day I got my medal. My colleagues told me: “Your notebook, turn it into an app!”",
+    "contenuTitre": "What's inside the notebook",
+    "recettesTitre": "Recipe cards",
+    "recettesTexte": "Your notebook starts with 20 of Maryse's recipes. Copy the ones you like, add your own, find them by how much time you have.",
+    "planningTitre": "The week's menu",
+    "planningTexte": "Lunch and dinner, Monday to Sunday: drop a recipe onto a meal, like pinning a note on the fridge.",
+    "coursesTitre": "The shopping list",
+    "coursesTexte": "One click and the week's ingredients are gathered, quantities added up. At the shop, you tick them off as you go.",
+    "citation": "“I was never a great cook. I was just organised, and that makes all the difference.”",
+    "citationAuteur": "Maryse",
+    "finTitre": "Your notebook is waiting",
+    "finTexte": "Create your account in a minute: Maryse's recipes are already inside.",
+    "exemple": {
+      "ficheTitre": "Yoghurt cake",
+      "ficheLignes": ["1 pot of yoghurt", "3 pots of flour", "2 pots of sugar", "3 eggs"],
+      "ficheNote": "The kids love it!",
+      "jours": ["Mon", "Tue", "Wed", "Thu"],
+      "plats": ["Quiche", "Soup", "Crêpes", "Gratin"],
+      "articles": ["Milk", "Eggs", "Flour", "Apples"]
+    }
+  },
+  "histoire": {
+    "titre": "Maryse's story",
+    "intro": "Maryse & Co was born from a squared school notebook, twenty years of dinners to cook and a medal ceremony.",
+    "fiction": "A story inspired by Maryse, partly imagined for this demo.",
+    "etapes": [
+      {
+        "quand": "For more than twenty years",
+        "titre": "Work, family, and dinner",
+        "texte": "Maryse leaves early, comes home late, and every evening the same question waits for her at the door: “What's for dinner?”"
+      },
+      {
+        "quand": "In the kitchen drawer",
+        "titre": "The notebook",
+        "texte": "To stop improvising, she writes everything down in a school notebook: the recipes that work, the week's menu on the back, the shopping list on the last page. The pages get stained, and the notebook never leaves the kitchen."
+      },
+      {
+        "quand": "The day of the medal",
+        "titre": "“Turn it into an app!”",
+        "texte": "When Maryse receives her Medal of Honour for Labour, her colleagues give her flowers and some advice: that notebook everyone keeps borrowing should be shared."
+      },
+      {
+        "quand": "Today",
+        "titre": "Maryse & Co",
+        "texte": "The notebook becomes an online notebook. Same recipes, same organisation, and room for every family's own."
+      }
+    ],
+    "fin": "And you, what will you write in your notebook?",
+    "cta": "Start my notebook"
+  },
+  "fonctionnalites": {
+    "titre": "What the notebook does",
+    "intro": "Three pages to start with, and room for more.",
+    "modules": [
+      {
+        "titre": "Recipes",
+        "points": [
+          "20 of Maryse's recipes to get started, ready to copy into your notebook",
+          "Your own recipes: ingredients, steps, time and difficulty",
+          "Search by name, filter by tag, time and difficulty"
+        ]
+      },
+      {
+        "titre": "Meal plan",
+        "points": [
+          "The whole week at a glance, lunch and dinner",
+          "Drag a recipe onto a meal, or pick it from a list",
+          "Previous week, next week, or back to today"
+        ]
+      },
+      {
+        "titre": "Shopping",
+        "points": [
+          "A list generated from the week's meal plan",
+          "Ingredients grouped, quantities added up",
+          "Items to tick off, manual additions, printing"
+        ]
+      }
+    ],
+    "transverseTitre": "For the whole family",
+    "transverse": [
+      "In French or English",
+      "A light theme for the day, a dark one for the evening",
+      "A personal account: nobody else can see your notebook",
+      "On computer, tablet or phone"
+    ],
+    "bientotTitre": "The next pages",
+    "bientotTexte": "The notebook is built to grow. Ideas waiting their turn:",
+    "bientot": [
+      "Adjust servings",
+      "Step-by-step cooking mode",
+      "Favourites and notes",
+      "Pantry",
+      "Import and export",
+      "Sharing with the household"
+    ],
+    "cta": "Start my notebook"
+  },
+  "mentions": {
+    "titre": "Legal notice",
+    "sections": [
+      {
+        "titre": "Publisher",
+        "texte": "Maryse & Co is a technical demo project with no commercial activity, published from the GitHub repository ClementTro/POCMARYSE."
+      },
+      {
+        "titre": "Hosting",
+        "texte": "The site is hosted by GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). Accounts and notebook data are hosted by Supabase Inc., on servers located in the European Union."
+      },
+      {
+        "titre": "Photographs",
+        "texte": "The photographs of Maryse are published with the consent of the people shown. Any reuse is forbidden."
+      },
+      {
+        "titre": "Contact",
+        "texte": "For any question, open an issue on the project's GitHub repository."
+      }
+    ]
+  },
+  "confidentialite": {
+    "titre": "Privacy policy",
+    "maj": "Updated on 30 October 2026.",
+    "sections": [
+      {
+        "titre": "Data collected",
+        "texte": "Your email address, your first name, your preferences (language, theme) and what you write in the notebook: recipes, meal plan and shopping list."
+      },
+      {
+        "titre": "Why",
+        "texte": "Only to make your notebook work: signing you in and giving you back your data. No ads, no resale, no audience measurement tools."
+      },
+      {
+        "titre": "Who can access it",
+        "texte": "Nobody but you. Data is protected row by row in the database: an account can only read its own information."
+      },
+      {
+        "titre": "Where it is stored",
+        "texte": "At Supabase, in the European Union. Your language and theme are also remembered in your browser (local storage), with no advertising cookies."
+      },
+      {
+        "titre": "How long",
+        "texte": "As long as your account exists. Since this site is a demo, inactive accounts may be deleted."
+      },
+      {
+        "titre": "Your rights",
+        "texte": "You can ask to access, correct or delete your data by opening an issue on the project's GitHub repository. You can also lodge a complaint with the CNIL, the French data protection authority."
+      }
+    ]
+  }
+}

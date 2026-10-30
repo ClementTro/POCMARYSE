@@ -4,9 +4,11 @@ import { initReactI18next } from 'react-i18next';
 import appEn from './locales/en/app.json';
 import authEn from './locales/en/auth.json';
 import commonEn from './locales/en/common.json';
+import vitrineEn from './locales/en/vitrine.json';
 import appFr from './locales/fr/app.json';
 import authFr from './locales/fr/auth.json';
 import commonFr from './locales/fr/common.json';
+import vitrineFr from './locales/fr/vitrine.json';
 
 export const LANGUES = ['fr', 'en'] as const;
 export type Langue = (typeof LANGUES)[number];
@@ -18,15 +20,15 @@ void i18n
   .use(initReactI18next)
   .init({
     resources: {
-      fr: { common: commonFr, app: appFr, auth: authFr },
-      en: { common: commonEn, app: appEn, auth: authEn },
+      fr: { common: commonFr, app: appFr, auth: authFr, vitrine: vitrineFr },
+      en: { common: commonEn, app: appEn, auth: authEn, vitrine: vitrineEn },
     },
     fallbackLng: 'fr',
     supportedLngs: [...LANGUES],
     nonExplicitSupportedLngs: true,
     load: 'languageOnly',
     defaultNS: 'common',
-    ns: ['common', 'app', 'auth'],
+    ns: ['common', 'app', 'auth', 'vitrine'],
     interpolation: { escapeValue: false },
     detection: {
       order: ['localStorage', 'navigator'],
