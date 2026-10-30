@@ -1,4 +1,5 @@
 import type { Json, Ligne } from '@/core/database.types';
+import { normaliser } from '@/shared/lib/texte';
 import {
   DIFFICULTES,
   ORIGINES,
@@ -51,15 +52,6 @@ export function estDemo(recette: Pick<Recette, 'user_id'>): boolean {
 
 export function tempsTotal(recette: Pick<Recette, 'prep_minutes' | 'cook_minutes'>): number {
   return recette.prep_minutes + recette.cook_minutes;
-}
-
-/** Minuscules sans accents, pour une recherche tolérante (« creme » trouve « Crème »). */
-export function normaliser(texte: string): string {
-  return texte
-    .normalize('NFD')
-    .replace(/\p{Diacritic}/gu, '')
-    .toLowerCase()
-    .trim();
 }
 
 export function filtrerRecettes(recettes: Recette[], filtres: FiltresRecettes): Recette[] {

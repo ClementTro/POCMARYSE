@@ -12,7 +12,6 @@ import {
   lireEtapes,
   lireFiltres,
   lireIngredients,
-  normaliser,
   tagsDisponibles,
   trierRecettes,
   versRecette,
@@ -119,10 +118,6 @@ describe('filtrerRecettes', () => {
       recette({ id: 'b', title: 'Brioche' }),
     ]);
     expect(triees.map((r) => r.id)).toEqual(['b', 'z', 'demo']);
-  });
-
-  it('normalise les textes', () => {
-    expect(normaliser('  Œufs à la NEIGE ')).toBe('œufs a la neige');
   });
 });
 
