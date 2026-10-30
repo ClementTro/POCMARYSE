@@ -21,7 +21,7 @@ Chaque jalon se termine par une release `develop → main` (voir ADR 0010).
 
 ## Jalon 3 — v0.3.0 : les trois modules
 
-- [ ] Recettes : liste, filtres, fiche, création / modification / suppression, copie des recettes de démo
+- [x] Recettes : liste, filtres, fiche, création / modification / suppression, copie des recettes de démo
 - [ ] Planning : semaine midi / soir, glisser-déposer
 - [ ] Courses : génération depuis le planning, regroupement, cases à cocher
 

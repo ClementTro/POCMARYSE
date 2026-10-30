@@ -5,6 +5,14 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+### Ajouté
+
+- Module Recettes : liste avec recherche sans accents et filtres (étiquette, temps, difficulté,
+  origine) conservés dans l'URL, fiche cartonnée, création / modification / suppression,
+  copie des recettes de Maryse dans son carnet, impression.
+- Champs à libellé masqué et message d'erreur de chargement avec « Réessayer » dans `shared/ui`.
+- Règles de dépendance entre couches vérifiées par ESLint.
+
 ## [0.2.0] - 2026-10-30
 
 ### Ajouté
