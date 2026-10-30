@@ -16,5 +16,7 @@ alwaysApply: true
   2. `gh pr create --base main --head develop --title "release: vX.Y.Z"` ;
   3. `gh pr checks <n> --watch` ; si rouge, corriger sur `develop` ;
   4. `gh pr merge <n> --merge` (pas de squash, ne pas supprimer `develop`) ;
-  5. `git fetch && git tag vX.Y.Z origin/main && git push origin vX.Y.Z`.
+  5. `git fetch && git tag -a vX.Y.Z origin/main -m "..." && git push origin vX.Y.Z` ;
+  6. `git merge --ff-only origin/main && git push` pour resynchroniser `develop`.
+- En cas d'erreur GraphQL de `gh pr create` / `gh pr merge`, utiliser l'API REST (`gh api`, voir AGENTS.md).
 - Interdits : `push --force` sur main/develop, réécriture d'historique publié, désactivation de la CI.

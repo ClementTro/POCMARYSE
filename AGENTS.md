@@ -99,8 +99,12 @@ export interface AppModule {
   2. `gh pr create --base main --head develop --title "release: vX.Y.Z" --body "<résumé>"` ;
   3. `gh pr checks <n> --watch` jusqu'à CI verte (sinon : commits `fix` sur `develop`, puis on recommence) ;
   4. `gh pr merge <n> --merge` (merge commit, **pas** de squash ni de suppression de `develop`) ;
-  5. `git tag vX.Y.Z origin/main && git push origin vX.Y.Z` ;
-  6. vérifier le déploiement (`gh run list --workflow deploy.yml`).
+  5. `git fetch && git tag -a vX.Y.Z origin/main -m "vX.Y.Z : <résumé>" && git push origin vX.Y.Z` ;
+  6. resynchroniser `develop` sur le merge commit : `git merge --ff-only origin/main && git push` ;
+  7. vérifier le déploiement (`gh run list --workflow deploy.yml`, puis `gh run watch <id>`).
+- Si `gh pr create` échoue sur une erreur GraphQL transitoire, passer par l'API REST :
+  `gh api -X POST repos/ClementTro/POCMARYSE/pulls -f title=... -f head=develop -f base=main -f body=...`,
+  et pour merger : `gh api -X PUT repos/ClementTro/POCMARYSE/pulls/<n>/merge -f merge_method=merge`.
 - **Interdits** : `push --force` sur `main` ou `develop`, réécriture d'historique publié, commit de `.env*`
   (sauf `.env.example`), suppression des branches `main` / `develop`.
 
