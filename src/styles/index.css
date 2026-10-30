@@ -18,11 +18,12 @@
   }
 
   html {
-    @apply bg-papier text-encre dark:bg-nuit dark:text-papier;
+    background-color: rgb(var(--seyes-fond));
   }
 
+  /* Les variantes dark: ciblent les descendants de .dark : les couleurs de base vont donc sur body. */
   body {
-    @apply font-texte leading-relaxed antialiased;
+    @apply bg-papier font-texte leading-relaxed text-encre antialiased dark:bg-nuit dark:text-papier;
   }
 
   h1,
