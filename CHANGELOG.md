@@ -5,6 +5,25 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+## [0.2.0] - 2026-10-30
+
+### Ajouté
+
+- Design system « cahier de cuisine » : papier Seyès, bleu faïence, vichy, fiches bristol,
+  photos scotchées, notes manuscrites ; thème clair, sombre ou système, appliqué avant le premier rendu.
+- Interface en français et en anglais, langue détectée puis mémorisée.
+- Registre des modules (`AppModule`), layouts public et application, routes protégées.
+- Client Supabase typé (PKCE), fournisseur de session, écran « Backend non configuré ».
+- Migration SQL : profils, recettes, planning, courses, RLS sur chaque table ; 20 recettes de démo.
+- Inscription, connexion, mot de passe oublié, nouveau mot de passe, déconnexion.
+- Pages vitrine : accueil, histoire de Maryse, fonctionnalités, mentions légales, confidentialité.
+- Script `npm run typo:fr` pour les espaces insécables de la typographie française.
+
+### Corrigé
+
+- Fond du thème sombre appliqué sur `body`.
+- Largeur du bouton de changement de thème.
+
 ## [0.1.0] - 2026-10-30
 
 ### Ajouté

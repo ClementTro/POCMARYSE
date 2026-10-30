@@ -1,7 +1,7 @@
 {
   "name": "maryse-and-co",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Maryse & Co — le carnet de cuisine familial de Maryse, en application web.",
   "type": "module",
   "engines": {

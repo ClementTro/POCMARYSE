@@ -10,14 +10,14 @@ Chaque jalon se termine par une release `develop → main` (voir ADR 0010).
 - [x] CI (`ci.yml`) et déploiement (`deploy.yml`)
 - [x] Première page publiée
 
-## Jalon 2 — v0.2.0 : vitrine et comptes
+## Jalon 2 — v0.2.0 : vitrine et comptes (publié)
 
-- [ ] Design system « cahier de cuisine », thème clair/sombre
-- [ ] i18n FR/EN
-- [ ] Registre des modules, layouts, routes protégées
-- [ ] Schéma Supabase, RLS, recettes de démo
-- [ ] Inscription, connexion, mot de passe oublié, déconnexion
-- [ ] Pages vitrine : accueil, histoire de Maryse, fonctionnalités, mentions légales, confidentialité
+- [x] Design system « cahier de cuisine », thème clair/sombre
+- [x] i18n FR/EN
+- [x] Registre des modules, layouts, routes protégées
+- [x] Schéma Supabase, RLS, recettes de démo
+- [x] Inscription, connexion, mot de passe oublié, déconnexion
+- [x] Pages vitrine : accueil, histoire de Maryse, fonctionnalités, mentions légales, confidentialité
 
 ## Jalon 3 — v0.3.0 : les trois modules
 
