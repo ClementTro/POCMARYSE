@@ -68,7 +68,7 @@ Règles de dépendance :
 
 - `shared/` n'importe rien de `core/`, `vitrine/` ni `modules/`.
 - Un module n'importe jamais un autre module. S'il a besoin de données d'un autre domaine, il passe par
-  Supabase (requête dédiée) ou par un utilitaire de `shared/`.
+  Supabase (requête dédiée) ou par un utilitaire de `shared/` (ex. dates locales dans `shared/lib/dates.ts`).
 - `core/` ne connaît les modules que via `moduleRegistry.ts`.
 - Un module peut importer de `core/` uniquement : `@/core/types`, `@/core/supabase` (`clientSupabase()`),
   `@/core/database.types` (types des tables) et `@/core/auth/useAuth`. Ses imports internes sont relatifs.
@@ -118,7 +118,7 @@ npm install          # dépendances
 npm run dev          # serveur local (http://localhost:5173/POCMARYSE/)
 npm run build        # build de production + copie 404.html
 npm run preview      # prévisualise le build
-npm run lint         # ESLint + vérification que tous les fichiers sont en UTF-8
+npm run lint         # ESLint + vérification UTF-8 (fichiers valides, pas de texte encodé deux fois)
 npm run typecheck    # tsc --noEmit
 npm run test         # Vitest (une passe)
 npm run format       # Prettier
@@ -165,3 +165,4 @@ Direction « cahier de cuisine familial » : papier Seyès, faïence bleue, napp
 | [0009](docs/adr/0009-gestion-des-secrets.md) | Gestion des secrets et variables d'environnement |
 | [0010](docs/adr/0010-workflow-git.md) | Workflow git develop / main sans validation humaine |
 | [0011](docs/adr/0011-donnees-personnelles.md) | Données personnelles, RGPD et photos |
+| [0012](docs/adr/0012-generation-liste-de-courses.md) | Génération de la liste de courses depuis le planning |
