@@ -5,6 +5,8 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+## [0.3.0] - 2026-10-30
+
 ### Ajouté
 
 - Module Recettes : liste avec recherche sans accents et filtres (étiquette, temps, difficulté,
