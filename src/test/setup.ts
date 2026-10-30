@@ -2,6 +2,8 @@ import '@testing-library/jest-dom/vitest';
 import { cleanup } from '@testing-library/react';
 import { afterEach, vi } from 'vitest';
 import i18n from '@/i18n';
+// Enregistre les traductions de chaque module, comme au démarrage de l'application.
+import '@/core/moduleRegistry';
 
 void i18n.changeLanguage('fr');
 
