@@ -1,0 +1,20 @@
+---
+description: Workflow git develop/main, commits et releases sans validation humaine (ADR 0010)
+alwaysApply: true
+---
+
+# Workflow git
+
+- Toujours travailler sur `develop`. Jamais de commit direct sur `main`.
+- Conventional Commits en français, impératif présent, une modification logique par commit :
+  `feat(recettes): ajoute la fiche détaillée`.
+- Types : feat, fix, docs, style, refactor, test, chore, ci, build, perf.
+- Portées : core, ui, auth, vitrine, recettes, planning, courses, i18n, theme, db, ci, docs, adr.
+- Avant chaque commit : `npm run lint && npm run typecheck && npm run test`.
+- Release en fin de jalon :
+  1. `CHANGELOG.md` + version `package.json`, commit `chore(release): vX.Y.Z` sur `develop`, push ;
+  2. `gh pr create --base main --head develop --title "release: vX.Y.Z"` ;
+  3. `gh pr checks <n> --watch` ; si rouge, corriger sur `develop` ;
+  4. `gh pr merge <n> --merge` (pas de squash, ne pas supprimer `develop`) ;
+  5. `git fetch && git tag vX.Y.Z origin/main && git push origin vX.Y.Z`.
+- Interdits : `push --force` sur main/develop, réécriture d'historique publié, désactivation de la CI.

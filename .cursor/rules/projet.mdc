@@ -1,0 +1,15 @@
+---
+description: Contexte général et contraintes non négociables de Maryse & Co
+alwaysApply: true
+---
+
+# Maryse & Co — rappel permanent
+
+- Lire `AGENTS.md` avant toute modification ; il fait foi.
+- Répondre et documenter en français.
+- Front 100 % statique sur GitHub Pages, servi sous `/POCMARYSE/` : chemins via `import.meta.env.BASE_URL`.
+- Backend = Supabase uniquement. Jamais de clé `service_role` ni de `.env` commité.
+- Une fonctionnalité métier = un module dans `src/modules/<id>/`, déclaré dans `src/core/moduleRegistry.ts`.
+- Nouvelle idée de module → `docs/MODULES_A_VENIR.md`, pas de code.
+- Décision modifiée ou nouvelle → ADR dans `docs/adr/` + mise à jour de `AGENTS.md`.
+- Fonctionnalité livrée → `CHANGELOG.md` (Non publié) + `docs/ROADMAP.md`.
