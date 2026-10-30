@@ -6,7 +6,7 @@ export function Logo({ vers = '/' }: { vers?: string }) {
   return (
     <Link
       to={vers}
-      className="flex min-h-11 items-center gap-2 rounded-fiche font-titre text-xl text-faience dark:text-seyes-clair"
+      className="flex min-h-11 shrink-0 items-center gap-2 whitespace-nowrap rounded-fiche font-titre text-xl text-faience dark:text-seyes-clair"
     >
       <svg viewBox="0 0 64 64" aria-hidden="true" className="h-8 w-8 shrink-0">
         <rect

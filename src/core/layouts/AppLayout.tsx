@@ -64,7 +64,7 @@ export function AppLayout() {
     <div className="flex min-h-screen flex-col">
       <LienEvitement />
       <header className="no-print border-b border-seyes bg-papier-fonce dark:border-nuit-ligne dark:bg-nuit">
-        <div className="mx-auto flex max-w-6xl items-center gap-4 px-6 pt-3">
+        <div className="mx-auto flex max-w-6xl items-center gap-2 px-4 pt-3 sm:gap-4 sm:px-6">
           <Logo vers="/app" />
           <div className="ml-auto flex items-center gap-1">
             <LangSwitch />
@@ -78,7 +78,7 @@ export function AppLayout() {
         </div>
         <nav
           aria-label={t('nav.application')}
-          className="mx-auto mt-2 flex max-w-6xl gap-1 overflow-x-auto px-6"
+          className="mx-auto mt-2 flex max-w-6xl gap-1 overflow-x-auto px-4 sm:px-6"
         >
           {entrees.map((entree) => (
             <OngletNav key={entree.vers} {...entree} />
@@ -86,7 +86,7 @@ export function AppLayout() {
         </nav>
       </header>
       <main id={ID_CONTENU} tabIndex={-1} className="flex-1 focus:outline-none">
-        <div className="mx-auto max-w-6xl px-6 py-8">
+        <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
           <Suspense fallback={<Chargement />}>
             <Outlet />
           </Suspense>
