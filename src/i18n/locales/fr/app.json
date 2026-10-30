@@ -4,5 +4,30 @@
     "titreSansNom": "Bonjour",
     "intro": "Voici ta journée en cuisine.",
     "aucunModule": "Les pages du carnet arrivent bientôt."
+  },
+  "profil": {
+    "intro": "Ton nom, ta langue et ton thème sont gardés sur ton compte : tu les retrouves sur tous tes appareils.",
+    "nom": {
+      "titre": "Comment t'appeler ?",
+      "libelle": "Prénom ou surnom",
+      "aide": "Affiché sur la page « Aujourd'hui ». Tu peux le laisser vide.",
+      "enregistrer": "Enregistrer le prénom",
+      "enregistre": "C'est noté !",
+      "tropLong": "60 caractères au maximum."
+    },
+    "preferences": {
+      "titre": "Préférences",
+      "aide": "Appliquées tout de suite et enregistrées sur ton compte.",
+      "theme": "Thème",
+      "clair": "Clair",
+      "sombre": "Sombre",
+      "systeme": "Comme l'appareil"
+    },
+    "compte": {
+      "titre": "Compte",
+      "email": "Adresse e-mail",
+      "motDePasse": "Changer de mot de passe"
+    },
+    "erreurServeur": "Le profil n'a pas pu être enregistré. Réessaie dans un instant."
   }
 }

@@ -4,5 +4,30 @@
     "titreSansNom": "Hello",
     "intro": "Here is your day in the kitchen.",
     "aucunModule": "The notebook pages are coming soon."
+  },
+  "profil": {
+    "intro": "Your name, language and theme are saved to your account: you find them on all your devices.",
+    "nom": {
+      "titre": "What should we call you?",
+      "libelle": "First name or nickname",
+      "aide": "Shown on the “Today” page. You can leave it empty.",
+      "enregistrer": "Save the name",
+      "enregistre": "Got it!",
+      "tropLong": "60 characters at most."
+    },
+    "preferences": {
+      "titre": "Preferences",
+      "aide": "Applied right away and saved to your account.",
+      "theme": "Theme",
+      "clair": "Light",
+      "sombre": "Dark",
+      "systeme": "Same as device"
+    },
+    "compte": {
+      "titre": "Account",
+      "email": "Email address",
+      "motDePasse": "Change password"
+    },
+    "erreurServeur": "The profile could not be saved. Try again in a moment."
   }
 }

@@ -19,6 +19,9 @@ const NouveauMotDePassePage = lazy(() => import('@/vitrine/pages/NouveauMotDePas
 const TableauDeBordPage = lazy(() =>
   import('@/core/pages/TableauDeBordPage').then((m) => ({ default: m.TableauDeBordPage })),
 );
+const ProfilPage = lazy(() =>
+  import('@/core/pages/ProfilPage').then((m) => ({ default: m.ProfilPage })),
+);
 
 const routes: RouteObject[] = [
   {
@@ -50,6 +53,7 @@ const routes: RouteObject[] = [
         children: [
           { index: true, element: <TableauDeBordPage /> },
           ...modules.map((module) => ({ path: module.basePath, children: module.routes })),
+          { path: 'profil', element: <ProfilPage /> },
           { path: '*', element: <PageIntrouvable /> },
         ],
       },
