@@ -1,13 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/core/auth/useAuth';
 import { modules } from '@/core/moduleRegistry';
+import { useProfil } from '@/core/profil/api';
 import { useTitrePage } from '@/shared/hooks/useTitrePage';
 import { EtatVide } from '@/shared/ui/EtatVide';
 
 export function TableauDeBordPage() {
   const { t } = useTranslation('app');
   const { utilisateur } = useAuth();
-  const nom = (utilisateur?.user_metadata?.display_name as string | undefined)?.trim();
+  const { data: profil } = useProfil();
+  const nom = (
+    profil?.display_name ?? (utilisateur?.user_metadata?.display_name as string | undefined)
+  )?.trim();
   useTitrePage(t('common:nav.tableauDeBord'));
 
   const widgets = modules.flatMap((module) =>
