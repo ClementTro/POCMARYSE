@@ -1,0 +1,58 @@
+{
+  "marque": "Maryse & Co",
+  "nav": {
+    "accueil": "Accueil",
+    "histoire": "L'histoire de Maryse",
+    "fonctionnalites": "Fonctionnalités",
+    "connexion": "Se connecter",
+    "inscription": "Créer mon carnet",
+    "ouvrirCarnet": "Ouvrir mon carnet",
+    "tableauDeBord": "Aujourd'hui",
+    "profil": "Mon profil",
+    "deconnexion": "Se déconnecter",
+    "principale": "Navigation principale",
+    "application": "Navigation de l'application",
+    "allerAuContenu": "Aller au contenu",
+    "menu": "Menu"
+  },
+  "theme": {
+    "passerSombre": "Passer en thème sombre",
+    "passerClair": "Passer en thème clair"
+  },
+  "langue": {
+    "choisir": "Langue",
+    "fr": "Français",
+    "en": "English"
+  },
+  "etat": {
+    "chargement": "Je tourne les pages…",
+    "erreur": "Le carnet n'a pas pu être chargé. Vérifie ta connexion puis réessaie.",
+    "reessayer": "Réessayer"
+  },
+  "photo": {
+    "aVenir": "La photo de Maryse arrive bientôt"
+  },
+  "pied": {
+    "mentions": "Mentions légales",
+    "confidentialite": "Confidentialité",
+    "demo": "Maryse & Co est une démo technique : les recettes sont vraies, l'entreprise est imaginaire."
+  },
+  "backend": {
+    "titre": "Le carnet n'est pas encore relié",
+    "texte": "Le service de comptes n'est pas configuré sur ce site. Tu peux parcourir la vitrine ; l'application ouvrira dès que la configuration sera faite.",
+    "retour": "Revenir à l'accueil"
+  },
+  "introuvable": {
+    "titre": "Cette page n'est pas dans le cahier",
+    "texte": "Le lien est peut-être ancien ou mal recopié.",
+    "retour": "Revenir à l'accueil"
+  },
+  "actions": {
+    "enregistrer": "Enregistrer",
+    "annuler": "Annuler",
+    "supprimer": "Supprimer",
+    "modifier": "Modifier",
+    "retour": "Retour",
+    "fermer": "Fermer"
+  }
+}

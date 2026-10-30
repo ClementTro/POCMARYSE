@@ -54,8 +54,8 @@ Les raisons de chaque choix sont dans [`docs/adr/`](docs/adr/).
 
 ```
 src/
-  core/        shell de l'app : router, layouts, auth, client Supabase, registre des modules, thème
-  shared/      composants UI réutilisables, hooks, utilitaires (aucune logique métier)
+  core/        shell de l'app : router, layouts, auth, client Supabase, registre des modules, pages système
+  shared/      composants UI réutilisables, thème, hooks, utilitaires (aucune logique métier)
   vitrine/     pages publiques (accueil, histoire, fonctionnalités, auth, pages légales)
   modules/     un dossier par module métier (recettes, planning, courses)
   i18n/        initialisation i18next et traductions communes
@@ -70,6 +70,8 @@ Règles de dépendance :
 - Un module n'importe jamais un autre module. S'il a besoin de données d'un autre domaine, il passe par
   Supabase (requête dédiée) ou par un utilitaire de `shared/`.
 - `core/` ne connaît les modules que via `moduleRegistry.ts`.
+- Un module peut importer de `core/` uniquement : `@/core/types`, `@/core/supabase` (`clientSupabase()`)
+  et `@/core/auth/useAuth`.
 
 Contrat d'un module (voir ADR 0005 et `CONTRIBUTING.md`) :
 
@@ -99,8 +101,12 @@ export interface AppModule {
   2. `gh pr create --base main --head develop --title "release: vX.Y.Z" --body "<résumé>"` ;
   3. `gh pr checks <n> --watch` jusqu'à CI verte (sinon : commits `fix` sur `develop`, puis on recommence) ;
   4. `gh pr merge <n> --merge` (merge commit, **pas** de squash ni de suppression de `develop`) ;
-  5. `git tag vX.Y.Z origin/main && git push origin vX.Y.Z` ;
-  6. vérifier le déploiement (`gh run list --workflow deploy.yml`).
+  5. `git fetch && git tag -a vX.Y.Z origin/main -m "vX.Y.Z : <résumé>" && git push origin vX.Y.Z` ;
+  6. resynchroniser `develop` sur le merge commit : `git merge --ff-only origin/main && git push` ;
+  7. vérifier le déploiement (`gh run list --workflow deploy.yml`, puis `gh run watch <id>`).
+- Si `gh pr create` échoue sur une erreur GraphQL transitoire, passer par l'API REST :
+  `gh api -X POST repos/ClementTro/POCMARYSE/pulls -f title=... -f head=develop -f base=main -f body=...`,
+  et pour merger : `gh api -X PUT repos/ClementTro/POCMARYSE/pulls/<n>/merge -f merge_method=merge`.
 - **Interdits** : `push --force` sur `main` ou `develop`, réécriture d'historique publié, commit de `.env*`
   (sauf `.env.example`), suppression des branches `main` / `develop`.
 
@@ -115,6 +121,7 @@ npm run lint         # ESLint
 npm run typecheck    # tsc --noEmit
 npm run test         # Vitest (une passe)
 npm run format       # Prettier
+npm run typo:fr      # espaces insécables FR (avant ? ! : ; et dans « ») — à lancer après toute modif d'un fr.json
 ```
 
 Configuration locale : copier `.env.example` en `.env.local` et renseigner les deux variables Supabase.

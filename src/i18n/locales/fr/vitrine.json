@@ -1,0 +1,161 @@
+{
+  "photos": {
+    "medailleAlt": "Maryse, entourée de deux collègues, tient sa Médaille d'honneur du travail et un bouquet de fleurs.",
+    "secondeAlt": "Une autre photo de Maryse."
+  },
+  "accueil": {
+    "titre": "Le carnet de cuisine de Maryse, ouvert à toute la famille",
+    "intro": "Des recettes qui ont fait leurs preuves, le menu de la semaine sur le frigo et la liste de courses qui s'écrit toute seule. Comme le cahier de Maryse, mais dans ta poche.",
+    "ctaPrincipal": "Créer mon carnet",
+    "ctaSecondaire": "Lire l'histoire de Maryse",
+    "gratuit": "Gratuit et sans publicité.",
+    "photoNote": "Le jour de ma médaille. Mes collègues m'ont dit\u00a0: «\u00a0Ton cahier, fais-en une appli\u00a0!\u00a0»",
+    "contenuTitre": "Ce qu'on trouve dans le carnet",
+    "recettesTitre": "Des fiches recettes",
+    "recettesTexte": "Ton carnet commence avec 20 recettes de Maryse. Copie celles que tu aimes, ajoute les tiennes, retrouve-les selon le temps dont tu disposes.",
+    "planningTitre": "Le menu de la semaine",
+    "planningTexte": "Midi et soir, du lundi au dimanche : glisse une recette sur un repas, comme on aimante un mot sur le frigo.",
+    "coursesTitre": "La liste de courses",
+    "coursesTexte": "Un clic et les ingrédients de la semaine sont réunis, quantités additionnées. Au magasin, tu barres au fur et à mesure.",
+    "citation": "«\u00a0Je n'ai jamais été une grande cheffe. J'étais juste organisée, et ça change tout.\u00a0»",
+    "citationAuteur": "Maryse",
+    "finTitre": "Ton carnet t'attend",
+    "finTexte": "Crée ton compte en une minute : les recettes de Maryse sont déjà dedans.",
+    "exemple": {
+      "ficheTitre": "Gâteau au yaourt",
+      "ficheLignes": ["1 pot de yaourt", "3 pots de farine", "2 pots de sucre", "3 œufs"],
+      "ficheNote": "Les enfants adorent !",
+      "jours": ["Lun", "Mar", "Mer", "Jeu"],
+      "plats": ["Quiche", "Soupe", "Crêpes", "Gratin"],
+      "articles": ["Lait", "Œufs", "Farine", "Pommes"]
+    }
+  },
+  "histoire": {
+    "titre": "L'histoire de Maryse",
+    "intro": "Maryse & Co est né d'un cahier à grands carreaux, de vingt ans de dîners à préparer et d'une remise de médaille.",
+    "fiction": "Récit inspiré de Maryse, en partie imaginé pour cette démo.",
+    "etapes": [
+      {
+        "quand": "Pendant plus de vingt ans",
+        "titre": "Le travail, la famille, et le dîner",
+        "texte": "Maryse part tôt, rentre tard, et chaque soir la même question l'attend dans l'entrée : « Qu'est-ce qu'on mange ? »"
+      },
+      {
+        "quand": "Dans le tiroir de la cuisine",
+        "titre": "Le cahier",
+        "texte": "Pour ne plus improviser, elle note tout dans un cahier d'écolier : les recettes qui marchent, le menu de la semaine au dos, la liste de courses sur la dernière page. Les pages se tachent, le cahier ne quitte plus la cuisine."
+      },
+      {
+        "quand": "Le jour de la médaille",
+        "titre": "« Fais-en une appli ! »",
+        "texte": "Quand Maryse reçoit sa Médaille d'honneur du travail, ses collègues lui offrent des fleurs et un conseil : ce cahier que tout le monde lui emprunte, il faudrait le partager."
+      },
+      {
+        "quand": "Aujourd'hui",
+        "titre": "Maryse & Co",
+        "texte": "Le cahier devient un carnet en ligne. Mêmes recettes, même organisation, et de la place pour celles de chaque famille."
+      }
+    ],
+    "fin": "Et toi, qu'est-ce que tu vas noter dans ton carnet ?",
+    "cta": "Créer mon carnet"
+  },
+  "fonctionnalites": {
+    "titre": "Ce que fait le carnet",
+    "intro": "Trois pages pour commencer, et de la place pour les suivantes.",
+    "modules": [
+      {
+        "titre": "Recettes",
+        "points": [
+          "20 recettes de Maryse pour démarrer, à copier dans ton carnet",
+          "Tes propres recettes : ingrédients, étapes, temps et difficulté",
+          "Recherche par nom, filtres par étiquette, temps et difficulté"
+        ]
+      },
+      {
+        "titre": "Planning",
+        "points": [
+          "La semaine en un coup d'œil, midi et soir",
+          "Une recette glissée sur un repas, ou choisie dans une liste",
+          "Semaine précédente, suivante, ou retour à aujourd'hui"
+        ]
+      },
+      {
+        "titre": "Courses",
+        "points": [
+          "Liste générée à partir du planning de la semaine",
+          "Ingrédients regroupés, quantités additionnées",
+          "Articles à cocher, ajouts à la main, impression"
+        ]
+      }
+    ],
+    "transverseTitre": "Pour toute la famille",
+    "transverse": [
+      "En français ou en anglais",
+      "Un thème clair pour la journée, sombre pour le soir",
+      "Un compte personnel : personne d'autre que toi ne voit ton carnet",
+      "Sur ordinateur, tablette ou téléphone"
+    ],
+    "bientotTitre": "Les prochaines pages",
+    "bientotTexte": "Le carnet est conçu pour grandir. Les idées qui attendent leur tour :",
+    "bientot": [
+      "Ajuster les portions",
+      "Mode cuisine pas à pas",
+      "Favoris et notes",
+      "Garde-manger",
+      "Import et export",
+      "Partage avec le foyer"
+    ],
+    "cta": "Créer mon carnet"
+  },
+  "mentions": {
+    "titre": "Mentions légales",
+    "sections": [
+      {
+        "titre": "Éditeur",
+        "texte": "Maryse & Co est un projet de démonstration technique, sans activité commerciale, publié depuis le dépôt GitHub ClementTro/POCMARYSE."
+      },
+      {
+        "titre": "Hébergement",
+        "texte": "Le site est hébergé par GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis). Les comptes et les données du carnet sont hébergés par Supabase Inc., sur des serveurs situés dans l'Union européenne."
+      },
+      {
+        "titre": "Photographies",
+        "texte": "Les photographies de Maryse sont publiées avec l'accord des personnes représentées. Toute réutilisation est interdite."
+      },
+      {
+        "titre": "Contact",
+        "texte": "Pour toute question, ouvre une demande (issue) sur le dépôt GitHub du projet."
+      }
+    ]
+  },
+  "confidentialite": {
+    "titre": "Politique de confidentialité",
+    "maj": "Mise à jour le 30 octobre 2026.",
+    "sections": [
+      {
+        "titre": "Les données collectées",
+        "texte": "Ton adresse e-mail, ton prénom, tes préférences (langue, thème) et ce que tu écris dans le carnet : recettes, planning et liste de courses."
+      },
+      {
+        "titre": "Pourquoi",
+        "texte": "Uniquement pour faire fonctionner ton carnet : te connecter et te rendre tes données. Aucune publicité, aucune revente, aucun outil de mesure d'audience."
+      },
+      {
+        "titre": "Qui y a accès",
+        "texte": "Personne d'autre que toi. Les données sont protégées ligne par ligne dans la base : un compte ne peut lire que ses propres informations."
+      },
+      {
+        "titre": "Où elles sont stockées",
+        "texte": "Chez Supabase, dans l'Union européenne. Ta langue et ton thème sont aussi mémorisés dans ton navigateur (stockage local), sans aucun cookie publicitaire."
+      },
+      {
+        "titre": "Combien de temps",
+        "texte": "Tant que ton compte existe. Ce site étant une démonstration, les comptes inactifs peuvent être supprimés."
+      },
+      {
+        "titre": "Tes droits",
+        "texte": "Tu peux demander l'accès à tes données, leur correction ou leur suppression en ouvrant une demande sur le dépôt GitHub du projet. Tu peux aussi adresser une réclamation à la CNIL."
+      }
+    ]
+  }
+}

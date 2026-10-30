@@ -1,8 +1,15 @@
+import { BrowserRouter } from 'react-router-dom';
+import { Providers } from '@/core/Providers';
+import { AppRoutes } from '@/core/router';
+import { RemonterEnHaut } from '@/core/routing/RemonterEnHaut';
+
 export function App() {
   return (
-    <main className="mx-auto flex min-h-screen max-w-lecture flex-col justify-center gap-4 px-6">
-      <h1 className="font-titre text-4xl text-faience">Maryse & Co</h1>
-      <p className="text-lg">Le carnet de cuisine de Maryse arrive bientôt.</p>
-    </main>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <Providers>
+        <RemonterEnHaut />
+        <AppRoutes />
+      </Providers>
+    </BrowserRouter>
   );
 }

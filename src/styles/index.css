@@ -3,7 +3,101 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --seyes-fond: 253 252 247;
+    --seyes-ligne: 185 203 228;
+    --seyes-marge: 201 70 61;
+    color-scheme: light;
+  }
+
+  .dark {
+    --seyes-fond: 22 35 58;
+    --seyes-ligne: 44 65 102;
+    --seyes-marge: 201 70 61;
+    color-scheme: dark;
+  }
+
+  html {
+    background-color: rgb(var(--seyes-fond));
+  }
+
+  /* Les variantes dark: ciblent les descendants de .dark : les couleurs de base vont donc sur body. */
   body {
-    @apply bg-papier font-texte text-encre antialiased;
+    @apply bg-papier font-texte leading-relaxed text-encre antialiased dark:bg-nuit dark:text-papier;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-titre font-normal text-faience dark:text-seyes-clair;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-faience ring-offset-2 ring-offset-papier dark:ring-beurre dark:ring-offset-nuit;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Page de cahier à grands carreaux : carreaux de 2rem, réglure fine tous les 0.5rem. */
+  .papier-seyes {
+    background-color: rgb(var(--seyes-fond));
+    background-image:
+      linear-gradient(to right, rgb(var(--seyes-ligne) / 0.55) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--seyes-ligne) / 0.9) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--seyes-ligne) / 0.35) 1px, transparent 1px);
+    background-size:
+      2rem 2rem,
+      2rem 2rem,
+      100% 0.5rem;
+  }
+
+  .marge-cahier {
+    position: relative;
+  }
+
+  .marge-cahier::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--marge, 3rem);
+    width: 2px;
+    background: rgb(var(--seyes-marge) / 0.55);
+    pointer-events: none;
+  }
+
+  /* Fiche bristol : réglure bleue, première ligne rouge sous l'en-tête. */
+  .fiche-lignee {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(var(--seyes-ligne) / 0.6) 1px,
+      transparent 1px
+    );
+    background-size: 100% 1.75rem;
+    background-position: 0 3.5rem;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: white !important;
+    color: black !important;
   }
 }

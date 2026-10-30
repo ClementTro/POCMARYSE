@@ -1,0 +1,58 @@
+{
+  "marque": "Maryse & Co",
+  "nav": {
+    "accueil": "Home",
+    "histoire": "Maryse's story",
+    "fonctionnalites": "Features",
+    "connexion": "Sign in",
+    "inscription": "Start my notebook",
+    "ouvrirCarnet": "Open my notebook",
+    "tableauDeBord": "Today",
+    "profil": "My profile",
+    "deconnexion": "Sign out",
+    "principale": "Main navigation",
+    "application": "App navigation",
+    "allerAuContenu": "Skip to content",
+    "menu": "Menu"
+  },
+  "theme": {
+    "passerSombre": "Switch to dark theme",
+    "passerClair": "Switch to light theme"
+  },
+  "langue": {
+    "choisir": "Language",
+    "fr": "Français",
+    "en": "English"
+  },
+  "etat": {
+    "chargement": "Turning the pages…",
+    "erreur": "The notebook could not be loaded. Check your connection and try again.",
+    "reessayer": "Try again"
+  },
+  "photo": {
+    "aVenir": "Maryse's photo is coming soon"
+  },
+  "pied": {
+    "mentions": "Legal notice",
+    "confidentialite": "Privacy",
+    "demo": "Maryse & Co is a tech demo: the recipes are real, the company is imaginary."
+  },
+  "backend": {
+    "titre": "The notebook is not connected yet",
+    "texte": "The account service is not configured on this site. You can browse the showcase; the app will open as soon as it is set up.",
+    "retour": "Back to home"
+  },
+  "introuvable": {
+    "titre": "This page is not in the notebook",
+    "texte": "The link may be old or mistyped.",
+    "retour": "Back to home"
+  },
+  "actions": {
+    "enregistrer": "Save",
+    "annuler": "Cancel",
+    "supprimer": "Delete",
+    "modifier": "Edit",
+    "retour": "Back",
+    "fermer": "Close"
+  }
+}
