@@ -16,7 +16,7 @@ import { FILTRES_VIDES, type FiltresRecettes } from '../types';
 export default function ListeRecettesPage() {
   const { t } = useTranslation('recettes');
   useTitrePage(t('liste.titre'));
-  const { data: recettes, isPending, isError, refetch } = useRecettes();
+  const { data: recettes, isError, refetch } = useRecettes();
   const [params, setParams] = useSearchParams();
   const filtres = lireFiltres(params);
 
@@ -39,10 +39,12 @@ export default function ListeRecettesPage() {
         </LienBouton>
       </header>
 
-      {isPending ? (
-        <Chargement />
-      ) : isError ? (
-        <ErreurChargement onReessayer={() => void refetch()} />
+      {!recettes ? (
+        isError ? (
+          <ErreurChargement onReessayer={() => void refetch()} />
+        ) : (
+          <Chargement />
+        )
       ) : recettes.length === 0 ? (
         <EtatVide titre={t('liste.videTitre')} texte={t('liste.videTexte')} />
       ) : (

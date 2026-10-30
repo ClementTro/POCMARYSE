@@ -57,14 +57,15 @@ export default function FicheRecettePage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const etat = useLocation().state as EtatNavigationRecette | null;
-  const { data: recette, isPending, isError, refetch } = useRecette(id);
+  const { data: recette, isError, refetch } = useRecette(id);
   const copier = useCopierRecette();
   const supprimer = useSupprimerRecette();
   const [confirmation, setConfirmation] = useState(false);
   useTitrePage(recette?.title ?? t('liste.titre'));
 
-  if (isPending) return <Chargement />;
-  if (isError) return <ErreurChargement onReessayer={() => void refetch()} />;
+  if (recette === undefined) {
+    return isError ? <ErreurChargement onReessayer={() => void refetch()} /> : <Chargement />;
+  }
   if (!recette) {
     return (
       <EtatVide
