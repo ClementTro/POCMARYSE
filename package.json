@@ -16,7 +16,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "typo:fr": "node scripts/typographie-fr.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

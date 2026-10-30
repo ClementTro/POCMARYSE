@@ -121,6 +121,7 @@ npm run lint         # ESLint
 npm run typecheck    # tsc --noEmit
 npm run test         # Vitest (une passe)
 npm run format       # Prettier
+npm run typo:fr      # espaces insécables FR (avant ? ! : ; et dans « ») — à lancer après toute modif d'un fr.json
 ```
 
 Configuration locale : copier `.env.example` en `.env.local` et renseigner les deux variables Supabase.

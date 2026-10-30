@@ -35,11 +35,11 @@
   "pied": {
     "mentions": "Mentions légales",
     "confidentialite": "Confidentialité",
-    "demo": "Maryse & Co est une démo technique : les recettes sont vraies, l'entreprise est imaginaire."
+    "demo": "Maryse & Co est une démo technique : les recettes sont vraies, l'entreprise est imaginaire."
   },
   "backend": {
     "titre": "Le carnet n'est pas encore relié",
-    "texte": "Le service de comptes n'est pas configuré sur ce site. Tu peux parcourir la vitrine ; l'application ouvrira dès que la configuration sera faite.",
+    "texte": "Le service de comptes n'est pas configuré sur ce site. Tu peux parcourir la vitrine ; l'application ouvrira dès que la configuration sera faite.",
     "retour": "Revenir à l'accueil"
   },
   "introuvable": {
