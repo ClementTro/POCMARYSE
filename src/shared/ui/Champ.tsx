@@ -53,7 +53,7 @@ interface ChampCommun {
   aide?: string;
   erreur?: string;
   classeCadre?: string;
-  /** Libellé lu par les lecteurs d'écran mais non affiché (lignes répétées d'un tableau). */
+  /** LibellÃ© lu par les lecteurs dâ€™Ã©cran mais non affichÃ© (lignes rÃ©pÃ©tÃ©es dâ€™un tableau). */
   masquerLabel?: boolean;
 }
 
