@@ -5,6 +5,25 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+## [1.0.0] - 2026-10-30
+
+### Ajouté
+
+- Page Profil : prénom affiché, langue, thème (clair, sombre ou celui de l'appareil), adresse du compte
+  et lien de changement de mot de passe.
+- Langue et thème synchronisés avec le profil Supabase : retrouvés sur tous les appareils, et chaque
+  changement fait depuis l'en-tête est enregistré (ADR 0013).
+- Tableau de bord complet : widget « L'idée du jour » (une recette du carnet par jour), menu du jour
+  et courses restantes ; salutation avec le prénom du profil.
+- Tests du tableau de bord, de la page Profil et de la synchronisation des préférences.
+- README avec captures d'écran ; guide de contribution aligné sur les conventions du code.
+
+### Corrigé
+
+- Contraste AA du repère « Aujourd'hui » du planning en thème clair.
+- En-têtes sans débordement horizontal jusqu'à 320 px de large (monogramme seul dans l'application
+  sous 380 px, boutons de la vitrine qui passent à la ligne d'un bloc).
+
 ## [0.3.0] - 2026-10-30
 
 ### Ajouté
