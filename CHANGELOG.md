@@ -5,6 +5,13 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+## [1.0.1] - 2026-10-31
+
+### Ajouté
+
+- Photos de Maryse sur l'accueil et la page « Histoire » (publiées avec consentement, ADR 0011).
+- Site en ligne relié au projet Supabase : inscription, connexion et modules utilisables.
+
 ## [1.0.0] - 2026-10-30
 
 ### Ajouté
