@@ -2,13 +2,13 @@
 
 Chaque jalon se termine par une release `develop → main` (voir ADR 0010).
 
-## Jalon 1 — v0.1.0 : socle et déploiement
+## Jalon 1 — v0.1.0 : socle et déploiement (publié)
 
 - [x] Connexion au repo, branches `main` et `develop`, GitHub Pages en mode Actions
 - [x] `AGENTS.md`, ADR 0001 à 0011, README, CONTRIBUTING, ROADMAP, MODULES_A_VENIR, CHANGELOG, règles Cursor
-- [ ] Squelette Vite + React + TypeScript + Tailwind, ESLint, Prettier, Vitest
-- [ ] CI (`ci.yml`) et déploiement (`deploy.yml`)
-- [ ] Première page publiée
+- [x] Squelette Vite + React + TypeScript + Tailwind, ESLint, Prettier, Vitest
+- [x] CI (`ci.yml`) et déploiement (`deploy.yml`)
+- [x] Première page publiée
 
 ## Jalon 2 — v0.2.0 : vitrine et comptes
 
