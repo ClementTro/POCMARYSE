@@ -27,3 +27,8 @@ export interface Case {
   date: DateIso;
   creneau: Creneau;
 }
+
+/** Données transportées pendant un glisser : soit un repas déjà posé, soit une recette du bac. */
+export type Glisse =
+  | { type: 'repas'; repas: Repas; titre: string }
+  | { type: 'recette'; recette: RecettePlanifiable; titre: string };
