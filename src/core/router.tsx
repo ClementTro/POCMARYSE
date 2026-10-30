@@ -8,6 +8,10 @@ import { ProtectedRoute } from '@/core/routing/ProtectedRoute';
 import { RedirigerSiConnecte } from '@/core/routing/RedirigerSiConnecte';
 
 const AccueilPage = lazy(() => import('@/vitrine/pages/AccueilPage'));
+const HistoirePage = lazy(() => import('@/vitrine/pages/HistoirePage'));
+const FonctionnalitesPage = lazy(() => import('@/vitrine/pages/FonctionnalitesPage'));
+const MentionsLegalesPage = lazy(() => import('@/vitrine/pages/MentionsLegalesPage'));
+const ConfidentialitePage = lazy(() => import('@/vitrine/pages/ConfidentialitePage'));
 const ConnexionPage = lazy(() => import('@/vitrine/pages/ConnexionPage'));
 const InscriptionPage = lazy(() => import('@/vitrine/pages/InscriptionPage'));
 const MotDePasseOubliePage = lazy(() => import('@/vitrine/pages/MotDePasseOubliePage'));
@@ -21,6 +25,10 @@ const routes: RouteObject[] = [
     element: <PublicLayout />,
     children: [
       { index: true, element: <AccueilPage /> },
+      { path: 'histoire', element: <HistoirePage /> },
+      { path: 'fonctionnalites', element: <FonctionnalitesPage /> },
+      { path: 'mentions-legales', element: <MentionsLegalesPage /> },
+      { path: 'confidentialite', element: <ConfidentialitePage /> },
       {
         element: <RedirigerSiConnecte />,
         children: [

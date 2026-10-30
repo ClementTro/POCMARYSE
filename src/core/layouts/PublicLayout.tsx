@@ -50,7 +50,7 @@ export function PublicLayout() {
               </LienBouton>
             ) : (
               <>
-                <LienBouton to="/connexion" variante="discret" className="hidden sm:inline-flex">
+                <LienBouton to="/connexion" variante="discret" className="hidden lg:inline-flex">
                   {t('nav.connexion')}
                 </LienBouton>
                 <LienBouton to="/inscription" className="ml-1">
