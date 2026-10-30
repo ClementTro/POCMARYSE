@@ -5,6 +5,33 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+## [0.3.0] - 2026-10-30
+
+### Ajouté
+
+- Module Recettes : liste avec recherche sans accents et filtres (étiquette, temps, difficulté,
+  origine) conservés dans l'URL, fiche cartonnée, création / modification / suppression,
+  copie des recettes de Maryse dans son carnet, impression.
+- Module Planning : semaine du lundi au dimanche, midi et soir, recettes posées comme des aimants
+  par glisser-déposer (souris, toucher, clavier case par case avec annonces pour lecteurs d'écran),
+  échange de deux repas, choix dans une liste en alternative, navigation entre semaines,
+  mises à jour optimistes. Widget « Au menu aujourd'hui » pour le tableau de bord.
+- Module Courses : liste en bloc-notes préparée depuis les repas de cette semaine ou de la suivante,
+  ingrédients regroupés et additionnés (g/kg, ml/cl/l convertis), articles ajoutés à la main conservés,
+  saisie rapide en une ligne (« 2 kg de pommes »), articles barrés une fois cochés, retrait des articles
+  cochés, impression de ce qui reste à acheter. Widget « Les courses » pour le tableau de bord (ADR 0012).
+- Champs à libellé masqué et message d'erreur de chargement avec « Réessayer » dans `shared/ui`.
+- Utilitaires de dates locales partagés (`shared/lib/dates.ts`).
+- Règles de dépendance entre couches vérifiées par ESLint.
+- Vérification de l'encodage UTF-8 de tous les fichiers dans `npm run lint`, y compris le texte
+  encodé deux fois (accents remplacés par deux caractères parasites).
+
+### Corrigé
+
+- En-tête de l'application sur mobile (logo sur une ligne, bouton de déconnexion visible).
+- Les listes gardent leurs données affichées quand une relecture échoue.
+- Créneaux « Midi » et « Soir » du planning sans capitales, conformément à la charte.
+
 ## [0.2.0] - 2026-10-30
 
 ### Ajouté

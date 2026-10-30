@@ -1,0 +1,111 @@
+{
+  "nav": "Recettes",
+  "liste": {
+    "titre": "Mes recettes",
+    "intro": "Les recettes de Maryse pour commencer, et les tiennes à côté.",
+    "nouvelle": "Nouvelle recette",
+    "resultats_one": "{{count}} recette",
+    "resultats_other": "{{count}} recettes",
+    "aucunResultatTitre": "Aucune recette ne correspond",
+    "aucunResultatTexte": "Essaie un autre mot, ou retire un filtre.",
+    "reinitialiser": "Effacer les filtres",
+    "videTitre": "Le carnet est encore vide",
+    "videTexte": "Les recettes de Maryse apparaissent ici une fois la base de démo chargée. Tu peux aussi écrire la tienne."
+  },
+  "filtres": {
+    "titre": "Filtrer les recettes",
+    "recherche": "Chercher",
+    "recherchePlaceholder": "Titre ou ingrédient : poireau, crème…",
+    "etiquette": "Étiquette",
+    "toutes": "Toutes",
+    "temps": "Temps total",
+    "sansLimite": "Peu importe",
+    "tempsMax": "{{minutes}} min ou moins",
+    "difficulte": "Difficulté",
+    "origine": "Dans le carnet",
+    "origines": {
+      "toutes": "Toutes les recettes",
+      "miennes": "Mes recettes",
+      "demo": "Les recettes de Maryse"
+    }
+  },
+  "difficultes": {
+    "facile": "Facile",
+    "moyen": "Moyen",
+    "difficile": "Difficile"
+  },
+  "duree": {
+    "minutes": "{{count}} min",
+    "heures": "{{heures}} h",
+    "heuresMinutes": "{{heures}} h {{minutes}}"
+  },
+  "carte": {
+    "demo": "Recette de Maryse",
+    "portions_one": "{{count}} personne",
+    "portions_other": "{{count}} personnes"
+  },
+  "fiche": {
+    "retour": "Toutes les recettes",
+    "portions": "Pour",
+    "preparation": "Préparation",
+    "cuisson": "Cuisson",
+    "total": "Total",
+    "difficulte": "Difficulté",
+    "ingredients": "Ingrédients",
+    "etapes": "Étapes",
+    "aucunIngredient": "Pas d'ingrédient noté.",
+    "aucuneEtape": "Pas d'étape notée.",
+    "demoNote": "Cette recette vient du carnet de Maryse. Copie-la dans le tien pour l'adapter.",
+    "copier": "Copier dans mon carnet",
+    "copieFaite": "Recette copiée dans ton carnet. Tu peux maintenant la modifier.",
+    "modifier": "Modifier",
+    "supprimer": "Supprimer",
+    "confirmerSuppression": "Supprimer « {{titre}} » ? Elle sera aussi retirée du planning.",
+    "confirmer": "Oui, supprimer",
+    "imprimer": "Imprimer",
+    "introuvableTitre": "Recette introuvable",
+    "introuvableTexte": "Elle a peut-être été supprimée."
+  },
+  "formulaire": {
+    "titreNouvelle": "Nouvelle recette",
+    "titreModifier": "Modifier la recette",
+    "titre": "Nom de la recette",
+    "description": "En quelques mots",
+    "descriptionAide": "Facultatif : l'histoire de la recette, quand la faire…",
+    "portions": "Nombre de personnes",
+    "preparation": "Préparation (min)",
+    "cuisson": "Cuisson (min)",
+    "difficulte": "Difficulté",
+    "etiquettes": "Étiquettes",
+    "etiquettesAide": "Séparées par des virgules : plat, four, enfants",
+    "ingredients": "Ingrédients",
+    "ingredientsAide": "Quantité facultative : laisser vide pour « selon le goût ».",
+    "ingredient": "Ingrédient {{n}}",
+    "quantite": "Quantité",
+    "unite": "Unité",
+    "unitePlaceholder": "g, cl, pincée…",
+    "ajouterIngredient": "Ajouter un ingrédient",
+    "retirerIngredient": "Retirer l'ingrédient {{n}}",
+    "etapes": "Étapes",
+    "etape": "Étape {{n}}",
+    "ajouterEtape": "Ajouter une étape",
+    "retirerEtape": "Retirer l'étape {{n}}",
+    "enregistrer": "Enregistrer la recette",
+    "enregistre": "Recette enregistrée."
+  },
+  "erreurs": {
+    "titreRequis": "Donne un nom à la recette.",
+    "titreTropLong": "120 caractères au plus.",
+    "descriptionTropLongue": "1 000 caractères au plus.",
+    "portions": "Entre 1 et 30 personnes.",
+    "minutes": "Un nombre entier de minutes, 24 h au plus.",
+    "etiquettesTropLongues": "200 caractères au plus.",
+    "quantite": "Un nombre, par exemple 250 ou 1,5.",
+    "ingredientTropLong": "120 caractères au plus.",
+    "uniteTropLongue": "20 caractères au plus.",
+    "ingredientRequis": "Ajoute au moins un ingrédient.",
+    "etapeRequise": "Ajoute au moins une étape.",
+    "etapeTropLongue": "1 000 caractères au plus.",
+    "serveur": "Le carnet n'a pas pu enregistrer. Réessaie dans un instant."
+  }
+}

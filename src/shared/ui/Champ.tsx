@@ -9,7 +9,7 @@ import {
 import { cn } from '@/shared/lib/cn';
 
 const CLASSES_SAISIE =
-  'w-full rounded-fiche border border-seyes bg-white px-3 py-2 text-encre placeholder:text-encre-douce/70 focus-visible:border-faience dark:border-nuit-ligne dark:bg-nuit-carte dark:text-papier dark:placeholder:text-seyes/60';
+  'w-full rounded-fiche border border-seyes bg-white px-3 py-2 text-encre placeholder:text-encre-douce/70 focus-visible:border-faience dark:border-nuit-ligne dark:bg-nuit dark:text-papier dark:placeholder:text-seyes/60';
 
 interface CadreProps {
   id: string;
@@ -18,12 +18,13 @@ interface CadreProps {
   erreur?: string;
   children: ReactNode;
   className?: string;
+  masquerLabel?: boolean;
 }
 
-function Cadre({ id, label, aide, erreur, children, className }: CadreProps) {
+function Cadre({ id, label, aide, erreur, children, className, masquerLabel }: CadreProps) {
   return (
     <div className={cn('flex flex-col gap-1', className)}>
-      <label htmlFor={id} className="font-semibold">
+      <label htmlFor={id} className={masquerLabel ? 'sr-only' : 'font-semibold'}>
         {label}
       </label>
       {children}
@@ -52,16 +53,28 @@ interface ChampCommun {
   aide?: string;
   erreur?: string;
   classeCadre?: string;
+  /** Libellé lu par les lecteurs d’écran mais non affiché (lignes répétées d’un tableau). */
+  masquerLabel?: boolean;
 }
 
 export const ChampTexte = forwardRef<
   HTMLInputElement,
   ChampCommun & InputHTMLAttributes<HTMLInputElement>
->(function ChampTexte({ label, aide, erreur, classeCadre, className, id, ...props }, ref) {
+>(function ChampTexte(
+  { label, aide, erreur, classeCadre, masquerLabel, className, id, ...props },
+  ref,
+) {
   const idAuto = useId();
   const idChamp = id ?? idAuto;
   return (
-    <Cadre id={idChamp} label={label} aide={aide} erreur={erreur} className={classeCadre}>
+    <Cadre
+      id={idChamp}
+      label={label}
+      aide={aide}
+      erreur={erreur}
+      className={classeCadre}
+      masquerLabel={masquerLabel}
+    >
       <input
         ref={ref}
         id={idChamp}
@@ -77,11 +90,21 @@ export const ChampTexte = forwardRef<
 export const ChampZone = forwardRef<
   HTMLTextAreaElement,
   ChampCommun & TextareaHTMLAttributes<HTMLTextAreaElement>
->(function ChampZone({ label, aide, erreur, classeCadre, className, id, ...props }, ref) {
+>(function ChampZone(
+  { label, aide, erreur, classeCadre, masquerLabel, className, id, ...props },
+  ref,
+) {
   const idAuto = useId();
   const idChamp = id ?? idAuto;
   return (
-    <Cadre id={idChamp} label={label} aide={aide} erreur={erreur} className={classeCadre}>
+    <Cadre
+      id={idChamp}
+      label={label}
+      aide={aide}
+      erreur={erreur}
+      className={classeCadre}
+      masquerLabel={masquerLabel}
+    >
       <textarea
         ref={ref}
         id={idChamp}
@@ -98,13 +121,20 @@ export const ChampListe = forwardRef<
   HTMLSelectElement,
   ChampCommun & SelectHTMLAttributes<HTMLSelectElement>
 >(function ChampListe(
-  { label, aide, erreur, classeCadre, className, id, children, ...props },
+  { label, aide, erreur, classeCadre, masquerLabel, className, id, children, ...props },
   ref,
 ) {
   const idAuto = useId();
   const idChamp = id ?? idAuto;
   return (
-    <Cadre id={idChamp} label={label} aide={aide} erreur={erreur} className={classeCadre}>
+    <Cadre
+      id={idChamp}
+      label={label}
+      aide={aide}
+      erreur={erreur}
+      className={classeCadre}
+      masquerLabel={masquerLabel}
+    >
       <select
         ref={ref}
         id={idChamp}

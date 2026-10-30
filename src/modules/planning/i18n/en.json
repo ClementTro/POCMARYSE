@@ -1,0 +1,53 @@
+{
+  "nav": "Meal plan",
+  "page": {
+    "titre": "This week's menu",
+    "intro": "Drag a recipe onto a meal, like a magnet on the fridge. Or pick it from the list.",
+    "navigation": "Change week",
+    "precedente": "Previous week",
+    "suivante": "Next week",
+    "cetteSemaine": "This week",
+    "grille": "Meals of the week"
+  },
+  "creneaux": {
+    "midi": "Lunch",
+    "soir": "Dinner"
+  },
+  "case": {
+    "libelle": "{{jour}}, {{creneau}}",
+    "vide": "Nothing planned",
+    "choisir": "Pick",
+    "choisirPour": "Pick a recipe for {{case}}",
+    "retirer": "Remove {{titre}}",
+    "aujourdhui": "Today"
+  },
+  "bac": {
+    "titre": "Recipes in the notebook",
+    "aide": "Grab a recipe and drop it on a meal.",
+    "recherche": "Search recipes",
+    "aucune": "No recipe matches.",
+    "vide": "The recipe notebook is empty: add a recipe first."
+  },
+  "choix": {
+    "titre": "Pick a recipe",
+    "pour": "For {{case}}",
+    "recherche": "Search recipes",
+    "fermer": "Close"
+  },
+  "glisser": {
+    "instructions": "To move a recipe with the keyboard: Space to pick it up, arrow keys to move it, Space to drop it, Escape to cancel.",
+    "attrape": "Picked up {{titre}}.",
+    "survol": "{{titre}} is over {{case}}.",
+    "horsCase": "{{titre}} is not over a meal.",
+    "pose": "{{titre}} dropped on {{case}}.",
+    "annule": "Moving {{titre}} was cancelled."
+  },
+  "widget": {
+    "titre": "On the menu today",
+    "rien": "Nothing planned",
+    "ouvrir": "Open the meal plan"
+  },
+  "erreurs": {
+    "serveur": "The meal plan couldn't be saved. The meal was put back."
+  }
+}

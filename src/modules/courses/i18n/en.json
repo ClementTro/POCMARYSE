@@ -1,0 +1,51 @@
+{
+  "nav": "Shopping",
+  "page": {
+    "titre": "The shopping list",
+    "intro": "Everything to bring back from the market. Tick items as you go: they get crossed out.",
+    "liste": "My list",
+    "imprimer": "Print the list",
+    "vider": "Remove ticked items",
+    "restants_one": "{{count}} item to buy",
+    "restants_other": "{{count}} items to buy",
+    "toutCoche": "Everything is in the basket."
+  },
+  "ajout": {
+    "libelle": "Add an item",
+    "exemple": "e.g. 2 kg apples",
+    "aide": "Quantity and unit are optional.",
+    "bouton": "Add",
+    "vide": "Write the name of the item."
+  },
+  "article": {
+    "retirer": "Remove {{nom}}",
+    "planning": "From the meal plan"
+  },
+  "vide": {
+    "titre": "The list is empty",
+    "texte": "Add an item by hand, or build the list from the meals in your plan."
+  },
+  "generation": {
+    "titre": "From the meal plan",
+    "texte": "Ingredients from planned meals are added up: 200 g and 1 kg of flour make 1.2 kg.",
+    "semaine": "Week",
+    "cetteSemaine": "This week ({{periode}})",
+    "semaineProchaine": "Next week ({{periode}})",
+    "bouton": "Build the list",
+    "remplace": "Items from the meal plan are replaced. Items added by hand stay.",
+    "resultat_one": "{{count}} item added from the meals planned that week.",
+    "resultat_other": "{{count}} items added from the meals planned that week.",
+    "aucunRepas": "No meals are planned that week.",
+    "ouvrirPlanning": "Open the meal plan"
+  },
+  "widget": {
+    "titre": "Shopping",
+    "vide": "Nothing to buy for now.",
+    "etAutres_one": "and {{count}} more",
+    "etAutres_other": "and {{count}} more",
+    "ouvrir": "Open the list"
+  },
+  "erreurs": {
+    "serveur": "The list could not be saved. Try again in a moment."
+  }
+}

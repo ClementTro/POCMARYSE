@@ -1,0 +1,53 @@
+{
+  "nav": "Planning",
+  "page": {
+    "titre": "Le menu de la semaine",
+    "intro": "Glisse une recette sur un repas, comme un aimant sur le frigo. Ou choisis-la dans la liste.",
+    "navigation": "Changer de semaine",
+    "precedente": "Semaine précédente",
+    "suivante": "Semaine suivante",
+    "cetteSemaine": "Cette semaine",
+    "grille": "Repas de la semaine"
+  },
+  "creneaux": {
+    "midi": "Midi",
+    "soir": "Soir"
+  },
+  "case": {
+    "libelle": "{{jour}}, {{creneau}}",
+    "vide": "Rien de prévu",
+    "choisir": "Choisir",
+    "choisirPour": "Choisir une recette pour {{case}}",
+    "retirer": "Retirer {{titre}}",
+    "aujourdhui": "Aujourd'hui"
+  },
+  "bac": {
+    "titre": "Les recettes du carnet",
+    "aide": "Attrape une recette et pose-la sur un repas.",
+    "recherche": "Chercher une recette",
+    "aucune": "Aucune recette ne correspond.",
+    "vide": "Le carnet de recettes est vide : ajoute d'abord une recette."
+  },
+  "choix": {
+    "titre": "Choisir une recette",
+    "pour": "Pour {{case}}",
+    "recherche": "Chercher une recette",
+    "fermer": "Fermer"
+  },
+  "glisser": {
+    "instructions": "Pour déplacer une recette au clavier : Espace pour l'attraper, flèches pour la déplacer, Espace pour la poser, Échap pour annuler.",
+    "attrape": "{{titre}} attrapée.",
+    "survol": "{{titre}} au-dessus de {{case}}.",
+    "horsCase": "{{titre}} n'est au-dessus d'aucun repas.",
+    "pose": "{{titre}} posée sur {{case}}.",
+    "annule": "Déplacement de {{titre}} annulé."
+  },
+  "widget": {
+    "titre": "Au menu aujourd'hui",
+    "rien": "Rien de prévu",
+    "ouvrir": "Ouvrir le planning"
+  },
+  "erreurs": {
+    "serveur": "Le planning n'a pas pu être enregistré. Le repas a été remis à sa place."
+  }
+}

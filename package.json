@@ -1,7 +1,7 @@
 {
   "name": "maryse-and-co",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Maryse & Co — le carnet de cuisine familial de Maryse, en application web.",
   "type": "module",
   "engines": {
@@ -11,7 +11,7 @@
     "dev": "vite",
     "build": "vite build && node scripts/copy-404.mjs",
     "preview": "vite preview",
-    "lint": "eslint .",
+    "lint": "eslint . && node scripts/verifier-utf8.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.node.json --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",

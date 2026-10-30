@@ -25,6 +25,52 @@ export default tseslint.config(
     },
   },
   {
+    files: ['src/shared/**/*.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@/core/*', '@/vitrine/*', '@/modules/*'],
+              message: 'shared/ ne dépend que de lui-même (ADR 0005).',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ['src/modules/**/*.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: [
+                '@/core/*',
+                '!@/core/types',
+                '!@/core/supabase',
+                '!@/core/database.types',
+                '!@/core/auth',
+                '@/core/auth/*',
+                '!@/core/auth/useAuth',
+              ],
+              message:
+                'Un module n’utilise du core que types, supabase, database.types et auth/useAuth (ADR 0005).',
+            },
+            {
+              group: ['@/vitrine/*', '@/modules/*'],
+              message:
+                'Un module n’importe ni la vitrine ni un autre module ; imports internes en relatif (ADR 0005).',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
     files: ['scripts/**/*.mjs', '*.config.{js,ts}'],
     languageOptions: {
       globals: globals.node,
