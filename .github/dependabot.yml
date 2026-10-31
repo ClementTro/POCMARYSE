@@ -1,42 +1,14 @@
-# Mises à jour automatiques des dépendances (ADR 0014).
-# Les corrections et mises à jour mineures sont regroupées et fusionnées seules quand la CI est verte
-# (voir workflows/dependabot-auto-merge.yml). Les montées de version majeures sont ignorées :
-# ce sont des chantiers pour une personne technique.
+# Correctifs de sécurité uniquement (ADR 0015).
+# `open-pull-requests-limit: 0` coupe les mises à jour de routine : Dependabot n'ouvre une PR que pour une
+# faille connue (réglage « Dependabot security updates » du dépôt). Ces PR sont fusionnées seules quand la CI
+# est verte (workflows/dependabot-auto-merge.yml), sauf les versions majeures, réservées à une personne technique.
 version: 2
 updates:
   - package-ecosystem: npm
     directory: /
     schedule:
       interval: weekly
-      day: monday
-      time: '06:00'
-      timezone: Europe/Paris
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 0
     commit-message:
-      prefix: 'chore'
+      prefix: 'fix'
       include: scope
-    groups:
-      mises-a-jour-courantes:
-        update-types:
-          - minor
-          - patch
-    ignore:
-      - dependency-name: '*'
-        update-types: ['version-update:semver-major']
-
-  - package-ecosystem: github-actions
-    directory: /
-    schedule:
-      interval: monthly
-      timezone: Europe/Paris
-    commit-message:
-      prefix: 'ci'
-      include: scope
-    groups:
-      actions-github:
-        update-types:
-          - minor
-          - patch
-    ignore:
-      - dependency-name: '*'
-        update-types: ['version-update:semver-major']

@@ -110,16 +110,17 @@ export interface AppModule {
   prérequis, vérifications locales, version et changelog, commit `chore(release): vX.Y.Z`, push, PR, attente de
   la CI, fusion, suivi du déploiement et du contrôle du site. **Ne pas refaire ces étapes à la main.**
   - `npm run publier -- --a-blanc` fait seulement les vérifications, sans rien publier.
-  - Hors mode développeur, **jamais sans un « oui » explicite** de la propriétaire après les captures d'écran.
+  - **Jamais sans un « oui » explicite** de la propriétaire après les captures d'écran.
 - **Après la fusion** : `deploy.yml` déploie, contrôle le site (`scripts/verifier-site.mjs`), puis pose le tag
   `vX.Y.Z`. Si le contrôle échoue, il redéploie le dernier tag. **Le dernier tag est la dernière version saine.**
 - **Annuler** : `npm run annuler` remet en ligne la version précédente puis publie une version qui annule
   les changements.
-- **Mises à jour de dépendances** : Dependabot propose, la CI valide, la fusion est automatique pour les
-  corrections et mises à jour mineures. Les montées de version majeures sont du ressort d'une personne technique.
+- **Mises à jour de dépendances** (ADR 0015) : Dependabot ne propose que les correctifs de sécurité, fusionnés
+  seuls quand la CI est verte. Les autres mises à jour se font à la demande ; les montées de version majeures sont
+  du ressort d'une personne technique.
 - **Interdits** : `push --force`, réécriture d'historique publié, commit de `.env*` (sauf `.env.example`),
-  désactivation de la CI ou de la protection de `main` (sauf demande explicite d'un développeur), suppression
-  de `main`.
+  désactivation de la CI ou de la protection de `main`, suppression de `main`. Un développeur qui en a besoin
+  change lui-même les réglages GitHub.
 
 ## 6. Commandes
 
@@ -136,7 +137,6 @@ npm run typo:fr      # espaces insécables FR (avant ? ! : ; et dans « ») — 
 npm run publier      # met en ligne la demande en cours (voir section 5)
 npm run annuler      # remet en ligne la version précédente
 npm run diagnostic   # état de la CI, du déploiement, du site et de Supabase (lecture seule)
-npm run mode-dev     # active le mode développeur (npm run mode-asso pour le retirer)
 ```
 
 Sous Windows, ne jamais écrire un fichier avec `Set-Content`, `Out-File` ou `>` de PowerShell 5 :
@@ -181,20 +181,16 @@ Direction « cahier de cuisine familial » : papier Seyès, faïence bleue, napp
 | [0011](docs/adr/0011-donnees-personnelles.md) | Données personnelles, RGPD et photos |
 | [0012](docs/adr/0012-generation-liste-de-courses.md) | Génération de la liste de courses depuis le planning |
 | [0013](docs/adr/0013-preferences-du-profil.md) | Langue et thème synchronisés avec le profil |
-| [0014](docs/adr/0014-maintenance-par-l-association.md) | Maintenance par l'association : branche par demande, mise en ligne sûre, mode développeur |
+| [0014](docs/adr/0014-maintenance-par-l-association.md) | Maintenance par l'association : branche par demande, mise en ligne sûre |
+| [0015](docs/adr/0015-allegement-des-garde-fous.md) | Allègement des garde-fous de l'agent : une règle, trois procédures, correctifs de sécurité seuls |
 
-## 10. Interlocuteur et maintenance (ADR 0014)
+## 10. Interlocuteur et maintenance (ADR 0014 et 0015)
 
 Le site est entretenu par une personne **non technique** avec l'agent de Cursor. Les règles de comportement sont
-dans `.cursor/rules/` :
+dans `.cursor/rules/` et valent pour tout le monde, développeurs compris :
 
-- `interlocuteur.mdc` et `triage-demandes.mdc` (toujours actives) : ton, questions, tri des demandes.
-- `procedure-*.mdc` (chargées selon la demande) : bug, lenteur, texte ou image, nouvelle fonction,
-  mise en ligne, sécurité et versions.
-- Documents : [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md) (pannes, retour arrière, prérequis),
-  [`docs/GUIDE_ASSOCIATION.md`](docs/GUIDE_ASSOCIATION.md) (pour la propriétaire),
-  [`docs/SCENARIOS_AGENT.md`](docs/SCENARIOS_AGENT.md) (comportements à rejouer après toute modification des règles).
-
-**Mode développeur** : si le fichier `.cursor/mode-developpeur` existe (`npm run mode-dev`, jamais versionné) ou si
-la personne dit « je suis dev » / « mode développeur », l'agent lève le ton simplifié, les questions systématiques,
-les captures et le « oui » avant mise en ligne. Les contraintes de la section 2, la CI et le flux par PR restent.
+- `interlocuteur.mdc` (toujours active) : ton, questions, tri des demandes, arrêts, mise en ligne.
+- `procedure-probleme.mdc`, `procedure-modification.mdc`, `procedure-mise-en-ligne.mdc` (chargées selon la demande).
+- Documents : [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md) (pannes, retour arrière, prérequis, comportements à
+  vérifier après une modification des règles) et [`docs/GUIDE_ASSOCIATION.md`](docs/GUIDE_ASSOCIATION.md)
+  (pour la propriétaire).
