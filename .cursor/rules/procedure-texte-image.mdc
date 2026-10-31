@@ -1,0 +1,36 @@
+---
+description: Procédure pour changer un texte, un titre, une phrase, une couleur, une image ou une photo du site
+alwaysApply: false
+---
+
+# Procédure : changer un texte, une couleur ou une image
+
+Version à indiquer pour la mise en ligne : `patch`.
+
+## Textes
+
+- Les textes de l'interface sont dans `src/i18n/locales/fr/*.json` et `en/*.json`, et dans
+  `src/modules/<id>/i18n/`. Cherche le texte exact avec Grep.
+- Si le texte apparaît à plusieurs endroits, demande lequel (avec les captures ou les pages concernées).
+- Change toujours **le français et l'anglais ensemble** : propose la traduction et fais-la valider.
+- Après un changement dans un `fr.json` : `npm run typo:fr` (espaces insécables).
+- Ton : tutoiement dans l'application, phrases courtes, pas de libellés en capitales (voir `design.mdc`).
+
+## Couleurs
+
+Utilise uniquement les couleurs de la charte (jetons Tailwind `papier`, `faience`, `vichy`, etc.), vérifie le
+contraste (AA) et le thème sombre. Pas de couleur écrite en dur.
+
+## Images
+
+- Fichiers dans `public/images/`, référencés avec `asset()` de `@/shared/lib/asset` (le site est servi sous `/POCMARYSE/`).
+- Redimensionne et allège : 300 Ko au plus, 1600 px de large au plus, en jpg, webp ou svg.
+- Ajoute un texte alternatif en français et en anglais.
+- Pas de photo de personne sans consentement déclaré (ADR 0011).
+- **Les photos de Maryse** (`public/images/maryse/`) ne se remplacent, ne se recadrent et ne se réutilisent pas
+  ailleurs sans nouvelle décision. Explique-le et conseille de contacter la personne responsable du projet.
+
+## Avant la mise en ligne
+
+Montre des captures avant et après, en français et en anglais, en thème clair et sombre quand c'est visible.
+Ajoute une ligne simple à « Non publié » dans `CHANGELOG.md`, puis suis `procedure-mise-en-ligne.mdc`.

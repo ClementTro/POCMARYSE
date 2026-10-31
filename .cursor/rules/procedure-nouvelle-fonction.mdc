@@ -1,0 +1,26 @@
+---
+description: Procédure pour ajouter une fonctionnalité, une page, un champ, un bouton ou un module au site
+alwaysApply: false
+---
+
+# Procédure : ajouter une fonction
+
+Version à indiquer pour la mise en ligne : `minor`.
+
+1. **Triage** : relis `triage-demandes.mdc`. Si la demande est lourde ou risquée (base de données, connexion,
+   service externe, plus d'une dizaine de fichiers), ne code pas : version réduite et `docs/MODULES_A_VENIR.md`.
+2. **Mini cahier des charges**, cinq lignes au plus, en mots simples. Utilise le mode Plan de Cursor s'il est disponible :
+   - ce que tu pourras faire ;
+   - ce que tu ne pourras **pas** faire (pour éviter les attentes trop grandes) ;
+   - ce que ça change dans tes données (idéalement : rien) ;
+   - effort estimé : petit ou moyen.
+   Attends un « oui ».
+3. **Réalise** sur une branche `demande/<sujet>`, selon `CONTRIBUTING.md` (un module = un dossier dans
+   `src/modules/<id>/`, déclaré dans `src/core/moduleRegistry.ts`), `architecture.mdc` et `design.mdc`.
+   Textes en français et en anglais, tutoiement dans l'application, accessibilité, thème sombre.
+4. **Teste** : au moins un test sur la logique métier, puis `npm run lint && npm run typecheck && npm run test`.
+5. **Documente** : ligne simple dans « Non publié » de `CHANGELOG.md` et mise à jour de `docs/ROADMAP.md`.
+6. **Montre** des captures d'écran de la nouvelle fonction (clair et sombre, ordinateur et téléphone), puis
+   suis `procedure-mise-en-ligne.mdc`.
+
+Si un besoin de stockage de données apparaît en cours de route, arrête-toi : c'est une demande risquée.

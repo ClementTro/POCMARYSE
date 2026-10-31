@@ -1,0 +1,35 @@
+---
+description: Procédure pour mettre en ligne, publier, déployer des modifications, ou annuler la dernière mise en ligne et revenir en arrière
+alwaysApply: false
+---
+
+# Procédure : mettre en ligne et annuler
+
+Tout passe par les scripts : ne fais jamais à la main la PR, la fusion, le tag ou le déploiement.
+
+## Mettre en ligne
+
+1. Vérifie que tu es sur une branche `demande/<sujet>`, que tout est enregistré (commits) et que la section
+   « Non publié » de `CHANGELOG.md` contient une ligne simple pour cette demande.
+2. Lance `npm run publier -- --a-blanc` : il vérifie tout sans rien publier. S'il échoue, corrige ou explique le
+   problème en mots simples.
+3. Montre les captures d'écran du résultat (voir `interlocuteur.mdc`).
+4. Demande : **« Je mets en ligne ? »** (choix Oui / Non). N'avance que sur un « oui » explicite.
+5. Lance `npm run publier -- --type patch` (texte, image, problème) ou `--type minor` (nouvelle fonction).
+   Préviens que cela prend quelques minutes. Le script s'arrête au premier problème et l'explique.
+6. Rends compte : l'adresse du site, la version publiée, ce qu'elle verra, comment annuler.
+
+## Si quelque chose échoue
+
+- Lis le message du script, traduis-le en mots simples, lance `npm run diagnostic` pour comprendre.
+- La vérification de GitHub est rouge : corrige sur la branche, enregistre, relance `npm run publier` (il reprend
+  la même demande de mise en ligne).
+- Le contrôle du site échoue après la mise en ligne : GitHub remet **automatiquement** la dernière version saine.
+  Explique-le, puis cherche la cause avec `procedure-bug.mdc`.
+- Ne contourne jamais la CI, ne force rien, ne désactive aucune protection.
+
+## Annuler
+
+À la demande (« annule », « reviens en arrière »), confirme ce qui sera annulé, puis lance `npm run annuler`
+(`-- --a-blanc` pour voir sans rien faire). Il remet tout de suite la version précédente en ligne, puis publie une
+nouvelle version qui annule le changement. Si le script dit qu'il ne peut pas : il faut une personne technique.
