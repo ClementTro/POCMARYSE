@@ -44,6 +44,13 @@ Chaque jalon se termine par une release vers `main`. Jusqu'à la v1.1.0, elle pa
 - [x] Règles Cursor pour l'interlocuteur non technique, procédures par type de demande, commandes
 - [x] `MAINTENANCE.md`, `GUIDE_ASSOCIATION.md`, `SCENARIOS_AGENT.md`
 
+## Jalon 6 — allègement des garde-fous de l'agent (ADR 0015)
+
+- [x] Retrait du mode développeur et des commandes Cursor
+- [x] Une règle toujours active et trois procédures (problème, modification, mise en ligne)
+- [x] Dependabot limité aux correctifs de sécurité
+- [x] Guide de l'association sur une page ; scénarios de contrôle de l'agent intégrés à `MAINTENANCE.md`
+
 ## Après la v1
 
 Les prochaines évolutions sont choisies dans [`MODULES_A_VENIR.md`](MODULES_A_VENIR.md), une à la fois,
@@ -54,6 +61,6 @@ chacune avec son jalon et sa release.
 - [x] Déposer les photos de Maryse dans `public/images/maryse/` (`medaille.jpg`, et la seconde photo)
 - [x] Créer le projet Supabase et renseigner les variables du repo (voir `docs/SUPABASE_SETUP.md`)
 - [ ] Faire valider le texte de la page « Histoire » par Maryse
-- [ ] Coller `supabase/migrations/0002_ping.sql` dans l'éditeur SQL de Supabase (sinon la tâche hebdomadaire
-      « Garder Supabase actif » échoue)
-- [ ] Rejouer les scénarios de `docs/SCENARIOS_AGENT.md` dans une conversation Cursor neuve
+- [x] Coller `supabase/migrations/0002_ping.sql` dans l'éditeur SQL de Supabase
+- [ ] Rejouer les scénarios de contrôle de l'agent (`docs/MAINTENANCE.md`, « Règles de l'agent ») dans une
+      conversation Cursor neuve

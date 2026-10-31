@@ -5,6 +5,18 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+### Modifié
+
+- L'assistant de Cursor suit des consignes plus courtes, avec les mêmes précautions : il pose des questions,
+  analyse avant de corriger et demande ton accord avant de mettre en ligne, pour tout le monde.
+- Seuls les correctifs de sécurité sont appliqués automatiquement ; les autres mises à jour se font à la demande.
+- Le guide pour l'association tient sur une page.
+
+### Retiré
+
+- Le mode développeur et les commandes `/publier`, `/annuler`, `/diagnostic` : il suffit d'écrire sa demande
+  avec ses mots.
+
 ## [1.1.1] - 2026-10-31
 
 ### Modifié
