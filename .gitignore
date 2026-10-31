@@ -11,6 +11,9 @@ coverage/
 .env.local
 .env.*.local
 
+# Mode développeur de l'agent (local, ADR 0014)
+.cursor/mode-developpeur
+
 # Supabase CLI
 supabase/.temp/
 supabase/.branches/
