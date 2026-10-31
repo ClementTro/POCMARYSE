@@ -1,30 +1,88 @@
 name: Déploiement GitHub Pages
 
+# Chaque push sur main publie le site, le contrôle (scripts/verifier-site.mjs), puis pose le tag de la version.
+# Si le contrôle échoue, la dernière version taguée (la dernière version saine) est redéployée (ADR 0014).
+
 on:
   push:
     branches: [main]
+  schedule:
+    # Rattrapage quotidien : publie un main qui n'aurait pas déclenché de déploiement
+    # (une fusion faite avec le jeton de GitHub ne lance pas les autres workflows).
+    - cron: '30 5 * * *'
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version à remettre en ligne (ex. v1.0.1). Vide : la dernière version de main.'
+        required: false
+        default: ''
+      simuler_echec:
+        description: 'Test du retour arrière : fait échouer le contrôle du site'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
+  decider:
+    name: Faut-il déployer ?
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+    outputs:
+      deployer: ${{ steps.choix.outputs.deployer }}
+    steps:
+      - id: choix
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENEMENT: ${{ github.event_name }}
+        run: |
+          if [ "$EVENEMENT" != "schedule" ]; then
+            echo "deployer=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Dernière tentative de déploiement de main (hors retours arrière manuels et hors cette exécution).
+          derniere=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow deploy.yml --branch main --limit 30 \
+            --json databaseId,headSha,event \
+            --jq "[.[] | select(.event != \"workflow_dispatch\" and (.databaseId | tostring) != \"$GITHUB_RUN_ID\")][0].headSha // \"\"")
+          if [ "$derniere" = "$GITHUB_SHA" ]; then
+            echo "Cette version de main a déjà été tentée : rien à faire."
+            echo "deployer=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Cette version de main n'a jamais été déployée : rattrapage."
+            echo "deployer=true" >> "$GITHUB_OUTPUT"
+          fi
+
   build:
     name: Build
+    needs: decider
+    if: needs.decider.outputs.deployer == 'true'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    outputs:
+      version: ${{ steps.version.outputs.version }}
     steps:
       - uses: actions/checkout@v7
+        with:
+          # Une version précise (retour arrière) ou le dernier commit de main.
+          ref: ${{ inputs.version || github.sha }}
 
       - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
+
+      - name: Lire la version
+        id: version
+        run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
 
       - name: Installer les dépendances
         run: npm ci
@@ -45,9 +103,86 @@ jobs:
     name: Publication
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
         uses: actions/deploy-pages@v5
+
+  verifier:
+    name: Contrôle du site
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+
+      - name: Contrôler le site publié
+        run: node scripts/verifier-site.mjs
+        env:
+          SITE_URL: ${{ needs.deploy.outputs.page_url }}
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
+          SIMULER_ECHEC: ${{ inputs.simuler_echec }}
+
+  tagguer:
+    name: Tag de la version saine
+    needs: [build, verifier]
+    if: needs.verifier.result == 'success' && !inputs.version
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Poser le tag
+        env:
+          VERSION: ${{ needs.build.outputs.version }}
+        run: |
+          tag="v$VERSION"
+          if git rev-parse -q --verify "refs/tags/$tag" > /dev/null; then
+            echo "Le tag $tag existe déjà : rien à faire."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "$tag" -m "$tag : mise en ligne vérifiée"
+          git push origin "$tag"
+
+  retour-arriere:
+    name: Retour à la dernière version saine
+    needs: verifier
+    if: failure() && needs.verifier.result == 'failure' && !inputs.version
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Redéployer la dernière version taguée
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          derniere=$(git tag --list 'v*' --sort=-v:refname | head -n 1)
+          if [ -z "$derniere" ]; then
+            echo "::error::Aucune version saine (tag) vers laquelle revenir."
+            exit 1
+          fi
+          echo "Le contrôle du site a échoué : retour à $derniere."
+          gh workflow run deploy.yml --ref main -f version="$derniere"

@@ -13,8 +13,11 @@ et l'ADR concerné dans le même commit.
 - **Modules V1** : Recettes, Planning (repas de la semaine), Courses (liste générée depuis le planning).
 - **Modules futurs** : listés dans [`docs/MODULES_A_VENIR.md`](docs/MODULES_A_VENIR.md), jamais codés sans décision explicite.
 - **Langue** : documentation, commits et textes en français. L'interface est bilingue FR (défaut) / EN.
-- **Démo en ligne** : https://clementtro.github.io/POCMARYSE/
-- **Repo** : https://github.com/ClementTro/POCMARYSE
+- **Démo en ligne et dépôt** : le propriétaire peut changer ; ne pas écrire son nom en dur. L'adresse du site
+  (`https://<propriétaire>.github.io/POCMARYSE/`) et celle du dépôt s'obtiennent avec `npm run diagnostic`
+  ou `gh repo view`.
+- **Propriétaire** : l'association (dépôt GitHub, projet Supabase). Elle fait évoluer le site avec l'agent de
+  Cursor : voir la section 10 et l'ADR 0014.
 
 ## 2. Contraintes non négociables
 
@@ -88,29 +91,35 @@ export interface AppModule {
 }
 ```
 
-## 5. Workflow git (sans validation humaine)
+## 5. Workflow git (ADR 0014)
 
-- **Branches** : `main` = production (déployée sur Pages) ; `develop` = travail quotidien. Pas d'autre branche.
-- **On travaille toujours sur `develop`.** Jamais de commit direct sur `main`.
+- **Branches** : `main` est la seule branche longue (production, déployée sur Pages). Chaque demande se fait sur
+  une branche `demande/<sujet-en-minuscules-et-tirets>`. Il n'y a plus de `develop`.
+- **`main` est protégée, y compris pour la propriétaire** : PR obligatoire, check « Lint, types, tests, build »
+  obligatoire, ni push direct ni force push. Ne jamais chercher à contourner cette protection.
 - **Commits** : [Conventional Commits](https://www.conventionalcommits.org/fr/), en français, à l'impératif présent,
   **une modification logique par commit** (un commit doit pouvoir être relu et annulé seul).
   - Types : `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`, `ci`, `build`, `perf`.
   - Portées : `core`, `ui`, `auth`, `vitrine`, `recettes`, `planning`, `courses`, `i18n`, `theme`, `db`, `ci`, `docs`, `adr`.
   - Exemples : `feat(recettes): ajoute la fiche détaillée`, `fix(auth): corrige la redirection après connexion`.
 - **Avant chaque commit** : `npm run lint && npm run typecheck && npm run test` doivent passer.
-- **Release** (fin de jalon, voir `docs/ROADMAP.md`) :
-  1. mettre à jour `CHANGELOG.md` et la version de `package.json` sur `develop`, commit `chore(release): vX.Y.Z` ;
-  2. `gh pr create --base main --head develop --title "release: vX.Y.Z" --body "<résumé>"` ;
-  3. `gh pr checks <n> --watch` jusqu'à CI verte (sinon : commits `fix` sur `develop`, puis on recommence) ;
-  4. `gh pr merge <n> --merge` (merge commit, **pas** de squash ni de suppression de `develop`) ;
-  5. `git fetch && git tag -a vX.Y.Z origin/main -m "vX.Y.Z : <résumé>" && git push origin vX.Y.Z` ;
-  6. resynchroniser `develop` sur le merge commit : `git merge --ff-only origin/main && git push` ;
-  7. vérifier le déploiement (`gh run list --workflow deploy.yml`, puis `gh run watch <id>`).
-- Si `gh pr create` échoue sur une erreur GraphQL transitoire, passer par l'API REST :
-  `gh api -X POST repos/ClementTro/POCMARYSE/pulls -f title=... -f head=develop -f base=main -f body=...`,
-  et pour merger : `gh api -X PUT repos/ClementTro/POCMARYSE/pulls/<n>/merge -f merge_method=merge`.
-- **Interdits** : `push --force` sur `main` ou `develop`, réécriture d'historique publié, commit de `.env*`
-  (sauf `.env.example`), suppression des branches `main` / `develop`.
+- **Journal des changements** : chaque demande ajoute ses lignes à la section « Non publié » de `CHANGELOG.md`,
+  en phrases simples compréhensibles par l'association (« Le titre de l'accueil change »), pas en jargon.
+- **Mise en ligne** : `npm run publier -- --type patch|minor` (`patch` pour un texte, une image ou un bug,
+  `minor` pour une nouvelle fonction). Le script fait tout, dans l'ordre, et s'arrête au premier problème :
+  prérequis, vérifications locales, version et changelog, commit `chore(release): vX.Y.Z`, push, PR, attente de
+  la CI, fusion, suivi du déploiement et du contrôle du site. **Ne pas refaire ces étapes à la main.**
+  - `npm run publier -- --a-blanc` fait seulement les vérifications, sans rien publier.
+  - Hors mode développeur, **jamais sans un « oui » explicite** de la propriétaire après les captures d'écran.
+- **Après la fusion** : `deploy.yml` déploie, contrôle le site (`scripts/verifier-site.mjs`), puis pose le tag
+  `vX.Y.Z`. Si le contrôle échoue, il redéploie le dernier tag. **Le dernier tag est la dernière version saine.**
+- **Annuler** : `npm run annuler` remet en ligne la version précédente puis publie une version qui annule
+  les changements.
+- **Mises à jour de dépendances** : Dependabot propose, la CI valide, la fusion est automatique pour les
+  corrections et mises à jour mineures. Les montées de version majeures sont du ressort d'une personne technique.
+- **Interdits** : `push --force`, réécriture d'historique publié, commit de `.env*` (sauf `.env.example`),
+  désactivation de la CI ou de la protection de `main` (sauf demande explicite d'un développeur), suppression
+  de `main`.
 
 ## 6. Commandes
 
@@ -124,6 +133,10 @@ npm run typecheck    # tsc --noEmit
 npm run test         # Vitest (une passe)
 npm run format       # Prettier
 npm run typo:fr      # espaces insécables FR (avant ? ! : ; et dans « ») — à lancer après toute modif d'un fr.json
+npm run publier      # met en ligne la demande en cours (voir section 5)
+npm run annuler      # remet en ligne la version précédente
+npm run diagnostic   # état de la CI, du déploiement, du site et de Supabase (lecture seule)
+npm run mode-dev     # active le mode développeur (npm run mode-asso pour le retirer)
 ```
 
 Sous Windows, ne jamais écrire un fichier avec `Set-Content`, `Out-File` ou `>` de PowerShell 5 :
@@ -164,7 +177,24 @@ Direction « cahier de cuisine familial » : papier Seyès, faïence bleue, napp
 | [0007](docs/adr/0007-i18n.md) | Internationalisation FR/EN |
 | [0008](docs/adr/0008-charte-graphique.md) | Thème clair/sombre et charte « cahier de cuisine » |
 | [0009](docs/adr/0009-gestion-des-secrets.md) | Gestion des secrets et variables d'environnement |
-| [0010](docs/adr/0010-workflow-git.md) | Workflow git develop / main sans validation humaine |
+| [0010](docs/adr/0010-workflow-git.md) | Workflow git develop / main sans validation humaine (remplacé par 0014) |
 | [0011](docs/adr/0011-donnees-personnelles.md) | Données personnelles, RGPD et photos |
 | [0012](docs/adr/0012-generation-liste-de-courses.md) | Génération de la liste de courses depuis le planning |
 | [0013](docs/adr/0013-preferences-du-profil.md) | Langue et thème synchronisés avec le profil |
+| [0014](docs/adr/0014-maintenance-par-l-association.md) | Maintenance par l'association : branche par demande, mise en ligne sûre, mode développeur |
+
+## 10. Interlocuteur et maintenance (ADR 0014)
+
+Le site est entretenu par une personne **non technique** avec l'agent de Cursor. Les règles de comportement sont
+dans `.cursor/rules/` :
+
+- `interlocuteur.mdc` et `triage-demandes.mdc` (toujours actives) : ton, questions, tri des demandes.
+- `procedure-*.mdc` (chargées selon la demande) : bug, lenteur, texte ou image, nouvelle fonction,
+  mise en ligne, sécurité et versions.
+- Documents : [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md) (pannes, retour arrière, prérequis),
+  [`docs/GUIDE_ASSOCIATION.md`](docs/GUIDE_ASSOCIATION.md) (pour la propriétaire),
+  [`docs/SCENARIOS_AGENT.md`](docs/SCENARIOS_AGENT.md) (comportements à rejouer après toute modification des règles).
+
+**Mode développeur** : si le fichier `.cursor/mode-developpeur` existe (`npm run mode-dev`, jamais versionné) ou si
+la personne dit « je suis dev » / « mode développeur », l'agent lève le ton simplifié, les questions systématiques,
+les captures et le « oui » avant mise en ligne. Les contraintes de la section 2, la CI et le flux par PR restent.

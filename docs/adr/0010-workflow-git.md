@@ -1,6 +1,7 @@
 # ADR 0010 — Workflow git develop / main sans validation humaine
 
-- **Statut** : accepté
+- **Statut** : remplacé par l'[ADR 0014](0014-maintenance-par-l-association.md) (branche par demande,
+  validation avant mise en ligne). Conservé pour l'historique de la construction du projet.
 - **Date** : 2026-10-30
 
 ## Contexte

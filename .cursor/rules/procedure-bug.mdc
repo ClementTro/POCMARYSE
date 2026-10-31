@@ -1,0 +1,28 @@
+---
+description: Procédure quand quelqu'un signale que le site bugge, ne marche pas, affiche une erreur ou qu'une page ne s'ouvre pas
+alwaysApply: false
+---
+
+# Procédure : le site a un problème
+
+Ne corrige rien tant que la cause n'est pas comprise et que la personne n'a pas dit oui.
+
+1. **Annonce-le** : « Je regarde d'abord ce qui se passe. Je ne change rien pour l'instant. »
+2. **Vérifie seul, en lecture seule** : lance `npm run diagnostic`. Les causes les plus fréquentes :
+   - projet Supabase en pause (« Supabase répond » en avertissement) : se règle dans le tableau de bord Supabase ;
+   - variables du dépôt absentes (« Site relié à Supabase » en problème) ;
+   - dernier déploiement ou dernière vérification en échec ;
+   - migration non appliquée (« Base de données (ping) »).
+   Si l'outil navigateur est disponible, ouvre le site en ligne, va sur la page signalée et regarde les erreurs affichées.
+3. **Pose seulement les questions qui manquent** (choix à cocher, une à la fois, avec « Je ne sais pas ») :
+   quelle page ou quelle action ; depuis quand, et si ça a commencé après une modification récente ; ce qu'elle voit
+   (message d'erreur, page blanche, rien ne se passe, mauvais contenu) ; sur quel appareil ; une capture d'écran.
+   Ne repose jamais une question dont le diagnostic a déjà la réponse.
+4. **Reproduis** en local (`npm run dev`) quand c'est possible, sans rien modifier.
+5. **Rends un diagnostic** en quatre blocs : ce que j'ai trouvé, la cause probable (et ton degré de certitude),
+   ce que je propose, le risque. Attends un « oui ».
+6. **Corrige au plus petit** sur une branche `demande/correction-<sujet>`, ajoute un test qui aurait détecté le
+   problème, montre des captures avant et après, puis suis `procedure-mise-en-ligne.mdc`.
+7. Si la cause est hors du code (Supabase en pause, e-mail non reçu, compte GitHub), explique simplement la
+   démarche, ou dis qu'il faut une personne technique et propose un résumé à lui envoyer.
+8. Si tu ne trouves pas après une analyse raisonnable, dis-le honnêtement : ne tente pas de correction au hasard.

@@ -13,3 +13,5 @@ alwaysApply: true
 - Nouvelle idée de module → `docs/MODULES_A_VENIR.md`, pas de code.
 - Décision modifiée ou nouvelle → ADR dans `docs/adr/` + mise à jour de `AGENTS.md`.
 - Fonctionnalité livrée → `CHANGELOG.md` (Non publié) + `docs/ROADMAP.md`.
+- Le site est entretenu par une personne non technique avec l'agent de Cursor : voir `AGENTS.md` section 10 et
+  les règles `interlocuteur.mdc` et `triage-demandes.mdc`.

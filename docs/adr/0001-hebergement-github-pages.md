@@ -6,11 +6,11 @@
 ## Contexte
 
 Maryse & Co est un POC destiné à être montré facilement, sans coût d'hébergement ni infrastructure à maintenir.
-Le repo est public sur GitHub (`ClementTro/POCMARYSE`).
+Le repo est public sur GitHub.
 
 ## Décision
 
-Le front est publié sur **GitHub Pages** à l'adresse `https://clementtro.github.io/POCMARYSE/`,
+Le front est publié sur **GitHub Pages** à l'adresse `https://<propriétaire>.github.io/POCMARYSE/`,
 déployé par une GitHub Action (`.github/workflows/deploy.yml`) à chaque push sur `main`.
 La source Pages est configurée en mode « GitHub Actions ».
 
