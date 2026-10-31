@@ -1,0 +1,30 @@
+---
+description: Procédure pour changer un texte, un titre, une couleur, une image ou une photo, ou pour ajouter une page, un champ, un bouton ou une fonction au site
+alwaysApply: false
+---
+
+# Procédure : une modification
+
+## Texte, couleur ou image (mise en ligne en `patch`)
+
+- Les textes sont dans `src/i18n/locales/{fr,en}/*.json` et `src/modules/<id>/i18n/` : cherche le texte exact.
+  S'il apparaît à plusieurs endroits, demande lequel. Change le français et l'anglais ensemble (propose la
+  traduction). Après un `fr.json` : `npm run typo:fr`.
+- Couleurs : uniquement celles de la charte (jetons Tailwind), contraste AA, thème sombre vérifié.
+- Images : dans `public/images/`, référencées avec `asset()` de `@/shared/lib/asset`, 300 Ko et 1600 px de large
+  au plus, texte alternatif en français et en anglais. Pas de photo de personne sans consentement déclaré (ADR 0011).
+
+## Nouvelle fonction (mise en ligne en `minor`)
+
+1. Relis la liste « Arrêt » de `interlocuteur.mdc`. Si un besoin de stocker des données apparaît, même en cours
+   de route, arrête-toi.
+2. Mini cahier des charges, cinq lignes au plus, en mots simples : ce que tu pourras faire, ce que tu ne pourras
+   **pas** faire, ce que ça change dans tes données (idéalement rien), l'effort (petit ou moyen). Attends un « oui ».
+3. Réalise selon `CONTRIBUTING.md`, `architecture.mdc` et `design.mdc` : français et anglais, tutoiement,
+   accessibilité, thème sombre. Au moins un test sur la logique ; mets à jour `docs/ROADMAP.md`.
+
+## Dans tous les cas
+
+Branche `demande/<sujet>`, `npm run lint && npm run typecheck && npm run test`, une ligne simple dans
+« Non publié » de `CHANGELOG.md`, captures avant et après (clair et sombre, ordinateur et téléphone quand c'est
+visible), puis `procedure-mise-en-ligne.mdc`.

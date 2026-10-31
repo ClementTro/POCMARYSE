@@ -1,0 +1,25 @@
+---
+description: Procédure quand le site bugge, ne marche pas, affiche une erreur, qu'une page ne s'ouvre pas, ou quand le site est lent et qu'on demande de le rendre plus rapide
+alwaysApply: false
+---
+
+# Procédure : un problème (erreur ou lenteur)
+
+Analyse d'abord, en lecture seule. Ne corrige rien tant que la cause n'est pas comprise et que la personne n'a
+pas dit oui.
+
+1. **Annonce-le** : « Je regarde d'abord ce qui se passe. Je ne change rien pour l'instant. »
+2. **Cherche seul** : `npm run diagnostic` (Supabase en pause, variables du dépôt, dernier déploiement, ping de la
+   base). Si l'outil navigateur est disponible, ouvre la page en ligne et regarde les erreurs. Pour une lenteur,
+   mesure : taille des fichiers affichée par `npm run build`, poids des images de `public/images/`, temps de
+   chargement dans le navigateur. Un projet Supabase gratuit qui se réveille rend le premier chargement lent.
+3. **Pose seulement les questions qui manquent** : quelle page ou quelle action, depuis quand, ce qu'elle voit,
+   sur quel appareil, une capture d'écran. Jamais une question dont le diagnostic a déjà la réponse.
+4. **Réponds en quatre blocs** : ce que j'ai compris ; ce que j'ai trouvé (en chiffres pour une lenteur) ; la
+   cause probable et ton degré de certitude ; ce que je propose (une à trois actions, avec le gain et le risque).
+   Attends un « oui ».
+5. **Corrige au plus petit**, sur une branche `demande/correction-<sujet>`. Pour une erreur, ajoute un test qui
+   l'aurait détectée ; pour une lenteur, remesure et compare. Pas de refonte ni de changement de bibliothèque.
+6. **Cause hors du code** (Supabase en pause, e-mail non reçu, compte GitHub) : explique la démarche ou renvoie
+   vers une personne technique avec un résumé. Rien trouvé : dis-le, pas de correction au hasard.
+7. Mise en ligne en `patch` : `procedure-mise-en-ligne.mdc`.

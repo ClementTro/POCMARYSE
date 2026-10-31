@@ -25,7 +25,7 @@ Tout passe par les scripts : ne fais jamais à la main la PR, la fusion, le tag 
 - La vérification de GitHub est rouge : corrige sur la branche, enregistre, relance `npm run publier` (il reprend
   la même demande de mise en ligne).
 - Le contrôle du site échoue après la mise en ligne : GitHub remet **automatiquement** la dernière version saine.
-  Explique-le, puis cherche la cause avec `procedure-bug.mdc`.
+  Explique-le, puis cherche la cause avec `procedure-probleme.mdc`.
 - Ne contourne jamais la CI, ne force rien, ne désactive aucune protection.
 
 ## Annuler
