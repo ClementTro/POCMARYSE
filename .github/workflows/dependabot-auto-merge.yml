@@ -1,0 +1,29 @@
+name: Fusion automatique des mises à jour
+
+# Active la fusion automatique des PR de Dependabot (corrections et mises à jour mineures).
+# GitHub fusionne dès que le check obligatoire de la CI est vert. Les versions majeures sont ignorées
+# par dependabot.yml ; si l'une arrivait quand même, elle reste en attente d'une personne technique.
+
+on: pull_request
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fusion-automatique:
+    name: Activer la fusion automatique
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - id: infos
+        uses: dependabot/fetch-metadata@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fusionner quand la CI est verte
+        if: steps.infos.outputs.update-type != 'version-update:semver-major'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: gh pr merge --auto --merge "$PR_URL"

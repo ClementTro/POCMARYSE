@@ -1,0 +1,42 @@
+# Mises à jour automatiques des dépendances (ADR 0014).
+# Les corrections et mises à jour mineures sont regroupées et fusionnées seules quand la CI est verte
+# (voir workflows/dependabot-auto-merge.yml). Les montées de version majeures sont ignorées :
+# ce sont des chantiers pour une personne technique.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+      timezone: Europe/Paris
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'chore'
+      include: scope
+    groups:
+      mises-a-jour-courantes:
+        update-types:
+          - minor
+          - patch
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+      timezone: Europe/Paris
+    commit-message:
+      prefix: 'ci'
+      include: scope
+    groups:
+      actions-github:
+        update-types:
+          - minor
+          - patch
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
