@@ -14,8 +14,8 @@ alwaysApply: true
 - Avant chaque commit : `npm run lint && npm run typecheck && npm run test`.
 - Ajouter les changements à la section « Non publié » de `CHANGELOG.md`, en phrases simples.
 - Mise en ligne : uniquement `npm run publier -- --type patch|minor` (patch : texte, image, bug ; minor :
-  nouvelle fonction). Ne pas refaire à la main les étapes PR, merge, tag. Hors mode développeur, jamais sans
-  un « oui » explicite après les captures d'écran.
+  nouvelle fonction). Ne pas refaire à la main les étapes PR, merge, tag. Jamais sans un « oui » explicite
+  après les captures d'écran.
 - Retour arrière : `npm run annuler`.
-- Interdits : `push --force`, réécriture d'historique publié, désactivation de la CI ou de la protection de `main`
-  (sauf demande explicite d'un développeur), commit de `.env*`.
+- Interdits : `push --force`, réécriture d'historique publié, désactivation de la CI ou de la protection de `main`,
+  commit de `.env*`.

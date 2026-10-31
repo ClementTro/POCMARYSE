@@ -1,6 +1,7 @@
 # ADR 0014 — Maintenance par l'association
 
-- **Statut** : accepté. Remplace l'[ADR 0010](0010-workflow-git.md).
+- **Statut** : accepté. Remplace l'[ADR 0010](0010-workflow-git.md). Modifié par l'[ADR 0015](0015-allegement-des-garde-fous.md)
+  (mode développeur, commandes, règles Cursor et mises à jour automatiques).
 - **Date** : 2026-10-31
 
 ## Contexte
