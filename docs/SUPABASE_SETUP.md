@@ -16,8 +16,10 @@ Dans **SQL Editor** > **New query** :
 
 1. Coller le contenu de [`supabase/migrations/0001_init.sql`](../supabase/migrations/0001_init.sql), puis **Run**.
 2. Nouvelle requête : coller [`supabase/seed.sql`](../supabase/seed.sql) (20 recettes de démo), puis **Run**.
+3. Nouvelle requête : coller [`supabase/migrations/0002_ping.sql`](../supabase/migrations/0002_ping.sql)
+   (fonction `ping()` utilisée par la tâche qui empêche la mise en pause, voir « Points d'attention »), puis **Run**.
 
-Les deux scripts sont rejouables sans erreur. Vérifier dans **Table Editor** que les tables `profiles`, `recipes`,
+Les scripts sont rejouables sans erreur. Vérifier dans **Table Editor** que les tables `profiles`, `recipes`,
 `meal_plan_entries` et `shopping_items` existent, avec le badge « RLS enabled ».
 
 ## 3. Configurer l'authentification
@@ -75,8 +77,11 @@ npm run dev
 
 ## Points d'attention
 
-- **Mise en pause** : un projet gratuit inactif pendant ~7 jours est mis en pause. Le relancer depuis le
-  tableau de bord Supabase avant une démo.
+- **Mise en pause** : un projet gratuit inactif pendant ~7 jours est mis en pause. Le workflow
+  `garder-actif.yml` appelle `ping()` chaque lundi pour l'éviter ; il échoue (et GitHub envoie un e-mail) si le
+  projet ne répond plus. Si le projet est tout de même en pause, le relancer depuis le tableau de bord Supabase.
+  GitHub désactive les tâches planifiées après 60 jours sans activité dans le dépôt : les relancer dans
+  l'onglet **Actions** si besoin.
 - **Limite d'e-mails** : le service d'e-mails intégré est limité à quelques envois par heure. Pour une démo à
   plusieurs, configurer un SMTP (**Authentication** > **Emails** > **SMTP Settings**) ou désactiver
   temporairement « Confirm email ».
@@ -88,4 +93,5 @@ npm run dev
 | Fichier | Contenu |
 |---|---|
 | `0001_init.sql` | tables `profiles`, `recipes`, `meal_plan_entries`, `shopping_items`, RLS, trigger de profil |
+| `0002_ping.sql` | fonction `ping()` (réveil hebdomadaire, sans accès aux données) |
 | `seed.sql` | 20 recettes de démo (rejouable) |
