@@ -1,8 +1,8 @@
 name: CI
 
+# Vérifie chaque PR vers main (la branche main est protégée : ce check est obligatoire, ADR 0014).
+
 on:
-  push:
-    branches: [develop]
   pull_request:
     branches: [main]
   workflow_dispatch:
