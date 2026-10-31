@@ -5,6 +5,10 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+### Modifié
+
+- Essai du nouveau circuit de mise en ligne (aucun changement visible sur le site).
+
 ## [1.1.0] - 2026-10-31
 
 ### Ajouté
