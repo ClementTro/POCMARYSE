@@ -5,7 +5,9 @@ d'ajout d'un module.
 
 ## Branches et commits
 
-- On travaille sur `develop`, jamais sur `main` (voir ADR 0010).
+- Une branche par demande, `demande/<sujet>`, jamais de commit direct sur `main` (protégée, voir ADR 0014).
+- On met en ligne avec `npm run publier -- --type patch|minor` : le script enchaîne vérifications, PR, CI,
+  fusion, déploiement et contrôle du site. `npm run annuler` revient à la version précédente.
 - Format [Conventional Commits](https://www.conventionalcommits.org/fr/) en français, impératif présent :
 
 ```

@@ -3,7 +3,7 @@
 Le carnet de cuisine familial de Maryse, en application web : des recettes, le planning des repas de la
 semaine et la liste de courses qui se fait toute seule.
 
-- **Démo** : https://clementtro.github.io/POCMARYSE/
+- **Démo** : `https://<propriétaire>.github.io/POCMARYSE/` (l'adresse exacte s'affiche avec `npm run diagnostic`)
 - **Statut** : POC / démo technique, v1.0.0 (voir [`docs/ROADMAP.md`](docs/ROADMAP.md))
 
 ![Le tableau de bord « Aujourd'hui » : l'idée de recette du jour, le menu du jour et les courses restantes](docs/captures/tableau-de-bord.png)
@@ -61,6 +61,10 @@ La mise en place du backend est décrite dans [`docs/SUPABASE_SETUP.md`](docs/SU
 | `npm run test` | tests Vitest |
 | `npm run format` | formatage Prettier |
 | `npm run typo:fr` | espaces insécables de la typographie française dans les traductions |
+| `npm run publier` | met en ligne la demande en cours (PR, CI, fusion, déploiement, contrôle) |
+| `npm run annuler` | remet en ligne la version précédente |
+| `npm run diagnostic` | état de la CI, du déploiement, du site et de Supabase |
+| `npm run mode-dev` | active le mode développeur de l'agent (`mode-asso` pour le retirer) |
 
 ## Documentation
 
@@ -70,9 +74,14 @@ La mise en place du backend est décrite dans [`docs/SUPABASE_SETUP.md`](docs/SU
 - [`docs/ROADMAP.md`](docs/ROADMAP.md) : jalons et avancement.
 - [`docs/MODULES_A_VENIR.md`](docs/MODULES_A_VENIR.md) : idées de modules.
 - [`docs/SUPABASE_SETUP.md`](docs/SUPABASE_SETUP.md) : créer et relier le backend.
+- [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md) : mise en ligne, pannes, retour arrière, mises à jour.
+- [`docs/GUIDE_ASSOCIATION.md`](docs/GUIDE_ASSOCIATION.md) : guide pour la personne qui entretient le site avec Cursor.
 - [`CHANGELOG.md`](CHANGELOG.md) : historique des versions.
 
 ## Déploiement
 
-Chaque push sur `main` publie le site via GitHub Actions. Le travail se fait sur `develop` ;
-les releases sont des PR `develop → main` mergées une fois la CI verte (voir ADR 0010).
+Chaque demande se fait sur une branche `demande/<sujet>`. `npm run publier` vérifie le travail, ouvre la PR vers
+`main`, attend la CI, fusionne, puis `deploy.yml` publie le site, le contrôle et pose le tag de version. En cas
+de problème, le dernier tag sain est remis en ligne automatiquement, et `npm run annuler` revient en arrière à la
+demande. Détails : [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md) et ADR 0014. Pour la personne qui entretient le
+site avec Cursor : [`docs/GUIDE_ASSOCIATION.md`](docs/GUIDE_ASSOCIATION.md).

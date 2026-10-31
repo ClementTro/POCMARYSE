@@ -1,6 +1,7 @@
 # Roadmap
 
-Chaque jalon se termine par une release `develop → main` (voir ADR 0010).
+Chaque jalon se termine par une release vers `main`. Jusqu'à la v1.1.0, elle passait par la branche `develop`
+(ADR 0010) ; ensuite, chaque demande a sa branche et sa mise en ligne (ADR 0014).
 
 ## Jalon 1 — v0.1.0 : socle et déploiement (publié)
 

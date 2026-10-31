@@ -26,8 +26,8 @@ Dans **Authentication** > **URL Configuration** :
 
 | Champ | Valeur |
 |---|---|
-| Site URL | `https://clementtro.github.io/POCMARYSE/` |
-| Redirect URLs | `https://clementtro.github.io/POCMARYSE/**` |
+| Site URL | `https://<propriétaire>.github.io/POCMARYSE/` |
+| Redirect URLs | `https://<propriétaire>.github.io/POCMARYSE/**` |
 | | `http://localhost:5173/POCMARYSE/**` |
 
 Dans **Authentication** > **Sign In / Providers** > **Email** : laisser « Confirm email » activé (recommandé).
@@ -49,12 +49,12 @@ Ces deux valeurs sont publiques par nature (ADR 0009). **Ne jamais utiliser la c
 
 ## 5. Brancher le site en ligne (GitHub Pages)
 
-Depuis un terminal authentifié avec `gh` :
+Depuis un terminal authentifié avec `gh`, dans le dossier du projet :
 
 ```bash
-gh variable set VITE_SUPABASE_URL --repo ClementTro/POCMARYSE --body "https://xxxx.supabase.co"
-gh variable set VITE_SUPABASE_ANON_KEY --repo ClementTro/POCMARYSE --body "eyJ..."
-gh workflow run deploy.yml --repo ClementTro/POCMARYSE --ref main
+gh variable set VITE_SUPABASE_URL --body "https://xxxx.supabase.co"
+gh variable set VITE_SUPABASE_ANON_KEY --body "eyJ..."
+gh workflow run deploy.yml --ref main
 ```
 
 Ou via GitHub : **Settings** > **Secrets and variables** > **Actions** > onglet **Variables**.

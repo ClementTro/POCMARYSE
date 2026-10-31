@@ -1,22 +1,21 @@
 ---
-description: Workflow git develop/main, commits et releases sans validation humaine (ADR 0010)
+description: Workflow git (branche par demande), commits et mise en ligne par script (ADR 0014)
 alwaysApply: true
 ---
 
 # Workflow git
 
-- Toujours travailler sur `develop`. Jamais de commit direct sur `main`.
+- Jamais de commit ni de push direct sur `main` (protégée). Une branche par demande : `demande/<sujet>`.
+  Créer la branche avant de modifier quoi que ce soit : `git switch -c demande/<sujet>`.
 - Conventional Commits en français, impératif présent, une modification logique par commit :
   `feat(recettes): ajoute la fiche détaillée`.
 - Types : feat, fix, docs, style, refactor, test, chore, ci, build, perf.
 - Portées : core, ui, auth, vitrine, recettes, planning, courses, i18n, theme, db, ci, docs, adr.
 - Avant chaque commit : `npm run lint && npm run typecheck && npm run test`.
-- Release en fin de jalon :
-  1. `CHANGELOG.md` + version `package.json`, commit `chore(release): vX.Y.Z` sur `develop`, push ;
-  2. `gh pr create --base main --head develop --title "release: vX.Y.Z"` ;
-  3. `gh pr checks <n> --watch` ; si rouge, corriger sur `develop` ;
-  4. `gh pr merge <n> --merge` (pas de squash, ne pas supprimer `develop`) ;
-  5. `git fetch && git tag -a vX.Y.Z origin/main -m "..." && git push origin vX.Y.Z` ;
-  6. `git merge --ff-only origin/main && git push` pour resynchroniser `develop`.
-- En cas d'erreur GraphQL de `gh pr create` / `gh pr merge`, utiliser l'API REST (`gh api`, voir AGENTS.md).
-- Interdits : `push --force` sur main/develop, réécriture d'historique publié, désactivation de la CI.
+- Ajouter les changements à la section « Non publié » de `CHANGELOG.md`, en phrases simples.
+- Mise en ligne : uniquement `npm run publier -- --type patch|minor` (patch : texte, image, bug ; minor :
+  nouvelle fonction). Ne pas refaire à la main les étapes PR, merge, tag. Hors mode développeur, jamais sans
+  un « oui » explicite après les captures d'écran.
+- Retour arrière : `npm run annuler`.
+- Interdits : `push --force`, réécriture d'historique publié, désactivation de la CI ou de la protection de `main`
+  (sauf demande explicite d'un développeur), commit de `.env*`.
