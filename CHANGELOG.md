@@ -5,6 +5,26 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+## [1.1.0] - 2026-10-31
+
+### Ajouté
+
+- Mise en ligne en une seule commande (`npm run publier`) : vérifications, fusion, déploiement, contrôle du site
+  et numéro de version, avec un message simple à la moindre difficulté.
+- Contrôle automatique du site après chaque mise en ligne. S'il détecte un problème, la dernière version
+  saine est remise en ligne toute seule.
+- `npm run annuler` (retour à la version précédente) et `npm run diagnostic` (état du site, en lecture seule).
+- Mises à jour automatiques des dépendances (Dependabot), regroupées et fusionnées quand tout est vert.
+- Réveil hebdomadaire du projet Supabase pour éviter sa mise en pause (migration `0002_ping.sql` à appliquer).
+- Règles pour l'assistant de Cursor : il tutoie, parle simplement, pose des questions avant d'agir, trie les demandes
+  et suit une procédure par type de demande ; mode développeur pour tout lever.
+- Documentation : `docs/MAINTENANCE.md`, `docs/GUIDE_ASSOCIATION.md`, `docs/SCENARIOS_AGENT.md`, ADR 0014.
+
+### Modifié
+
+- Une branche par demande (`demande/<sujet>`) à la place de `develop` ; `main` est protégée (ADR 0014, qui remplace l'ADR 0010).
+- Les mentions légales et la documentation ne citent plus le nom du dépôt.
+
 ## [1.0.1] - 2026-10-31
 
 ### Ajouté
