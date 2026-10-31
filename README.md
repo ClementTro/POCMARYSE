@@ -64,7 +64,6 @@ La mise en place du backend est décrite dans [`docs/SUPABASE_SETUP.md`](docs/SU
 | `npm run publier` | met en ligne la demande en cours (PR, CI, fusion, déploiement, contrôle) |
 | `npm run annuler` | remet en ligne la version précédente |
 | `npm run diagnostic` | état de la CI, du déploiement, du site et de Supabase |
-| `npm run mode-dev` | active le mode développeur de l'agent (`mode-asso` pour le retirer) |
 
 ## Documentation
 

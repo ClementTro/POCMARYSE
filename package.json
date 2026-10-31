@@ -21,9 +21,7 @@
     "publier": "node scripts/publier.mjs",
     "annuler": "node scripts/annuler.mjs",
     "diagnostic": "node scripts/diagnostic.mjs",
-    "verifier-site": "node scripts/verifier-site.mjs",
-    "mode-dev": "node scripts/mode.mjs dev",
-    "mode-asso": "node scripts/mode.mjs asso"
+    "verifier-site": "node scripts/verifier-site.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
