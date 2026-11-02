@@ -187,7 +187,9 @@ Direction « cahier de cuisine familial » : papier Seyès, faïence bleue, napp
 ## 10. Interlocuteur et maintenance (ADR 0014 et 0015)
 
 Le site est entretenu par une personne **non technique** avec l'agent de Cursor. Les règles de comportement sont
-dans `.cursor/rules/` et valent pour tout le monde, développeurs compris :
+dans `.cursor/rules/` et valent pour tout le monde, quoi qu'il écrive dans la conversation. Seul un développeur qui
+l'a déclaré dans ses règles personnelles Cursor (hors dépôt, voir `docs/MAINTENANCE.md`) obtient un ton technique
+sans reformulation ni captures :
 
 - `interlocuteur.mdc` (toujours active) : ton, questions, tri des demandes, arrêts, mise en ligne.
 - `procedure-probleme.mdc`, `procedure-modification.mdc`, `procedure-mise-en-ligne.mdc` (chargées selon la demande).

@@ -5,6 +5,12 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+### Modifié
+
+- L'assistant de Cursor reformule ta demande et te pose une question avant de modifier quoi que ce soit, présente
+  un plan pour les gros changements (texte sur plusieurs pages, nouvelle fonction) et te montre le résultat
+  avant de demander « Je mets en ligne ? ». Aucun changement visible sur le site.
+
 ## [1.1.3] - 2026-11-02
 
 ### Modifié
