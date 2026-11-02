@@ -5,6 +5,8 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+## [1.1.3] - 2026-11-02
+
 ### Modifié
 
 - Les pages de présentation racontent une Maryse à l'agenda bien rempli, entre son travail et le secrétariat
