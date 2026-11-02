@@ -5,6 +5,13 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+### Ajouté
+
+- Une nouvelle page « Spécial demi-finale » présente la demi-finale du Challenge mixte de l'Isère
+  (samedi 7 novembre 2026) avec cinq recettes à préparer la veille, le matin du match, à emporter et après le
+  match. Elle est annoncée par un encadré sur l'accueil et un lien dans le menu du haut, en français, en anglais
+  et en espagnol. Sur ordinateur, la barre du haut est un peu plus large pour que le menu tienne sur une ligne.
+
 ## [1.2.0] - 2026-11-02
 
 ### Ajouté

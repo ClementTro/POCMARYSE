@@ -21,6 +21,12 @@
     "citationAuteur": "Maryse",
     "finTitre": "Your notebook is waiting",
     "finTexte": "Create your account in a minute: Maryse's recipes are already inside. The time you save is yours to spend as you like.",
+    "evenement": {
+      "date": "Saturday 7 November 2026",
+      "titre": "Semi-final special: the Challenge mixte de l'Isère",
+      "texte": "Five simple recipes to be in top shape before, during and after the match.",
+      "cta": "See the match recipes"
+    },
     "exemple": {
       "ficheTitre": "Yoghurt cake",
       "ficheLignes": ["1 pot of yoghurt", "3 pots of flour", "2 pots of sugar", "3 eggs"],
@@ -157,5 +163,123 @@
         "texte": "You can ask to access, correct or delete your data by opening an issue on the project's GitHub repository. You can also lodge a complaint with the CNIL, the French data protection authority."
       }
     ]
+  },
+  "evenement": {
+    "titre": "Semi-final special",
+    "date": "Saturday 7 November 2026",
+    "intro": "On 7 November 2026, it's the semi-final of the Challenge mixte de l'Isère! To be in top shape on the big day, here are a few simple recipes to make before, during and after the match.",
+    "pour": "Makes",
+    "temps": "Time",
+    "ingredients": "Ingredients",
+    "etapes": "Steps",
+    "recettes": [
+      {
+        "moment": "The day before",
+        "titre": "Wholewheat pasta with chicken and vegetables",
+        "description": "Pasta to fill up on energy, without a heavy evening.",
+        "portions": "4 people",
+        "temps": "35 min",
+        "ingredients": [
+          "320 g wholewheat pasta",
+          "2 chicken breasts",
+          "1 courgette",
+          "1 red pepper",
+          "1 onion",
+          "2 tablespoons olive oil",
+          "Salt and pepper"
+        ],
+        "etapes": [
+          "Dice the chicken and cut the vegetables into small pieces.",
+          "Soften the onion in the olive oil, add the chicken and let it brown for 5 minutes.",
+          "Add the courgette and pepper, cover and cook for 10 minutes over a low heat.",
+          "Meanwhile, cook the pasta. Drain it and mix it with the vegetables. Season with salt and pepper."
+        ]
+      },
+      {
+        "moment": "On the morning of the match",
+        "titre": "Banana and honey porridge",
+        "description": "A breakfast that is gentle on the stomach, to eat about three hours before the match.",
+        "portions": "2 people",
+        "temps": "10 min",
+        "ingredients": [
+          "80 g rolled oats",
+          "400 ml milk",
+          "1 banana",
+          "1 tablespoon honey",
+          "1 pinch of cinnamon"
+        ],
+        "etapes": [
+          "Put the oats and milk in a saucepan.",
+          "Heat gently for 5 minutes, stirring, until creamy.",
+          "Add the sliced banana, the honey and the cinnamon. Eat warm."
+        ]
+      },
+      {
+        "moment": "To take along",
+        "titre": "Homemade cereal bars with dried fruit",
+        "description": "To slip into your bag for a snack during the day or on the way home.",
+        "portions": "12 bars",
+        "temps": "35 min",
+        "ingredients": [
+          "200 g rolled oats",
+          "60 g dried apricots",
+          "40 g raisins",
+          "50 g almonds",
+          "50 g butter",
+          "3 tablespoons honey",
+          "1 egg"
+        ],
+        "etapes": [
+          "Preheat the oven to 180 °C.",
+          "Chop the apricots and roughly crush the almonds. Mix them with the oats and raisins.",
+          "Melt the butter with the honey. Pour over the mixture, add the beaten egg and mix well.",
+          "Press the mixture into a tin lined with baking paper and bake for 20 minutes. Let it cool before cutting into bars."
+        ]
+      },
+      {
+        "moment": "After the match",
+        "titre": "Rice bowl with soft-boiled egg and vegetables",
+        "description": "A complete, colourful meal to recover well.",
+        "portions": "4 people",
+        "temps": "30 min",
+        "ingredients": [
+          "250 g rice",
+          "4 eggs",
+          "1 broccoli",
+          "2 carrots",
+          "1 tablespoon sesame seeds",
+          "2 tablespoons soy sauce"
+        ],
+        "etapes": [
+          "Cook the rice.",
+          "Cut the broccoli into small florets and steam for 5 minutes. Grate the carrots.",
+          "Lower the eggs into boiling water for 6 minutes, then into cold water, and peel them.",
+          "Share the rice between the bowls, add the vegetables and the halved eggs. Drizzle with soy sauce and sprinkle with sesame."
+        ]
+      },
+      {
+        "moment": "After the match",
+        "titre": "Strawberry, banana and yoghurt smoothie",
+        "description": "To quench your thirst and treat yourself when you get home.",
+        "portions": "2 glasses",
+        "temps": "5 min",
+        "ingredients": [
+          "150 g strawberries (frozen out of season)",
+          "1 banana",
+          "1 plain yoghurt",
+          "200 ml milk",
+          "1 teaspoon honey"
+        ],
+        "etapes": [
+          "Hull the strawberries and cut the banana into pieces.",
+          "Blend everything until really smooth.",
+          "Serve straight away, nice and cold."
+        ]
+      }
+    ],
+    "avertissement": "These recipes are simple ideas for eating well around the match, not a training plan. If you follow a special diet, ask a health professional for advice.",
+    "finTitre": "Want to keep them close at hand?",
+    "finTexte": "Start your notebook: you can write these recipes down and drop them into your weekly menu.",
+    "cta": "Start my notebook"
   }
 }

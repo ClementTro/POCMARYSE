@@ -57,6 +57,8 @@ Les prochaines évolutions sont choisies dans [`MODULES_A_VENIR.md`](MODULES_A_V
 chacune avec son jalon et sa release.
 
 - [x] Pages publiques en espagnol (ADR 0016) ; l'application en espagnol reste à faire (`MODULES_A_VENIR.md`)
+- [x] Page temporaire « Spécial demi-finale » (`/demi-finale`), encadré de l'accueil et lien du menu : à retirer
+      après le 7 novembre 2026
 
 ## En attente côté porteur du projet
 

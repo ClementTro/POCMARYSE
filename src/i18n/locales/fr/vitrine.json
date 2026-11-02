@@ -21,6 +21,12 @@
     "citationAuteur": "Maryse",
     "finTitre": "Ton carnet t'attend",
     "finTexte": "Crée ton compte en une minute : les recettes de Maryse sont déjà dedans. Le temps gagné, c'est toi qui décides quoi en faire.",
+    "evenement": {
+      "date": "Samedi 7 novembre 2026",
+      "titre": "Spécial demi-finale du Challenge mixte de l'Isère",
+      "texte": "Cinq recettes simples pour être en forme avant, pendant et après le match.",
+      "cta": "Voir les recettes du match"
+    },
     "exemple": {
       "ficheTitre": "Gâteau au yaourt",
       "ficheLignes": ["1 pot de yaourt", "3 pots de farine", "2 pots de sucre", "3 œufs"],
@@ -157,5 +163,123 @@
         "texte": "Tu peux demander l'accès à tes données, leur correction ou leur suppression en ouvrant une demande sur le dépôt GitHub du projet. Tu peux aussi adresser une réclamation à la CNIL."
       }
     ]
+  },
+  "evenement": {
+    "titre": "Spécial demi-finale",
+    "date": "Samedi 7 novembre 2026",
+    "intro": "Le 7 novembre 2026, c'est la demi-finale du Challenge mixte de l'Isère ! Pour être en forme le jour J, voici quelques recettes simples à préparer avant, pendant et après le match.",
+    "pour": "Pour",
+    "temps": "Temps",
+    "ingredients": "Ingrédients",
+    "etapes": "Étapes",
+    "recettes": [
+      {
+        "moment": "La veille",
+        "titre": "Pâtes complètes au poulet et aux petits légumes",
+        "description": "Des pâtes pour faire le plein d'énergie, sans alourdir la soirée.",
+        "portions": "4 personnes",
+        "temps": "35 min",
+        "ingredients": [
+          "320 g de pâtes complètes",
+          "2 blancs de poulet",
+          "1 courgette",
+          "1 poivron rouge",
+          "1 oignon",
+          "2 cuillères à soupe d'huile d'olive",
+          "Sel et poivre"
+        ],
+        "etapes": [
+          "Coupe le poulet en dés et les légumes en petits morceaux.",
+          "Fais revenir l'oignon dans l'huile d'olive, ajoute le poulet et laisse dorer 5 minutes.",
+          "Ajoute la courgette et le poivron, couvre et laisse cuire 10 minutes à feu doux.",
+          "Pendant ce temps, fais cuire les pâtes. Égoutte-les et mélange-les aux légumes. Sale et poivre."
+        ]
+      },
+      {
+        "moment": "Le matin du match",
+        "titre": "Porridge à la banane et au miel",
+        "description": "Un petit-déjeuner doux pour l'estomac, à prendre environ trois heures avant le match.",
+        "portions": "2 personnes",
+        "temps": "10 min",
+        "ingredients": [
+          "80 g de flocons d'avoine",
+          "40 cl de lait",
+          "1 banane",
+          "1 cuillère à soupe de miel",
+          "1 pincée de cannelle"
+        ],
+        "etapes": [
+          "Verse les flocons d'avoine et le lait dans une casserole.",
+          "Fais chauffer à feu doux 5 minutes en remuant, jusqu'à ce que ce soit crémeux.",
+          "Ajoute la banane en rondelles, le miel et la cannelle. Déguste tiède."
+        ]
+      },
+      {
+        "moment": "À emporter",
+        "titre": "Barres de céréales maison aux fruits secs",
+        "description": "À glisser dans le sac pour une petite faim pendant la journée ou sur la route du retour.",
+        "portions": "12 barres",
+        "temps": "35 min",
+        "ingredients": [
+          "200 g de flocons d'avoine",
+          "60 g d'abricots secs",
+          "40 g de raisins secs",
+          "50 g d'amandes",
+          "50 g de beurre",
+          "3 cuillères à soupe de miel",
+          "1 œuf"
+        ],
+        "etapes": [
+          "Préchauffe le four à 180 °C.",
+          "Coupe les abricots en petits morceaux et concasse les amandes. Mélange-les avec les flocons et les raisins.",
+          "Fais fondre le beurre avec le miel. Verse sur le mélange, ajoute l'œuf battu et mélange bien.",
+          "Tasse la pâte dans un moule tapissé de papier cuisson et fais cuire 20 minutes. Laisse refroidir avant de couper en barres."
+        ]
+      },
+      {
+        "moment": "Après le match",
+        "titre": "Bol de riz, œuf mollet et légumes",
+        "description": "Un repas complet et coloré pour bien récupérer.",
+        "portions": "4 personnes",
+        "temps": "30 min",
+        "ingredients": [
+          "250 g de riz",
+          "4 œufs",
+          "1 brocoli",
+          "2 carottes",
+          "1 cuillère à soupe de graines de sésame",
+          "2 cuillères à soupe de sauce soja"
+        ],
+        "etapes": [
+          "Fais cuire le riz.",
+          "Coupe le brocoli en petits bouquets et fais-le cuire 5 minutes à la vapeur. Râpe les carottes.",
+          "Plonge les œufs 6 minutes dans l'eau bouillante, puis dans l'eau froide, et écale-les.",
+          "Répartis le riz dans les bols, ajoute les légumes et l'œuf coupé en deux. Arrose de sauce soja et parsème de sésame."
+        ]
+      },
+      {
+        "moment": "Après le match",
+        "titre": "Smoothie fraise, banane et yaourt",
+        "description": "Pour se désaltérer et se faire plaisir en rentrant.",
+        "portions": "2 verres",
+        "temps": "5 min",
+        "ingredients": [
+          "150 g de fraises (surgelées hors saison)",
+          "1 banane",
+          "1 yaourt nature",
+          "20 cl de lait",
+          "1 cuillère à café de miel"
+        ],
+        "etapes": [
+          "Équeute les fraises et coupe la banane en morceaux.",
+          "Mixe tous les ingrédients jusqu'à obtenir une boisson bien lisse.",
+          "Sers aussitôt, bien frais."
+        ]
+      }
+    ],
+    "avertissement": "Ces recettes sont des idées simples pour bien manger autour du match, pas un programme sportif. Si tu suis un régime particulier, demande conseil à un professionnel de santé.",
+    "finTitre": "Envie de les garder sous la main ?",
+    "finTexte": "Crée ton carnet : tu pourras y noter ces recettes et les glisser dans ton menu de la semaine.",
+    "cta": "Créer mon carnet"
   }
 }
