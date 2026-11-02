@@ -4,27 +4,27 @@
     "secondeAlt": "Une autre photo de Maryse."
   },
   "accueil": {
-    "titre": "Le carnet de cuisine de Maryse, ouvert à toute la famille",
-    "intro": "Des recettes qui ont fait leurs preuves, le menu de la semaine sur le frigo et la liste de courses qui s'écrit toute seule. Comme le cahier de Maryse, mais dans ta poche.",
+    "titre": "Le carnet de cuisine de Maryse, pour les semaines bien remplies",
+    "intro": "Entre son travail et un grand club de tennis dont elle est secrétaire générale, Maryse n'a pas de temps à perdre. Son cahier règle les repas de la semaine en quelques minutes : des recettes qui ont fait leurs preuves, un menu planifié, une liste de courses qui s'écrit toute seule. Le voici, dans ta poche.",
     "ctaPrincipal": "Créer mon carnet",
     "ctaSecondaire": "Lire l'histoire de Maryse",
     "gratuit": "Gratuit et sans publicité.",
     "photoNote": "Le jour de ma médaille. Mes collègues m'ont dit\u00a0: «\u00a0Ton cahier, fais-en une appli\u00a0!\u00a0»",
-    "contenuTitre": "Ce qu'on trouve dans le carnet",
+    "contenuTitre": "Trois pages qui te font gagner du temps",
     "recettesTitre": "Des fiches recettes",
-    "recettesTexte": "Ton carnet commence avec 20 recettes de Maryse. Copie celles que tu aimes, ajoute les tiennes, retrouve-les selon le temps dont tu disposes.",
+    "recettesTexte": "Ton carnet commence avec 20 recettes de Maryse, testées et approuvées. Copie celles que tu aimes, ajoute les tiennes, retrouve-les selon le temps dont tu disposes.",
     "planningTitre": "Le menu de la semaine",
-    "planningTexte": "Midi et soir, du lundi au dimanche : glisse une recette sur un repas, comme on aimante un mot sur le frigo.",
+    "planningTexte": "Midi et soir, du lundi au dimanche : glisse une recette sur un repas, comme on aimante un mot sur le frigo. La semaine est calée d'un seul coup.",
     "coursesTitre": "La liste de courses",
-    "coursesTexte": "Un clic et les ingrédients de la semaine sont réunis, quantités additionnées. Au magasin, tu barres au fur et à mesure.",
-    "citation": "«\u00a0Je n'ai jamais été une grande cheffe. J'étais juste organisée, et ça change tout.\u00a0»",
+    "coursesTexte": "Un clic et les ingrédients de la semaine sont réunis, quantités additionnées. Une seule liste, un seul passage au magasin.",
+    "citation": "«\u00a0Au club, rien ne se fait sans planning. Je ne voyais pas pourquoi les repas feraient exception.\u00a0»",
     "citationAuteur": "Maryse",
     "finTitre": "Ton carnet t'attend",
-    "finTexte": "Crée ton compte en une minute : les recettes de Maryse sont déjà dedans.",
+    "finTexte": "Crée ton compte en une minute : les recettes de Maryse sont déjà dedans. Le temps gagné, c'est toi qui décides quoi en faire.",
     "exemple": {
       "ficheTitre": "Gâteau au yaourt",
       "ficheLignes": ["1 pot de yaourt", "3 pots de farine", "2 pots de sucre", "3 œufs"],
-      "ficheNote": "Les enfants adorent !",
+      "ficheNote": "Succès garanti au club !",
       "jours": ["Lun", "Mar", "Mer", "Jeu"],
       "plats": ["Quiche", "Soupe", "Crêpes", "Gratin"],
       "articles": ["Lait", "Œufs", "Farine", "Pommes"]
@@ -32,36 +32,36 @@
   },
   "histoire": {
     "titre": "L'histoire de Maryse",
-    "intro": "Maryse & Co est né d'un cahier à grands carreaux, de vingt ans de dîners à préparer et d'une remise de médaille.",
+    "intro": "Maryse & Co est né d'un cahier à grands carreaux, d'un agenda bien rempli et d'une remise de médaille.",
     "fiction": "Récit inspiré de Maryse, en partie imaginé pour cette démo.",
     "etapes": [
       {
         "quand": "Pendant plus de vingt ans",
-        "titre": "Le travail, la famille, et le dîner",
-        "texte": "Maryse part tôt, rentre tard, et chaque soir la même question l'attend dans l'entrée : « Qu'est-ce qu'on mange ? »"
+        "titre": "Le bureau, le club, et tout le reste",
+        "texte": "Maryse mène sa carrière et, à côté, le secrétariat général d'un grand club de tennis : assemblées générales, tournois, licences, bénévoles à coordonner. Ses semaines sont pleines, chaque minute compte."
       },
       {
-        "quand": "Dans le tiroir de la cuisine",
+        "quand": "Le dimanche soir",
         "titre": "Le cahier",
-        "texte": "Pour ne plus improviser, elle note tout dans un cahier d'écolier : les recettes qui marchent, le menu de la semaine au dos, la liste de courses sur la dernière page. Les pages se tachent, le cahier ne quitte plus la cuisine."
+        "texte": "Elle applique aux repas la méthode qui marche au club : tout noter, tout planifier. Dans un cahier d'écolier, les recettes qui ont fait leurs preuves, le menu de la semaine au dos, la liste de courses sur la dernière page. Dix minutes le dimanche, et la semaine est réglée."
       },
       {
         "quand": "Le jour de la médaille",
         "titre": "« Fais-en une appli ! »",
-        "texte": "Quand Maryse reçoit sa Médaille d'honneur du travail, ses collègues lui offrent des fleurs et un conseil : ce cahier que tout le monde lui emprunte, il faudrait le partager."
+        "texte": "Quand Maryse reçoit sa Médaille d'honneur du travail, ses collègues lui offrent des fleurs et un conseil : ce cahier que tout le monde lui emprunte, au bureau comme au club, il faudrait le partager."
       },
       {
         "quand": "Aujourd'hui",
         "titre": "Maryse & Co",
-        "texte": "Le cahier devient un carnet en ligne. Mêmes recettes, même organisation, et de la place pour celles de chaque famille."
+        "texte": "Le cahier devient un carnet en ligne. Mêmes recettes, même méthode, et de la place pour les tiennes."
       }
     ],
-    "fin": "Et toi, qu'est-ce que tu vas noter dans ton carnet ?",
+    "fin": "Et toi, que vas-tu faire du temps gagné ?",
     "cta": "Créer mon carnet"
   },
   "fonctionnalites": {
     "titre": "Ce que fait le carnet",
-    "intro": "Trois pages pour commencer, et de la place pour les suivantes.",
+    "intro": "Trois pages pour gagner du temps chaque semaine, et de la place pour les suivantes.",
     "modules": [
       {
         "titre": "Recettes",
@@ -88,7 +88,7 @@
         ]
       }
     ],
-    "transverseTitre": "Pour toute la famille",
+    "transverseTitre": "Partout avec toi",
     "transverse": [
       "En français ou en anglais",
       "Un thème clair pour la journée, sombre pour le soir",

@@ -39,6 +39,8 @@ function rendre(url = '/?semaine=2026-10-28') {
 describe('PlanningPage', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    vi.useFakeTimers({ toFake: ['Date'] });
+    vi.setSystemTime(new Date(2026, 9, 28, 12));
     api.repas = [
       {
         id: 'p1',
@@ -48,6 +50,10 @@ describe('PlanningPage', () => {
         recette: { id: 'r1', title: 'Gratin dauphinois', prep_minutes: 20, cook_minutes: 60 },
       },
     ];
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
   });
 
   it('affiche la semaine demandée (ramenée au lundi) avec 14 cases', () => {

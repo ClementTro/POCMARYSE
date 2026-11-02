@@ -4,27 +4,27 @@
     "secondeAlt": "Another photo of Maryse."
   },
   "accueil": {
-    "titre": "Maryse's cooking notebook, open to the whole family",
-    "intro": "Tried-and-tested recipes, the week's menu on the fridge and a shopping list that writes itself. Just like Maryse's notebook, but in your pocket.",
+    "titre": "Maryse's cooking notebook, for busy weeks",
+    "intro": "Between her job and a big tennis club where she is general secretary, Maryse has no time to waste. Her notebook sorts out the week's meals in a few minutes: tried-and-tested recipes, a planned menu, a shopping list that writes itself. Here it is, in your pocket.",
     "ctaPrincipal": "Start my notebook",
     "ctaSecondaire": "Read Maryse's story",
     "gratuit": "Free, with no ads.",
     "photoNote": "The day I got my medal. My colleagues told me: “Your notebook, turn it into an app!”",
-    "contenuTitre": "What's inside the notebook",
+    "contenuTitre": "Three pages that save you time",
     "recettesTitre": "Recipe cards",
-    "recettesTexte": "Your notebook starts with 20 of Maryse's recipes. Copy the ones you like, add your own, find them by how much time you have.",
+    "recettesTexte": "Your notebook starts with 20 of Maryse's recipes, tried and approved. Copy the ones you like, add your own, find them by how much time you have.",
     "planningTitre": "The week's menu",
-    "planningTexte": "Lunch and dinner, Monday to Sunday: drop a recipe onto a meal, like pinning a note on the fridge.",
+    "planningTexte": "Lunch and dinner, Monday to Sunday: drop a recipe onto a meal, like pinning a note on the fridge. The whole week is sorted in one go.",
     "coursesTitre": "The shopping list",
-    "coursesTexte": "One click and the week's ingredients are gathered, quantities added up. At the shop, you tick them off as you go.",
-    "citation": "“I was never a great cook. I was just organised, and that makes all the difference.”",
+    "coursesTexte": "One click and the week's ingredients are gathered, quantities added up. One list, one trip to the shop.",
+    "citation": "“At the club, nothing happens without a schedule. I didn't see why meals should be any different.”",
     "citationAuteur": "Maryse",
     "finTitre": "Your notebook is waiting",
-    "finTexte": "Create your account in a minute: Maryse's recipes are already inside.",
+    "finTexte": "Create your account in a minute: Maryse's recipes are already inside. The time you save is yours to spend as you like.",
     "exemple": {
       "ficheTitre": "Yoghurt cake",
       "ficheLignes": ["1 pot of yoghurt", "3 pots of flour", "2 pots of sugar", "3 eggs"],
-      "ficheNote": "The kids love it!",
+      "ficheNote": "Always a hit at the club!",
       "jours": ["Mon", "Tue", "Wed", "Thu"],
       "plats": ["Quiche", "Soup", "Crêpes", "Gratin"],
       "articles": ["Milk", "Eggs", "Flour", "Apples"]
@@ -32,36 +32,36 @@
   },
   "histoire": {
     "titre": "Maryse's story",
-    "intro": "Maryse & Co was born from a squared school notebook, twenty years of dinners to cook and a medal ceremony.",
+    "intro": "Maryse & Co was born from a squared school notebook, a packed diary and a medal ceremony.",
     "fiction": "A story inspired by Maryse, partly imagined for this demo.",
     "etapes": [
       {
         "quand": "For more than twenty years",
-        "titre": "Work, family, and dinner",
-        "texte": "Maryse leaves early, comes home late, and every evening the same question waits for her at the door: “What's for dinner?”"
+        "titre": "The office, the club, and everything else",
+        "texte": "Maryse runs her career and, alongside it, the general secretariat of a big tennis club: general meetings, tournaments, memberships, volunteers to coordinate. Her weeks are full, and every minute counts."
       },
       {
-        "quand": "In the kitchen drawer",
+        "quand": "On Sunday evening",
         "titre": "The notebook",
-        "texte": "To stop improvising, she writes everything down in a school notebook: the recipes that work, the week's menu on the back, the shopping list on the last page. The pages get stained, and the notebook never leaves the kitchen."
+        "texte": "She applies the method that works at the club to meals: write everything down, plan everything. In a school notebook, the tried-and-tested recipes, the week's menu on the back, the shopping list on the last page. Ten minutes on Sunday, and the week is sorted."
       },
       {
         "quand": "The day of the medal",
         "titre": "“Turn it into an app!”",
-        "texte": "When Maryse receives her Medal of Honour for Labour, her colleagues give her flowers and some advice: that notebook everyone keeps borrowing should be shared."
+        "texte": "When Maryse receives her Medal of Honour for Labour, her colleagues give her flowers and some advice: that notebook everyone keeps borrowing, at the office and at the club, should be shared."
       },
       {
         "quand": "Today",
         "titre": "Maryse & Co",
-        "texte": "The notebook becomes an online notebook. Same recipes, same organisation, and room for every family's own."
+        "texte": "The notebook becomes an online notebook. Same recipes, same method, and room for yours."
       }
     ],
-    "fin": "And you, what will you write in your notebook?",
+    "fin": "And you, what will you do with the time you save?",
     "cta": "Start my notebook"
   },
   "fonctionnalites": {
     "titre": "What the notebook does",
-    "intro": "Three pages to start with, and room for more.",
+    "intro": "Three pages to save time every week, and room for more.",
     "modules": [
       {
         "titre": "Recipes",
@@ -88,7 +88,7 @@
         ]
       }
     ],
-    "transverseTitre": "For the whole family",
+    "transverseTitre": "Wherever you go",
     "transverse": [
       "In French or English",
       "A light theme for the day, a dark one for the evening",
