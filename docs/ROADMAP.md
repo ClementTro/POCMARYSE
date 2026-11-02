@@ -56,6 +56,8 @@ Chaque jalon se termine par une release vers `main`. Jusqu'à la v1.1.0, elle pa
 Les prochaines évolutions sont choisies dans [`MODULES_A_VENIR.md`](MODULES_A_VENIR.md), une à la fois,
 chacune avec son jalon et sa release.
 
+- [x] Pages publiques en espagnol (ADR 0016) ; l'application en espagnol reste à faire (`MODULES_A_VENIR.md`)
+
 ## En attente côté porteur du projet
 
 - [x] Déposer les photos de Maryse dans `public/images/maryse/` (`medaille.jpg`, et la seconde photo)

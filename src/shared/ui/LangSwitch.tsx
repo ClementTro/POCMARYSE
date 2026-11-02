@@ -1,15 +1,21 @@
 import { useTranslation } from 'react-i18next';
 import { cn } from '@/shared/lib/cn';
 
-const LANGUES = ['fr', 'en'] as const;
+const LANGUES_PAR_DEFAUT = ['fr', 'en'] as const;
 
-export function LangSwitch({ surChangement }: { surChangement?: (langue: string) => void }) {
+export function LangSwitch({
+  surChangement,
+  langues = LANGUES_PAR_DEFAUT,
+}: {
+  surChangement?: (langue: string) => void;
+  langues?: readonly string[];
+}) {
   const { t, i18n } = useTranslation();
   const active = i18n.resolvedLanguage ?? 'fr';
 
   return (
     <div role="group" aria-label={t('langue.choisir')} className="flex items-center">
-      {LANGUES.map((langue) => (
+      {langues.map((langue) => (
         <button
           key={langue}
           type="button"

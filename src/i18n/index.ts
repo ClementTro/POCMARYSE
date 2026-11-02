@@ -5,12 +5,16 @@ import appEn from './locales/en/app.json';
 import authEn from './locales/en/auth.json';
 import commonEn from './locales/en/common.json';
 import vitrineEn from './locales/en/vitrine.json';
+import authEs from './locales/es/auth.json';
+import commonEs from './locales/es/common.json';
+import vitrineEs from './locales/es/vitrine.json';
 import appFr from './locales/fr/app.json';
 import authFr from './locales/fr/auth.json';
 import commonFr from './locales/fr/common.json';
 import vitrineFr from './locales/fr/vitrine.json';
 
-export const LANGUES = ['fr', 'en'] as const;
+/** L'espagnol ne couvre que les pages publiques : le profil Supabase n'accepte que `fr` et `en`. */
+export const LANGUES = ['fr', 'en', 'es'] as const;
 export type Langue = (typeof LANGUES)[number];
 
 export const CLE_LANGUE = 'maryse-langue';
@@ -22,6 +26,7 @@ void i18n
     resources: {
       fr: { common: commonFr, app: appFr, auth: authFr, vitrine: vitrineFr },
       en: { common: commonEn, app: appEn, auth: authEn, vitrine: vitrineEn },
+      es: { common: commonEs, auth: authEs, vitrine: vitrineEs },
     },
     fallbackLng: 'fr',
     supportedLngs: [...LANGUES],
@@ -38,7 +43,7 @@ void i18n
   });
 
 function appliquerLangueDocument(langue: string) {
-  document.documentElement.lang = langue.startsWith('en') ? 'en' : 'fr';
+  document.documentElement.lang = LANGUES.find((code) => langue.startsWith(code)) ?? 'fr';
 }
 
 appliquerLangueDocument(i18n.resolvedLanguage ?? 'fr');

@@ -50,6 +50,15 @@ describe('SynchroPreferences', () => {
     expect(etat.modifier).not.toHaveBeenCalled();
   });
 
+  it('quitte l’espagnol des pages publiques pour la langue du compte', async () => {
+    await i18n.changeLanguage('es');
+    etat.profil = { id: 'u1', display_name: 'Maryse', locale: 'fr', theme: 'sombre' };
+    rendre();
+    await screen.findByRole('button', { name: 'Passer en thème clair' });
+    expect(i18n.resolvedLanguage).toBe('fr');
+    expect(etat.modifier).not.toHaveBeenCalled();
+  });
+
   it('enregistre ensuite chaque changement fait depuis l’en-tête', async () => {
     rendre();
     await userEvent.click(await screen.findByRole('button', { name: 'Switch to light theme' }));
