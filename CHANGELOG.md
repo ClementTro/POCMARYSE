@@ -5,6 +5,8 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+## [1.1.4] - 2026-11-02
+
 ### Modifié
 
 - L'assistant de Cursor reformule ta demande et te pose une question avant de modifier quoi que ce soit, présente
