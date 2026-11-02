@@ -10,6 +10,7 @@ import { RedirigerSiConnecte } from '@/core/routing/RedirigerSiConnecte';
 const AccueilPage = lazy(() => import('@/vitrine/pages/AccueilPage'));
 const HistoirePage = lazy(() => import('@/vitrine/pages/HistoirePage'));
 const FonctionnalitesPage = lazy(() => import('@/vitrine/pages/FonctionnalitesPage'));
+const DemiFinalePage = lazy(() => import('@/vitrine/pages/DemiFinalePage'));
 const MentionsLegalesPage = lazy(() => import('@/vitrine/pages/MentionsLegalesPage'));
 const ConfidentialitePage = lazy(() => import('@/vitrine/pages/ConfidentialitePage'));
 const ConnexionPage = lazy(() => import('@/vitrine/pages/ConnexionPage'));
@@ -30,6 +31,7 @@ const routes: RouteObject[] = [
       { index: true, element: <AccueilPage /> },
       { path: 'histoire', element: <HistoirePage /> },
       { path: 'fonctionnalites', element: <FonctionnalitesPage /> },
+      { path: 'demi-finale', element: <DemiFinalePage /> },
       { path: 'mentions-legales', element: <MentionsLegalesPage /> },
       { path: 'confidentialite', element: <ConfidentialitePage /> },
       {

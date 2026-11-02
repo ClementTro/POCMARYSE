@@ -21,6 +21,12 @@
     "citationAuteur": "Maryse",
     "finTitre": "Tu cuaderno te espera",
     "finTexte": "Crea tu cuenta en un minuto: las recetas de Maryse ya están dentro. El tiempo que ganes, tú decides en qué emplearlo.",
+    "evenement": {
+      "date": "Sábado 7 de noviembre de 2026",
+      "titre": "Especial semifinal del Challenge mixte de l'Isère",
+      "texte": "Cinco recetas sencillas para estar en forma antes, durante y después del partido.",
+      "cta": "Ver las recetas del partido"
+    },
     "exemple": {
       "ficheTitre": "Bizcocho de yogur",
       "ficheLignes": ["1 vaso de yogur", "3 vasos de harina", "2 vasos de azúcar", "3 huevos"],
@@ -157,5 +163,123 @@
         "texte": "Puedes pedir el acceso a tus datos, su corrección o su eliminación abriendo una incidencia en el repositorio de GitHub del proyecto. También puedes presentar una reclamación ante la CNIL, la autoridad francesa de protección de datos."
       }
     ]
+  },
+  "evenement": {
+    "titre": "Especial semifinal",
+    "date": "Sábado 7 de noviembre de 2026",
+    "intro": "El 7 de noviembre de 2026 se juega la semifinal del Challenge mixte de l'Isère. Para estar en forma el gran día, aquí tienes unas recetas sencillas para preparar antes, durante y después del partido.",
+    "pour": "Para",
+    "temps": "Tiempo",
+    "ingredients": "Ingredientes",
+    "etapes": "Pasos",
+    "recettes": [
+      {
+        "moment": "La víspera",
+        "titre": "Pasta integral con pollo y verduras",
+        "description": "Pasta para cargar energía sin que la cena resulte pesada.",
+        "portions": "4 personas",
+        "temps": "35 min",
+        "ingredients": [
+          "320 g de pasta integral",
+          "2 pechugas de pollo",
+          "1 calabacín",
+          "1 pimiento rojo",
+          "1 cebolla",
+          "2 cucharadas de aceite de oliva",
+          "Sal y pimienta"
+        ],
+        "etapes": [
+          "Corta el pollo en dados y las verduras en trozos pequeños.",
+          "Sofríe la cebolla en el aceite de oliva, añade el pollo y deja que se dore 5 minutos.",
+          "Añade el calabacín y el pimiento, tapa y deja cocer 10 minutos a fuego lento.",
+          "Mientras tanto, cuece la pasta. Escúrrela y mézclala con las verduras. Salpimienta."
+        ]
+      },
+      {
+        "moment": "La mañana del partido",
+        "titre": "Porridge de plátano y miel",
+        "description": "Un desayuno suave para el estómago, para tomar unas tres horas antes del partido.",
+        "portions": "2 personas",
+        "temps": "10 min",
+        "ingredients": [
+          "80 g de copos de avena",
+          "400 ml de leche",
+          "1 plátano",
+          "1 cucharada de miel",
+          "1 pizca de canela"
+        ],
+        "etapes": [
+          "Pon los copos de avena y la leche en un cazo.",
+          "Calienta a fuego lento 5 minutos sin dejar de remover, hasta que quede cremoso.",
+          "Añade el plátano en rodajas, la miel y la canela. Tómalo templado."
+        ]
+      },
+      {
+        "moment": "Para llevar",
+        "titre": "Barritas de cereales caseras con frutos secos",
+        "description": "Para meter en la bolsa y picar algo durante el día o en el camino de vuelta.",
+        "portions": "12 barritas",
+        "temps": "35 min",
+        "ingredients": [
+          "200 g de copos de avena",
+          "60 g de orejones de albaricoque",
+          "40 g de pasas",
+          "50 g de almendras",
+          "50 g de mantequilla",
+          "3 cucharadas de miel",
+          "1 huevo"
+        ],
+        "etapes": [
+          "Precalienta el horno a 180 °C.",
+          "Corta los orejones en trocitos y machaca las almendras. Mézclalos con los copos y las pasas.",
+          "Derrite la mantequilla con la miel. Viértela sobre la mezcla, añade el huevo batido y mezcla bien.",
+          "Aprieta la masa en un molde forrado con papel de horno y hornea 20 minutos. Deja enfriar antes de cortar en barritas."
+        ]
+      },
+      {
+        "moment": "Después del partido",
+        "titre": "Bol de arroz, huevo mollet y verduras",
+        "description": "Una comida completa y colorida para recuperarse bien.",
+        "portions": "4 personas",
+        "temps": "30 min",
+        "ingredients": [
+          "250 g de arroz",
+          "4 huevos",
+          "1 brócoli",
+          "2 zanahorias",
+          "1 cucharada de semillas de sésamo",
+          "2 cucharadas de salsa de soja"
+        ],
+        "etapes": [
+          "Cuece el arroz.",
+          "Corta el brócoli en ramilletes pequeños y cuécelo 5 minutos al vapor. Ralla las zanahorias.",
+          "Sumerge los huevos 6 minutos en agua hirviendo, luego en agua fría, y pélalos.",
+          "Reparte el arroz en los boles, añade las verduras y el huevo partido por la mitad. Riega con salsa de soja y espolvorea el sésamo."
+        ]
+      },
+      {
+        "moment": "Después del partido",
+        "titre": "Batido de fresa, plátano y yogur",
+        "description": "Para refrescarse y darse un capricho al volver a casa.",
+        "portions": "2 vasos",
+        "temps": "5 min",
+        "ingredients": [
+          "150 g de fresas (congeladas fuera de temporada)",
+          "1 plátano",
+          "1 yogur natural",
+          "200 ml de leche",
+          "1 cucharadita de miel"
+        ],
+        "etapes": [
+          "Quita el rabito a las fresas y corta el plátano en trozos.",
+          "Tritura todos los ingredientes hasta obtener una bebida bien fina.",
+          "Sírvelo enseguida, bien frío."
+        ]
+      }
+    ],
+    "avertissement": "Estas recetas son ideas sencillas para comer bien en torno al partido, no un programa deportivo. Si sigues una dieta especial, pide consejo a un profesional de la salud.",
+    "finTitre": "¿Quieres tenerlas siempre a mano?",
+    "finTexte": "Crea tu cuaderno: podrás apuntar estas recetas y añadirlas a tu menú de la semana.",
+    "cta": "Crear mi cuaderno"
   }
 }

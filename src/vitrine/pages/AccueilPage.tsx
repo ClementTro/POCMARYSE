@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/core/auth/useAuth';
 import { useTitrePage } from '@/shared/hooks/useTitrePage';
 import { LienBouton } from '@/shared/ui/Button';
+import { Fiche } from '@/shared/ui/Fiche';
 import { NoteManuscrite } from '@/shared/ui/NoteManuscrite';
 import { PhotoScotchee } from '@/shared/ui/PhotoScotchee';
 import { MiniBlocNotes, MiniFiche, MiniFrigo } from '@/vitrine/components/Illustrations';
@@ -62,6 +63,26 @@ export default function AccueilPage() {
             </NoteManuscrite>
           </div>
         </div>
+      </section>
+
+      <section aria-labelledby="titre-evenement" className="mx-auto max-w-6xl px-6 pt-12 md:pt-16">
+        <Fiche
+          as="div"
+          className="flex flex-col items-start gap-5 p-6 sm:p-8 md:flex-row md:items-center md:justify-between"
+        >
+          <div>
+            <p className="font-semibold text-vichy-fonce dark:text-beurre">
+              {t('accueil.evenement.date')}
+            </p>
+            <h2 id="titre-evenement" className="mt-1 text-2xl sm:text-3xl">
+              {t('accueil.evenement.titre')}
+            </h2>
+            <p className="mt-2 text-encre-douce dark:text-seyes">{t('accueil.evenement.texte')}</p>
+          </div>
+          <LienBouton to="/demi-finale" className="shrink-0">
+            {t('accueil.evenement.cta')}
+          </LienBouton>
+        </Fiche>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">

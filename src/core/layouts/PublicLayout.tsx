@@ -29,17 +29,20 @@ export function PublicLayout() {
     <div className="flex min-h-screen flex-col">
       <LienEvitement />
       <header className="no-print border-b border-seyes bg-papier/95 dark:border-nuit-ligne dark:bg-nuit/95">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3 sm:px-6">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3 sm:px-6">
           <Logo />
           <nav
             aria-label={t('nav.principale')}
-            className="order-last flex w-full gap-4 sm:order-none sm:w-auto"
+            className="order-last flex w-full flex-wrap gap-x-4 sm:order-none sm:w-auto"
           >
             <NavLink to="/histoire" className={lienNav}>
               {t('nav.histoire')}
             </NavLink>
             <NavLink to="/fonctionnalites" className={lienNav}>
               {t('nav.fonctionnalites')}
+            </NavLink>
+            <NavLink to="/demi-finale" className={lienNav}>
+              {t('nav.evenement')}
             </NavLink>
           </nav>
           <div className="ml-auto flex flex-wrap items-center justify-end gap-1">
