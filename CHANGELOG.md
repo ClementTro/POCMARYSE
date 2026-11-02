@@ -5,6 +5,12 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+### Modifié
+
+- Les pages de présentation racontent une Maryse à l'agenda bien rempli, entre son travail et le secrétariat
+  général d'un grand club de tennis : le carnet est présenté comme un moyen de gagner du temps, sans les clichés
+  sur le « qu'est-ce qu'on mange ? ». L'application, les recettes et les fonctions ne changent pas.
+
 ## [1.1.2] - 2026-10-31
 
 ### Modifié
