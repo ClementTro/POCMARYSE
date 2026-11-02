@@ -13,7 +13,8 @@ Tout passe par les scripts : ne fais jamais à la main la PR, la fusion, le tag 
    « Non publié » de `CHANGELOG.md` contient une ligne simple pour cette demande.
 2. Lance `npm run publier -- --a-blanc` : il vérifie tout sans rien publier. S'il échoue, corrige ou explique le
    problème en mots simples.
-3. Montre les captures d'écran du résultat (voir `interlocuteur.mdc`).
+3. **Montre le résultat** (captures d'écran, ou l'adresse locale si tu ne peux pas en prendre) : voir « Toujours »
+   dans `interlocuteur.mdc`. Sans cela, ne passe pas à l'étape suivante.
 4. Demande : **« Je mets en ligne ? »** (choix Oui / Non). N'avance que sur un « oui » explicite.
 5. Lance `npm run publier -- --type patch` (texte, image, problème) ou `--type minor` (nouvelle fonction).
    Préviens que cela prend quelques minutes. Le script s'arrête au premier problème et l'explique.

@@ -7,6 +7,9 @@ alwaysApply: false
 
 ## Texte, couleur ou image (mise en ligne en `patch`)
 
+Pour du texte sur plusieurs pages ou une page entière : reformulation, puis plan validé **avant** de modifier
+(voir `interlocuteur.mdc`). Propose le nouveau texte tel qu'il apparaîtra, pas seulement une description.
+
 - Les textes sont dans `src/i18n/locales/{fr,en}/*.json` et `src/modules/<id>/i18n/` : cherche le texte exact.
   S'il apparaît à plusieurs endroits, demande lequel. Change le français et l'anglais ensemble (propose la
   traduction). Après un `fr.json` : `npm run typo:fr`.
@@ -20,6 +23,7 @@ alwaysApply: false
    de route, arrête-toi.
 2. Mini cahier des charges, cinq lignes au plus, en mots simples : ce que tu pourras faire, ce que tu ne pourras
    **pas** faire, ce que ça change dans tes données (idéalement rien), l'effort (petit ou moyen). Attends un « oui ».
+   C'est le « plan » exigé par `interlocuteur.mdc`.
 3. Réalise selon `CONTRIBUTING.md`, `architecture.mdc` et `design.mdc` : français et anglais, tutoiement,
    accessibilité, thème sombre. Au moins un test sur la logique ; mets à jour `docs/ROADMAP.md`.
 
