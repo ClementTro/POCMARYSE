@@ -5,6 +5,8 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+## [1.2.0] - 2026-11-02
+
 ### Ajouté
 
 - Les pages publiques du site (accueil, histoire, fonctionnalités, connexion, pages légales) existent en
