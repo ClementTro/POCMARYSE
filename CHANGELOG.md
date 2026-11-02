@@ -5,6 +5,13 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+## [1.1.5] - 2026-11-02
+
+### Modifié
+
+- Sur la page « L'histoire de Maryse », la première étape commence désormais par « Pendant plus de dix ans »
+  au lieu de « Pendant plus de vingt ans ».
+
 ## [1.1.4] - 2026-11-02
 
 ### Modifié
