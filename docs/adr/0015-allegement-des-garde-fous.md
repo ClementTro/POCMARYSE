@@ -22,8 +22,17 @@ déploiement et retour automatique au dernier tag sain.
 
 ## Décision
 
-- **Plus de mode développeur.** Les règles de l'agent valent pour tout le monde. Un développeur qui veut un
-  autre comportement modifie les règles ; pour pousser sans PR, il désactive lui-même la protection de `main`.
+- **Pas de mode développeur déclenché dans la conversation.** Les règles de l'agent valent pour tout le monde,
+  quelle que soit la phrase écrite. Seule exception, ajoutée après un premier essai (2026-11-02) : un développeur
+  peut inscrire dans ses **règles personnelles Cursor** (hors du dépôt) qu'il est développeur de ce projet ; l'agent
+  parle alors court et technique et saute la reformulation, le plan et les captures. L'association n'a pas cette
+  ligne chez elle, donc rien ne s'active par erreur ; le « oui » avant la mise en ligne et les arrêts restent.
+  Pour pousser sans PR, il désactive lui-même la protection de `main`.
+- **Des déclencheurs fixes plutôt que du jugement.** Un premier essai réel (réécriture des pages de présentation)
+  a montré qu'un « au moindre doute, pose une question » n'est pas suivi : l'agent ne posait aucune question et
+  publiait sans captures. La règle exige maintenant, toujours, une reformulation validée avec l'outil de
+  questions, un plan pour un gros changement (texte sur plus d'une page, plus de trois fichiers, nouvelle
+  fonction) et le résultat montré avant « Je mets en ligne ? ».
 - **Plus de commandes Cursor** : l'agent comprend les demandes écrites avec des mots simples.
 - **Une règle toujours active** (`interlocuteur.mdc` : ton, questions, tri, arrêts, mise en ligne) et **trois
   procédures** chargées selon la demande : un problème (erreur ou lenteur), une modification (texte, image ou
@@ -49,7 +58,9 @@ déploiement et retour automatique au dernier tag sain.
 
 - Moins de texte à maintenir et des règles plus courtes, donc mieux suivies par l'agent.
 - Un développeur parle à un agent prudent, qui pose des questions et demande un « oui » avant de mettre en
-  ligne ; c'est voulu.
+  ligne, sauf s'il l'a déclaré dans ses règles personnelles ; c'est voulu.
+- Ces consignes restent du texte : un agent peut les ignorer. Le contrôle se fait avec les tests de
+  `docs/MAINTENANCE.md` ; en cas d'échec répété, l'étape suivante serait des hooks Cursor qui bloquent l'action.
 - Les actions GitHub vieilliront : une personne technique devra les mettre à jour de temps en temps.
 - Les tâches planifiées s'arrêtent après 60 jours sans activité dans le dépôt (ADR 0014) : c'est accepté pour
   une démo ; la base Supabase se relance alors à la main.
