@@ -12,7 +12,8 @@ et l'ADR concerné dans le même commit.
   raconte la success story de Maryse ; après connexion, l'utilisatrice accède à l'application.
 - **Modules V1** : Recettes, Planning (repas de la semaine), Courses (liste générée depuis le planning).
 - **Modules futurs** : listés dans [`docs/MODULES_A_VENIR.md`](docs/MODULES_A_VENIR.md), jamais codés sans décision explicite.
-- **Langue** : documentation, commits et textes en français. L'interface est bilingue FR (défaut) / EN.
+- **Langue** : documentation, commits et textes en français. L'interface est bilingue FR (défaut) / EN ;
+ les pages publiques existent aussi en espagnol (ADR 0016).
 - **Démo en ligne et dépôt** : le propriétaire peut changer ; ne pas écrire son nom en dur. L'adresse du site
   (`https://<propriétaire>.github.io/POCMARYSE/`) et celle du dépôt s'obtiennent avec `npm run diagnostic`
   ou `gh repo view`.
@@ -183,6 +184,7 @@ Direction « cahier de cuisine familial » : papier Seyès, faïence bleue, napp
 | [0013](docs/adr/0013-preferences-du-profil.md) | Langue et thème synchronisés avec le profil |
 | [0014](docs/adr/0014-maintenance-par-l-association.md) | Maintenance par l'association : branche par demande, mise en ligne sûre |
 | [0015](docs/adr/0015-allegement-des-garde-fous.md) | Allègement des garde-fous de l'agent : une règle, trois procédures, correctifs de sécurité seuls |
+| [0016](docs/adr/0016-espagnol-pages-publiques.md) | Espagnol sur les pages publiques |
 
 ## 10. Interlocuteur et maintenance (ADR 0014 et 0015)
 

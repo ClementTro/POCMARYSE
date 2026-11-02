@@ -10,9 +10,9 @@ alwaysApply: false
 Pour du texte sur plusieurs pages ou une page entière : reformulation, puis plan validé **avant** de modifier
 (voir `interlocuteur.mdc`). Propose le nouveau texte tel qu'il apparaîtra, pas seulement une description.
 
-- Les textes sont dans `src/i18n/locales/{fr,en}/*.json` et `src/modules/<id>/i18n/` : cherche le texte exact.
-  S'il apparaît à plusieurs endroits, demande lequel. Change le français et l'anglais ensemble (propose la
-  traduction). Après un `fr.json` : `npm run typo:fr`.
+- Les textes sont dans `src/i18n/locales/{fr,en,es}/*.json` et `src/modules/<id>/i18n/` : cherche le texte exact.
+  S'il apparaît à plusieurs endroits, demande lequel. Change le français et l'anglais ensemble, et l'espagnol
+  pour les pages publiques (propose la traduction). Après un `fr.json` : `npm run typo:fr`.
 - Couleurs : uniquement celles de la charte (jetons Tailwind), contraste AA, thème sombre vérifié.
 - Images : dans `public/images/`, référencées avec `asset()` de `@/shared/lib/asset`, 300 Ko et 1600 px de large
   au plus, texte alternatif en français et en anglais. Pas de photo de personne sans consentement déclaré (ADR 0011).
