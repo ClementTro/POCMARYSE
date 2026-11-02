@@ -1,0 +1,59 @@
+{
+  "marque": "Maryse & Co",
+  "nav": {
+    "accueil": "Inicio",
+    "histoire": "La historia de Maryse",
+    "fonctionnalites": "Funciones",
+    "connexion": "Iniciar sesión",
+    "inscription": "Crear mi cuaderno",
+    "ouvrirCarnet": "Abrir mi cuaderno",
+    "tableauDeBord": "Hoy",
+    "profil": "Mi perfil",
+    "deconnexion": "Cerrar sesión",
+    "principale": "Navegación principal",
+    "application": "Navegación de la aplicación",
+    "allerAuContenu": "Ir al contenido",
+    "menu": "Menú"
+  },
+  "theme": {
+    "passerSombre": "Cambiar al tema oscuro",
+    "passerClair": "Cambiar al tema claro"
+  },
+  "langue": {
+    "choisir": "Idioma",
+    "fr": "Français",
+    "en": "English",
+    "es": "Español"
+  },
+  "etat": {
+    "chargement": "Estoy pasando las páginas…",
+    "erreur": "No se ha podido cargar el cuaderno. Comprueba tu conexión y vuelve a intentarlo.",
+    "reessayer": "Reintentar"
+  },
+  "photo": {
+    "aVenir": "La foto de Maryse llegará pronto"
+  },
+  "pied": {
+    "mentions": "Aviso legal",
+    "confidentialite": "Privacidad",
+    "demo": "Maryse & Co es una demo técnica: las recetas son reales, la empresa es imaginaria."
+  },
+  "backend": {
+    "titre": "El cuaderno todavía no está conectado",
+    "texte": "El servicio de cuentas no está configurado en este sitio. Puedes recorrer las páginas de presentación; la aplicación se abrirá en cuanto esté configurada.",
+    "retour": "Volver al inicio"
+  },
+  "introuvable": {
+    "titre": "Esta página no está en el cuaderno",
+    "texte": "Puede que el enlace sea antiguo o que esté mal copiado.",
+    "retour": "Volver al inicio"
+  },
+  "actions": {
+    "enregistrer": "Guardar",
+    "annuler": "Cancelar",
+    "supprimer": "Eliminar",
+    "modifier": "Modificar",
+    "retour": "Volver",
+    "fermer": "Cerrar"
+  }
+}

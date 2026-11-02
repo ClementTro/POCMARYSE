@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/core/auth/useAuth';
+import { LANGUES } from '@/i18n';
 import { cn } from '@/shared/lib/cn';
 import { LienBouton } from '@/shared/ui/Button';
 import { Chargement } from '@/shared/ui/Chargement';
@@ -42,7 +43,7 @@ export function PublicLayout() {
             </NavLink>
           </nav>
           <div className="ml-auto flex flex-wrap items-center justify-end gap-1">
-            <LangSwitch />
+            <LangSwitch langues={LANGUES} />
             <ThemeToggle />
             {session ? (
               <LienBouton to="/app" className="ml-2 whitespace-nowrap">

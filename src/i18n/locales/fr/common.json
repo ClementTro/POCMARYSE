@@ -22,7 +22,8 @@
   "langue": {
     "choisir": "Langue",
     "fr": "Français",
-    "en": "English"
+    "en": "English",
+    "es": "Español"
   },
   "etat": {
     "chargement": "Je tourne les pages…",

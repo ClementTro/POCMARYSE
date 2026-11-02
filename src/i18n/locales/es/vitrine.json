@@ -1,0 +1,161 @@
+{
+  "photos": {
+    "medailleAlt": "Maryse, rodeada de dos compañeros, sostiene su Medalla de Honor del Trabajo y un ramo de flores.",
+    "secondeAlt": "Otra foto de Maryse."
+  },
+  "accueil": {
+    "titre": "El cuaderno de cocina de Maryse, para las semanas más ocupadas",
+    "intro": "Entre su trabajo y un gran club de tenis del que es secretaria general, Maryse no tiene tiempo que perder. Su cuaderno resuelve las comidas de la semana en pocos minutos: recetas que han demostrado su valía, un menú planificado y una lista de la compra que se escribe sola. Aquí lo tienes, en tu bolsillo.",
+    "ctaPrincipal": "Crear mi cuaderno",
+    "ctaSecondaire": "Leer la historia de Maryse",
+    "gratuit": "Gratis y sin publicidad.",
+    "photoNote": "El día de mi medalla. Mis compañeros me dijeron: «¡Tu cuaderno, conviértelo en una app!»",
+    "contenuTitre": "Tres páginas que te ahorran tiempo",
+    "recettesTitre": "Fichas de recetas",
+    "recettesTexte": "Tu cuaderno empieza con 20 recetas de Maryse, probadas y aprobadas. Copia las que te gusten, añade las tuyas y encuéntralas según el tiempo del que dispongas.",
+    "planningTitre": "El menú de la semana",
+    "planningTexte": "Comida y cena, de lunes a domingo: arrastra una receta hasta una comida, como quien pega una nota en la nevera. La semana queda organizada de una vez.",
+    "coursesTitre": "La lista de la compra",
+    "coursesTexte": "Un clic y los ingredientes de la semana quedan reunidos, con las cantidades sumadas. Una sola lista, una sola visita a la tienda.",
+    "citation": "«En el club, nada se hace sin planificación. No veía por qué las comidas iban a ser una excepción.»",
+    "citationAuteur": "Maryse",
+    "finTitre": "Tu cuaderno te espera",
+    "finTexte": "Crea tu cuenta en un minuto: las recetas de Maryse ya están dentro. El tiempo que ganes, tú decides en qué emplearlo.",
+    "exemple": {
+      "ficheTitre": "Bizcocho de yogur",
+      "ficheLignes": ["1 vaso de yogur", "3 vasos de harina", "2 vasos de azúcar", "3 huevos"],
+      "ficheNote": "¡Éxito asegurado en el club!",
+      "jours": ["Lun", "Mar", "Mié", "Jue"],
+      "plats": ["Quiche", "Sopa", "Crepes", "Gratinado"],
+      "articles": ["Leche", "Huevos", "Harina", "Manzanas"]
+    }
+  },
+  "histoire": {
+    "titre": "La historia de Maryse",
+    "intro": "Maryse & Co nació de un cuaderno de cuadros, de una agenda muy llena y de una entrega de medallas.",
+    "fiction": "Relato inspirado en Maryse, en parte imaginado para esta demo.",
+    "etapes": [
+      {
+        "quand": "Durante más de diez años",
+        "titre": "La oficina, el club y todo lo demás",
+        "texte": "Maryse lleva adelante su carrera y, además, la secretaría general de un gran club de tenis: asambleas generales, torneos, licencias, voluntarios que coordinar. Sus semanas están llenas y cada minuto cuenta."
+      },
+      {
+        "quand": "El domingo por la noche",
+        "titre": "El cuaderno",
+        "texte": "Aplica a las comidas el método que funciona en el club: anotarlo todo, planificarlo todo. En un cuaderno escolar, las recetas que han demostrado su valía, el menú de la semana en el reverso y la lista de la compra en la última página. Diez minutos el domingo y la semana está resuelta."
+      },
+      {
+        "quand": "El día de la medalla",
+        "titre": "«¡Conviértelo en una app!»",
+        "texte": "Cuando Maryse recibe su Medalla de Honor del Trabajo, sus compañeros le regalan flores y un consejo: ese cuaderno que todo el mundo le pide prestado, en la oficina y en el club, habría que compartirlo."
+      },
+      {
+        "quand": "Hoy",
+        "titre": "Maryse & Co",
+        "texte": "El cuaderno se convierte en un cuaderno en línea. Las mismas recetas, el mismo método, y espacio para las tuyas."
+      }
+    ],
+    "fin": "Y tú, ¿qué vas a hacer con el tiempo que ganes?",
+    "cta": "Crear mi cuaderno"
+  },
+  "fonctionnalites": {
+    "titre": "Lo que hace el cuaderno",
+    "intro": "Tres páginas para ganar tiempo cada semana, y espacio para las siguientes.",
+    "modules": [
+      {
+        "titre": "Recetas",
+        "points": [
+          "20 recetas de Maryse para empezar, listas para copiar en tu cuaderno",
+          "Tus propias recetas: ingredientes, pasos, tiempo y dificultad",
+          "Búsqueda por nombre, filtros por etiqueta, tiempo y dificultad"
+        ]
+      },
+      {
+        "titre": "Planificación",
+        "points": [
+          "La semana de un vistazo, comida y cena",
+          "Una receta arrastrada hasta una comida, o elegida de una lista",
+          "Semana anterior, siguiente, o vuelta a hoy"
+        ]
+      },
+      {
+        "titre": "Compra",
+        "points": [
+          "Lista generada a partir de la planificación de la semana",
+          "Ingredientes agrupados, cantidades sumadas",
+          "Artículos para marcar, añadidos a mano, impresión"
+        ]
+      }
+    ],
+    "transverseTitre": "Siempre contigo",
+    "transverse": [
+      "La aplicación en francés o en inglés, y estas páginas también en español",
+      "Un tema claro para el día y uno oscuro para la noche",
+      "Una cuenta personal: nadie más que tú ve tu cuaderno",
+      "En el ordenador, la tableta o el teléfono"
+    ],
+    "bientotTitre": "Las próximas páginas",
+    "bientotTexte": "El cuaderno está pensado para crecer. Las ideas que esperan su turno:",
+    "bientot": [
+      "Ajustar las raciones",
+      "Modo cocina paso a paso",
+      "Favoritos y notas",
+      "Despensa",
+      "Importar y exportar",
+      "Compartir con el hogar"
+    ],
+    "cta": "Crear mi cuaderno"
+  },
+  "mentions": {
+    "titre": "Aviso legal",
+    "sections": [
+      {
+        "titre": "Editor",
+        "texte": "Maryse & Co es un proyecto de demostración técnica, sin actividad comercial, publicado desde un repositorio público de GitHub."
+      },
+      {
+        "titre": "Alojamiento",
+        "texte": "El sitio está alojado por GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, Estados Unidos). Las cuentas y los datos del cuaderno están alojados por Supabase Inc., en servidores situados en la Unión Europea."
+      },
+      {
+        "titre": "Fotografías",
+        "texte": "Las fotografías de Maryse se publican con el consentimiento de las personas que aparecen en ellas. Queda prohibida cualquier reutilización."
+      },
+      {
+        "titre": "Contacto",
+        "texte": "Para cualquier pregunta, abre una incidencia (issue) en el repositorio de GitHub del proyecto."
+      }
+    ]
+  },
+  "confidentialite": {
+    "titre": "Política de privacidad",
+    "maj": "Actualizada el 30 de octubre de 2026.",
+    "sections": [
+      {
+        "titre": "Los datos recogidos",
+        "texte": "Tu correo electrónico, tu nombre, tus preferencias (idioma, tema) y lo que escribes en el cuaderno: recetas, planificación y lista de la compra."
+      },
+      {
+        "titre": "Para qué",
+        "texte": "Únicamente para que tu cuaderno funcione: iniciar tu sesión y devolverte tus datos. Sin publicidad, sin reventa, sin herramientas de medición de audiencia."
+      },
+      {
+        "titre": "Quién tiene acceso",
+        "texte": "Nadie más que tú. Los datos están protegidos fila por fila en la base de datos: una cuenta solo puede leer su propia información."
+      },
+      {
+        "titre": "Dónde se guardan",
+        "texte": "En Supabase, en la Unión Europea. Tu idioma y tu tema también se recuerdan en tu navegador (almacenamiento local), sin ninguna cookie publicitaria."
+      },
+      {
+        "titre": "Durante cuánto tiempo",
+        "texte": "Mientras exista tu cuenta. Como este sitio es una demostración, las cuentas inactivas pueden eliminarse."
+      },
+      {
+        "titre": "Tus derechos",
+        "texte": "Puedes pedir el acceso a tus datos, su corrección o su eliminación abriendo una incidencia en el repositorio de GitHub del proyecto. También puedes presentar una reclamación ante la CNIL, la autoridad francesa de protección de datos."
+      }
+    ]
+  }
+}

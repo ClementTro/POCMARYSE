@@ -63,3 +63,16 @@ Chaque entrée précise ce que le module apporte, ce qu'il démontre techniqueme
 - **Pour l'utilisatrice** : inviter les membres du foyer à partager le même planning et la même liste de courses.
 - **Démontre** : modèle multi-utilisateur (table `households`), RLS par appartenance, temps réel Supabase.
 - **Dépend de** : Planning, Courses.
+
+## Application en espagnol
+
+- **Pour l'utilisatrice** : utiliser le carnet en espagnol après connexion (recettes, planning, courses, profil) ;
+  le choix est retenu dans le profil comme les deux autres langues. Les pages publiques sont déjà traduites
+  (ADR 0016).
+- **Démontre** : ajout d'une langue à l'i18n existante (ADR 0007), synchronisation avec le profil (ADR 0013).
+- **Points d'attention** : la colonne `profiles.locale` n'accepte que `'fr'` et `'en'` (contrainte `check` de
+  `0001_init.sql`, trigger de création du profil) : nouvelle migration nécessaire. Côté front :
+  `enregistrerTraductions` dans `src/i18n/index.ts`, `LangSwitch` de `AppLayout`, page Profil, `InscriptionPage`
+  et `SynchroPreferences` (qui ramènent aujourd'hui `es` à `fr`), dates et libellés des jours, `app.json` et
+  fichiers `es` de chaque module, contrat `AppModule` (`i18n.es`), tests, ADR 0016.
+- **Dépend de** : tous les modules (transverse, évolution du `core` et de la base).

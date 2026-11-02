@@ -5,6 +5,14 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 
 ## [Non publié]
 
+## [1.2.0] - 2026-11-02
+
+### Ajouté
+
+- Les pages publiques du site (accueil, histoire, fonctionnalités, connexion, pages légales) existent en
+  espagnol : un bouton « ES » apparaît à côté de « FR » et « EN ». Après connexion, le carnet reste en français
+  ou en anglais.
+
 ## [1.1.5] - 2026-11-02
 
 ### Modifié

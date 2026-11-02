@@ -7,6 +7,7 @@ import { useModifierProfil, useProfil } from './api';
 /**
  * Relie la langue et le thème au profil Supabase :
  * - à l'ouverture de l'app, les préférences du compte l'emportent (on les retrouve sur un autre appareil) ;
+ *   l'espagnol des pages publiques, que le profil ne connaît pas, cède donc la place à sa langue ;
  * - ensuite, chaque changement (en-tête ou page Profil) est enregistré dans le profil.
  * On compare aux valeurs précédentes, pas au profil : l'application du profil ne doit pas être réenregistrée
  * pendant que `changeLanguage` est encore en cours.
@@ -29,7 +30,7 @@ export function SynchroPreferences() {
     if (profilApplique.current !== profil.id) {
       profilApplique.current = profil.id;
       if (profil.theme !== preference) setPreference(profil.theme);
-      if (profil.locale !== langue) void i18n.changeLanguage(profil.locale);
+      if (profil.locale !== i18n.resolvedLanguage) void i18n.changeLanguage(profil.locale);
       return;
     }
 
